@@ -1,0 +1,97 @@
+{% extends "./basepy.html" %}
+{% block title %}5. Logical Operators{% endblock %}
+{% block article %}
+<h1 id="top-head">5. Logical Operators</h1>
+
+<h2 id="sub-head">5.1 Indentation and Conditional Statements</h2>
+<p id="text-style">Indentation is used by Python to
+   determine which statement a block of code belongs to,
+   and is used to control the flow of the code. We use
+   indentation when we are making decisions in our code. For
+   example, say want to make a code that tells us when to stop
+   cooking our soup.</p>
+
+<pre id="code-style"><code class="python">soup_time = int(input('How long have you been cooking the soup?'))
+if soup_time >= 10:
+  print('The soup is ready!')
+if soup_time < 10:
+  print('Keep on cooking!')
+</code></pre>
+
+<p id="text-style">As we can see from the below flowchart,
+   there are three outcomes to this code: cooked soup, keep
+   cooking and an error.</p>
+<p><img src="{{ url_for('static', filename='images/if-state-5.png') }}"
+     alt="If statement flowchart"
+     width=30% height=70% style="margin-left:12.5rem;"
+     ></p>
+<p id="text-style">
+  Try running this code and see what happens for different
+  soup cooking times. You might notice that if the two conditions
+  are not met, the code ends - this is our third condition.</p>
+<p id="text-style">
+  This doesn’t seem to make sense because the two conditions cover all
+  numbers? One reason that this may occur is if you enter a value into
+  the program that the computer does not understand e.g. a string when
+  we are asking for a number. Be careful of this!</p>
+<p id="text-style">
+  As we can see from our sample code, the print statements are
+  indented. This is used by Python to indicate that we want to either
+  print “The soup is ready!” if the time is greater than 10, or “keep
+  cooking” if the time is less than 10. Try removing the indentation
+  and see what happens.</p>
+
+<p id="text-style">
+  If you do this Python thinks that there is no body code assigned
+  to the decision, and you get the following error.
+  <span id="code-style">IndentationError: expected an indented block</span>.
+</p>
+<hr id="art-div">
+<h2 id="sub-head">5.2 Futher conditional statements</h2>
+<p id="text-style">
+  There are two other if statements:
+  <ul id="code-style">
+    <li>else if</li>
+    <li>else</li>
+  </ul><br>
+  Else if (the syntax is elif in Python) is executed if the first
+  if statement is not met. <strong>Note: you need an if statement before
+  you call an elif statement.</strong>
+  If you just use if statements, the code will check every single
+  statement, In our soup code, even if the first condition is met it will
+  check the second condition. An elif statement can fix this:
+</p>
+<pre id="code-style">
+<code class="python">soup_time = int(input('How long have you been cooking the soup?'))
+if soup_time >= 10:
+  print('The soup is ready!')
+elif soup_time < 10:
+  print('Keep on cooking!')</code></pre>
+<p id="text-style">
+  We can see this in the below
+  flowchart, where if the first condition is
+  met, we do not check the second one.</p>
+<p><img src="{{ url_for('static', filename='images/else-state-5.png') }}"
+     alt="else if statement flowchart"
+     width=30% height=70% style="margin-left:12.5rem;"></p>
+<p id="text-style">An else statement is executed as an
+   alternate to both of these statements. For example,
+   in our soup situation rather than check that
+   <span id="code-style">soup_time</span>
+   is less than 10 we can add an else statement because
+   in this scenario we know there are exactly two outcomes.</p>
+<pre id="code-style">
+<code class="python">soup_time = int(input('How long have you been cooking the soup?'))
+if soup_time >= 10:
+  print('The soup is ready!')
+else:
+  print('Keep on cooking!')
+</code></pre>
+<p><img src="{{ url_for('static', filename='images/if-final-5.png') }}"
+     alt="else if statement flowchart"
+     width=30% height=70% style="margin-left:12.5rem;"></p>
+<p id="text-style">If statements can be confusing initially so don't
+   worry if you don't understand them well yet! Make sure to look
+   back at the examples on this page if you're stuck. The next article
+   will hopefully make everything more clear.</p>
+{% endblock %}

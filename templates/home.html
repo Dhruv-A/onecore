@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% block title %}Core: Learn programming{% endblock %}
+{% block body %}
+    <main>
+      <section class="section-container" id="landing-container">
+        <div class="section-graphics">
+          <img
+            id="landing-image"
+            src="./static/images/ultra-violet-galactic-background-free-vector.jpg"
+            alt="ultra-violet-galactic-background"
+          />
+        </div>
+        <div class="section-content" id="landing-content">
+          <div id="landing-description">
+            <div id="landing-desc-title">Learning made easy</div>
+            <div id="landing-desc-subtitle">
+              Tutorials to get started with coding
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-container" id="courses-container">
+        <div class="section-content" id="courses-content">
+          <div id="courses-description">
+            <div id="courses-desc-title">Visit our tutorials</div>
+          </div>
+          <ul id="flex-container">
+            <li class="course-box">
+          <div id="course-cards">
+            <div class="course-card">
+              <img
+                src="./static/images/python-logo.png"
+                alt="Python"
+                id="course-image-container"
+                class="pypic"
+              />
+              <!-- <div class="course-card-title">Python Fundamentals</div> -->
+              <div class="course-card-desc">
+                Learn the basics of the python programming language with our
+                simple step-by-step tutorials.
+              </div>
+              <div class="course-card-button-container">
+                <a href="/python/1" class="course-card-button"
+                  >Start</a
+                >
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="course-box">
+          <div id="course-cards">
+            <div class="course-card">
+              <img
+                src="./static/images/html-logo.png"
+                alt="Python"
+                id="course-image-container" class="html-image"
+              />
+              <!-- <div class="course-card-title">Python Fundamentals</div> -->
+              <div class="course-card-desc">
+                Make your own website with our articles and
+                tutorials on HTML and CSS.
+              </div>
+              <div class="course-card-button-container">
+                <a href="#" class="course-card-button"
+                  >Upcoming</a
+                >
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="course-box">
+      <div id="course-cards">
+        <div class="course-card">
+          <img
+            src="{{ url_for('static', filename='images/react-logo.png') }}"
+            alt="React"
+            id="course-image-container"
+            class="react-image"
+          />
+          <!-- <div class="course-card-title">Python Fundamentals</div> -->
+          <div class="course-card-desc">
+            Built user interfaces and applications with React, an open
+            source Javascript library
+          </div>
+          <div class="course-card-button-container">
+            <a href="#" class="course-card-button">Upcoming</a>
+          </div>
+        </div>
+      </div>
+      </li>
+      </ul>
+        </div>
+      </section>
+      <section class="section-container puzzle-container" id="courses-container">
+        <div class="section-content puzzle-content" id="courses-content">
+          <div id="courses-description" class="puzzle-description">
+            <div id="courses-desc-title" class="puzzle-title">Try out our puzzles!</div>
+          </div>
+          <div class="course-card-button-container">
+            <a href="/puzzles" class="course-card-button">Start</a>
+          </div>
+        </div>
+      </section>
+    </main>
+{% endblock %}

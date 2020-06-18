@@ -1,0 +1,109 @@
+{% extends "basepy.html" %}
+{% block title %}2. Strings{% endblock %}
+{% block article %}
+<h1 id="top-head">2. Strings</h1>
+<h2 id="sub-head">2.1 Running Downloadable Files</h2>
+<p id="text-style">Many of the examples used will have
+    accompanying PDFs and Python Files. Make sure to download them
+    and have a look! There are instruction on how to open and run a
+    python file in the PDF below</p>
+<a id="link-style" href="{{ url_for('static', filename='pyCode/run-file-idle.pdf') }}"
+   download>Download PDF</a>
+<hr id="art-div">
+<h2 id="sub-head">2.2 Basics</h2>
+<p id="text-style">A string is a sequence of characters,
+   a character being any letter, number or other symbol.
+   In Python, you represent strings with quotation marks.
+   For example:</p>
+<p><span id="code-style">'Hello World'</span><span
+   id="text-style"> is a string</span></p>
+<p><span id="code-style">Hello</span><span id="text-style"> is not
+   a string (because it doesn't have quotation marks
+   around it)</span></p>
+<p id="text-style">You can use double quotations as well.
+   For example:</p>
+<p><span id="code-style">"Hello World"</span>
+   <span id="text-style"> is a string</span</p>
+<p id="text-style">There is no difference between single and double
+   quotations in python. You can verify if something is a string using the
+   <span id="code-style">type</span> function:</p>
+<pre id="code-style"><code class="python">>>> type('Hello World')
+&lt;class 'str'></code></pre>
+<p><span id="code-style">'str'</span><span id="text-style"> simply
+   meaning that the content in the brackets is a string. When you
+   type code into IDLE, sometimes something will be coloured
+   differently, just like the code on this page. Strings are red here
+   but there are different <em>syntax highlighting</em> styles</span></p>
+<a id="link-style" href="{{ url_for('static', filename='pyCode/string-type.py') }}"
+   download>Download example</a>
+<hr id="art-div">
+<h2 id="sub-head">2.3 What are methods?</h2>
+<p id="text-style">Methods are procedures you can perform on strings
+   (and other data types that will be covered later like lists).
+   Python has a set of built-in methods that you can use on strings and
+   these can change various features of the string.</span></p>
+<hr id="art-div">
+<h2 id="sub-head">2.4 String Methods</h2>
+<p id="text-style">Firstly, let's say you have the string:
+   <span id="code-style">'Hello World'</span></p>
+<p id="text-style">If you want to capitalise the whole string, you could use
+   <span id="code-style">upper</span> which is a method giving you
+   a string with all the letters capitalised.</p>
+<pre id="code-style"><code class="python">>>> 'Hello World'.upper()
+'HELLO WORLD'</code></pre>
+<a id="link-style" href="{{ url_for('static', filename='pyCode/string-upper.py') }}"
+   download>Download example</a>
+<p id="text-style"><strong>Note:</strong> that if you try to capitalise a string
+   which is already in caps, <span id="code-style">upper</span>
+   will return that string:</p>
+
+<pre id="code-style"><code class="python">>>> 'HELLO WORLD'.upper()
+'HELLO WORLD'</code></pre>
+<p id="text-style">Conversely, if you wanted to convert a string completely
+   to lowercase, you can use the <span id="code-style">lower</span>
+   function:</p>
+
+<pre id="code-style"><code class="python">>>> 'Hello World'.lower()
+'hello world'</code></pre>
+
+<p id="text-style">Additionally, there are methods to find out properties
+   of a string. For example, you can use the
+   <span id="code-style">isupper</span> method
+   which returns either <em>True</em> or <em>False</em> (we will
+   cover many uses of True and False values later on). If a string only
+   has caps, <span id="code-style">isupper</span> will output True,
+   otherwise it will output False:</p>
+
+<pre id="code-style"><code class="python">>>> 'HELLO WORLD'.isupper()
+True</code></pre>
+<a id="link-style" href="{{ url_for('static', filename='pyCode/string-isupper.py') }}"
+   download>Download example</a><br>
+<pre id="code-style"><code class="python">>>> 'Hello World'.isupper()
+False</code></pre>
+
+<p id="text-style">The last method we will cover in this article
+   is one to count how many times a string occurs in another
+   string. Let's say we wanted to see how many times
+   <span id="code-style">'Hello'</span> occurs
+   in <span id="code-style">'Hello World'</p>
+
+<pre id="code-style"><code class="python">>>> 'Hello World'.count('Hello')
+1</code></pre>
+<p id="text-style">You can also use it to count
+   how many times a certain letter occurs:</p>
+<pre id="code-style"><code class="python">>>> 'Hello World'.count('o')
+2</code></pre>
+<hr id="art-div">
+<h2 id="sub=head">2.5 Concatenation</h2>
+<p id=text-style>The process of joining strings is called concatenation.
+   In python we can use + for this purpose. For example:</span></p>
+<pre id="code-style"><code class="python">>>> 'Hello' + 'World'
+'HelloWorld'</code></pre>
+<p id="text-style">Notice how there is no space between the two words.
+   You need to consider this very often and there is a very simple fix:
+   adding a space at the end of the first string.</p>
+<pre id="code-style"><code class="python">>>> 'Hello ' + 'World'
+'Hello World'</code></pre>
+<a id="link-style" href="{{ url_for('static', filename='pyCode/string-concatenation.py') }}"
+   download>Download example</a>
+{% endblock %}

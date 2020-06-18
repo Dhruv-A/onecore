@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% block title %}Core: Create your own content{% endblock %}
+{% block body %}
+<main>
+<article id="course-lesson" class="about-content-container">
+<h1 class="about-title">Creating your own HTML files</h1>
+<h2 id="sub-head">1. Downloading a text editor and flask</h2>
+<p id="text-style">To run the website files, you will need to
+   have a python IDE installed on your device. Ideally, this will
+   be something with a text editor like atom so that you can do everything
+   all in the same place. You can download atom
+   <a id="link-style" href="https://atom.io/">here</a> and then install
+   a package in it that lets you run python. You will also need to download
+   python itself from
+   <a id="link-style"href="https://www.python.org/downloads/">here</a>. Then,
+   go to the command prompt and type in</p>
+   <pre id="code-style"><code class="python">pip install flask</code></pre>
+   <p id="text-style">This will install everything you need!</p>
+<hr id="art-div">
+<h2 id="sub-head">2. Downloading the website files</h2>
+<p id="text-style">The last thing you'll need to download are the website
+   files so that you can see exactly how your content will look. You just
+   need to download this folder
+   <a id="link-style"href="https://drive.google.com/file/d/1IYQVUmkL56fyzS7LiAVCifR_o8iSvVoI/view?usp=sharing">here</a>.
+   Then open the folder in atom as a project folder and you can now get started!</p>
+<hr id="art-div">
+<h2 id="sub-head">3. Running the website</h2>
+<p id="text-style">To run the website, go to the python file called main.py
+   inside the folder you downloaded from the previous step. Leave it running
+   and go to your browser and type in <em>http://localhost:5000</em>. Then
+   click on the button that says <em>edit</em> on the navbar at the top.
+   Whenever you code and refresh the browser, your changes will be visible here.</p>
+<p id="text-style">Do not edit any of the files except <em>edit.html</em> which
+   you will find inside the folder called <em>templates</em>. You put your HTML
+   after the 3rd line, where it says to. After you start putting in HTML, save
+   the html file (ctrl+s). Then, go to your browser and refresh the page from
+   before. You should see all your changes pop up!</p>
+<hr id="art-div">
+<h2 id="sub-head">4. Headings</h2>
+<p id="text-style">For the main heading at the top of the page, you
+   use the following:</p>
+<pre id="code-style"><code class="html">&lt;h1 id="top-head">Put heading here&lt;/h1></code></pre>
+
+<p id="text-style">For the sub headings for sections, you
+   use the following:</p>
+<pre id="code-style"><code class="html">&lt;h2 id="sub-head">Put heading here&lt;/h2></code></pre>
+<hr id="art-div">
+<h2 id="sub-head">5. Text</h2>
+<p id="text-style">For paragraphs of text, you
+   use the following:</p>
+<pre id="code-style"><code class="html">&lt;p id="text-style">Put text here&lt;/p></code></pre>
+<p id="text-style">Use multiple of those for different paragraphs as it looks
+   nicer than using &lt;br>:
+<pre id="code-style"><code class="html">&lt;p id="text-style">This is one paragraph&lt;/p>
+&lt;p id="text-style">This is another paragraph&lt;/p></code></pre>
+<hr id="art-div">
+<h2 id="sub-head">6. Code</h2>
+<p id="text-style">For code, you
+   use the following:</p>
+<pre id="code-style"><code class="html">&lt;pre id="code-style">&lt;code class="python">Put code here&lt;/code>&lt;/pre></code></pre>
+<p id="text-style">Change the word python in <em>class="python"</em> to the language you are using.
+   For multiple lines of code, start on the same line as the opening tags, code as you normally would
+   and finish on the same line as the closing tags:</p>
+<pre id="code-style"><code class="html">&lt;pre id="code-style">&lt;code class="python">for i in range(10):
+  print(i)
+print('I am no longer in the for loop')&lt;/code>&lt;/pre></code></pre>
+<hr id="art-div">
+<h2 id="sub-head">7. Links</h2>
+<p id="text-style">For links to something else, you
+   use the following:</p>
+<pre id="code-style"><code class="html">&lt;a id="link-style" href="https://websiteyouarelinkingto">Put text you want to click here&lt;/a></code></pre>
+<hr id="art-div">
+<h2 id="sub-head">8. Images</h2>
+<p id="text-style">For images, you go to the <em>static</em> folder, and then
+   the folder called <em>images</em>. Put your image in that, then
+   use the following:</p>
+<pre id="code-style"><code class="html">&lt;p>&lt;img src="{{ url_for('static', filename='images/imagename.png') }}"
+     alt="This text will show up if image is not available"
+     width=30% height=70% style="margin-left:12.5rem;"
+     >&lt;/p></code></pre>
+<p id="text-style">The only thing you need to change is to replace <em>imagename.png</em>
+   with the name of your image. Do not remove or replace anything else unless you know
+   what you're doing.</p>
+<hr id="art-div">
+<h2 id="sub-head">9. Extras</h2>
+   <p id="text-style">Please let me know if you have any questions. Once your content
+   is done, send me the whole edit.html file and then I'll upload it to the website!
+   Then you can delete the stuff you put in edit.html so that the only stuff that's
+   in there is:</p>
+<pre id="code-style"><code class="python">{&#37; extends "baseedit.html" &#37;}
+{&#37; block title &#37;}Title{&#37; endblock &#37;}
+{&#37; block article &#37;}
+Replace this text with your code...
+{&#37; endblock &#37;}</code></pre>
+<p id="text-style">Also, if you want to edit the stuff on the sidebar, you can
+   do that by going to the <em>baseedit.html</em> file in <em>templates</em>.</p>
+   In it, you can edit the things that say <em>1. Module 1</em> to whatever you wish!
+   You can add more of these lesson cards whenever! However, don't worry about
+   linking it to stuff (I'll handle all that). Make sure to let me know
+   what you want the modules on your sidebar to be called so that I can make those
+   changes!</p>
+</article>
+</main>
+{% endblock %}

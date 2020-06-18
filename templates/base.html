@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% block head %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fontstyle.css') }}" />
+    <link rel="icon" href="{{ url_for('static', filename='images/logo-core-small.png') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/foundation.min.css">
+    <title>{% block title %}{% endblock %}</title>
+    {% endblock %}
+  </head>
+  <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <nav id="navbar">
+      <div id="nav-container">
+        <a id="brand-container" href="/">
+          <img id="brand-icon" src="{{ url_for('static', filename='images/logo-core.png') }}" alt="rocket-icon" />
+          <div id="brand-name"></div>
+        </a>
+        <ul id="links-container">
+          <li class="link-container">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="link-container">
+            <a class="nav-link" href="/courses">Courses</a>
+          </li>
+          <li class="link-container">
+            <a class="nav-link" href="/puzzles">Puzzles</a>
+          </li>
+          <li class="link-container">
+            <a class="nav-link" href="/contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="sidebar">
+      <div class="sidebar-container bar-block sidebar-collapse" id="mySidebar">
+      <ul class="side-link-list">
+        <li id="sidebar-link-item">
+      <button class="side-link-item side-button course-card-button-nav"
+      onclick="sidebar_close()">Close</button>
+        </li>
+        <li id="sidebar-link-item">
+      <a href="/" class="side-link-item side-button course-card-button-nav">Home</a>
+        </li>
+        <li id="sidebar-link-item">
+      <a href="/courses" class="side-link-item side-button course-card-button-nav">Courses</a>
+        </li>
+        <li id="sidebar-link-item">
+      <a href="/puzzles" class="side-link-item side-button course-card-button-nav">Puzzles</a>
+        </li>
+        <li id="sidebar-link-item">
+      <a href="/contact" class="side-link-item side-button course-card-button-nav">Contact</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sidebar-main" style="margin-right:200px">
+      <button id="navbutton" onclick="sidebar_open()">&#9776;</button>
+    </div>
+
+    <script>
+    function sidebar_open() {
+      document.getElementById("mySidebar").style.display = "block";
+      document.getElementById("navbutton").style.display = "none";
+    }
+
+    function sidebar_close() {
+      document.getElementById("mySidebar").style.display = "none";
+      document.getElementById("navbutton").style.display = "block";
+    }
+    sidebar_close();
+    </script>
+    </nav>
+    <script>
+      var prevScrollpos = window.pageYOffset;
+      window.onscroll = function() {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+          document.getElementById("navbar").style.top = "0";
+        } else {
+          document.getElementById("navbar").style.top = "-70px";
+        }
+        prevScrollpos = currentScrollPos;
+      }
+    </script>
+    {% block body %}
+    {% endblock %}
+    <footer>
+      <div class="footer-container">
+        <div class="footer-description">
+          <ul class="footer-list">
+            <li><p>Copyright &copy 2020 CORE</p>
+            </li>
+            <li class="credit-link-list">
+          <a class="credit-link" href="https://www.vecteezy.com/free-vector/galaxy">Galaxy Vectors (background) by Vecteezy</a>
+            </li>
+            </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

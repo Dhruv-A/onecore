@@ -1,0 +1,79 @@
+{% extends "./basepy.html" %}
+{% block title %}6. Booleans and Further Logic{% endblock %}
+{% block article %}
+<h1 id="top-head">6. Booleans and Further Logic</h1>
+<h2 id="sub-head">6.1 Booleans</h2>
+<p id="text-style">Booleans can be thought of as variables
+   that store two cases: true and false. It is returned by
+   comparison operators, such as the if statements discussed above.
+</p>
+<p id="text-style">
+   For example:<br>
+   Is 4 less than 5? We know this is the case, in other words,
+   it is true. We are able to compare such things in Python
+   and it will return either true/false. This can be seen in the
+   example below:
+ </p>
+ <pre id="code-style"><code class="python">>>> 4 &lt; 5
+True
+ </code></pre>
+ <p id="text-style">
+   We can see that the statement is true.<br>
+   Conversely, try the opposite:
+ </p>
+ <pre id="code-style"><code class="python">>>> 5 &lt; 4
+False
+ </code></pre>
+ <p id="text-style">We can see that Python outputs false.<br>
+    Python uses this logic in if statements. If we go back to our
+    soup flowchart
+    <a id="link-style" href="/python/5">(from the
+    previous article)</a>,
+    we can view yes/no as the boolean outputs of
+    True/False that the if statement outputs.<br><br>
+    In <span id="code-style">if soup_time >= 10</span> we can say that
+    <span id="code-style">soup_time >= 10</span> will either be
+    <em>True</em> or <em>False</em>.<br><br>
+    If the result of this comparison is true, we will stop cooking.
+    In this way, we can see how Python uses boolean operations to make
+    decisions in our comparison statements.</p>
+<hr id="art-div">
+<h2 id="sub-head">6.2 Logical Operators</h2>
+<p id="text-style">Sometimes you want multiple conditions to be
+    met before something happens in your code. You can do this using
+    <strong>and</strong>. It checks whether both conditions are
+    true and if either isn't, then it will output false.</p>
+<pre id="code-style"><code class="python">>>> True and True
+True
+>>> True and False
+False</code></pre>
+<p id="text-style">Let's apply this to our previous example.
+   We only want to stop cooking our soup after 10 minutes but we
+   also have to make sure we don't cook it for more than
+   20 minutes. How do we apply this?</p>
+<pre id="code-style">
+<code class="python">soup_time = int(input('How long have you been cooking the soup?'))
+if soup_time >= 10 and soup_time < 20:
+  print('The soup is ready')
+elif soup_time < 10:
+  print('Keep cooking')
+else:
+  print("You've cooked it for too long!")
+</code></pre>
+<p id="text-style">Additionally, we have two other operators for
+  booleans: <em>or</em> and <em>not</em>. <em>or</em> checks if either condition
+  is true. whereas <em>not</em> gives you the opposite of the boolean.</p>
+<pre id="code-style"><code class="python">>>> True or False
+True
+>>> True or True
+True
+>>> False or False
+False
+>>> not True
+False
+>>> not False
+True</code></pre>
+<p id="text-style">These are all very useful when you have
+                   very specific criteria in your if statements.
+                   Make sure you're comfortable with them!</p>
+{% endblock %}

@@ -1,0 +1,126 @@
+{% extends "./basepy.html" %}
+{% block title %}6. Booleans and Further Logic{% endblock %}
+{% block article %}
+<h1 id="top-head">7. Loops</h1>
+<h2 id="sub-head">7.1 While Loop</h2>
+
+<p id="text-style">While loops allow you to repeat a block of
+   code as long as a certain condition is met. It works by checking if
+   the condition next to <span id="code-style">while</span> is true.
+   The most basic while loop is the true loop in which your block
+   of code will run for an infinite time:</p>
+
+<pre id="code-style"><code class="python">while True:
+  print('I want soup')
+</code></pre>
+
+<p id="text-style">
+You can try this in the terminal but be sure to press ctrl+c to
+quit the code or else it will run forever.
+These loops can be useful in situations
+where we just want a block of code to run indefinitely e.g.
+in a code that constantly checks the temperature of the
+soup. However, more commonly we use a pre-test while
+loop. For example we can make a code to print “keep cooking” until
+the time of cooking reaches 10 seconds.</p>
+
+<pre id="code-style"><code class="lang-python">soup_time = 1
+while soup_time &lt; 10:
+  print("Keep cooking")
+  soup_time += 1
+</code></pre>
+
+<p id="text-style">
+We define a variable outside the loop and set
+it to be 1. Let’s say that each iteration is equal
+to one second. This code should print “keep cooking” 10 times.</p>
+
+<pre id="code-style"><code class="python">Keep cooking
+Keep cooking
+Keep cooking
+Keep cooking
+Keep cooking
+Keep cooking
+Keep cooking
+Keep cooking
+Keep cooking
+</code></pre>
+
+<p id="text-style">
+But wait! What’s that! It only printed “keep cooking” 9 times!?
+The reason for this is that we are using a less than statement.
+When soup_time = 10, 10 is not less than 10, so the code will exit
+the while loop. Try adding the following print statements to your
+code to check this out.</p>
+
+<pre id="code-style"><code class="python">soup_time = 1
+while soup_time &lt; 10:
+  print(f'The soup_time is {soup_time}')
+  print('Keep cooking')
+  soup_time += 1
+print('We are out of the loop')
+</code></pre>
+
+<pre id="code-style"><code class="python">The soup_time is 1
+Keep cooking
+The soup_time is 2
+Keep cooking
+The soup_time is 3
+Keep cooking
+The soup_time is 4
+Keep cooking
+The soup_time is 5
+Keep cooking
+The soup_time is 6
+Keep cooking
+The soup_time is 7
+Keep cooking
+The soup_time is 8
+Keep cooking
+The soup_time is 9
+Keep cooking
+We are out of the loop
+</code></pre>
+
+<p id="text-style bottom-py-a">
+If we wanted to fix this we could use the <= statement.
+This checks whether soup_time is less than OR EQUAL to 10.
+Try this out in your code and experiment with the
+comparison operators we've previously learnt
+<a id="link-style" href="/python/4#compare">here</a>.</p>
+
+<hr id="art-div">
+<h2 id="sub-head">7.2 For Loop</h2>
+<p id="text-style">We can consider for loops as a sort of while loop
+   as they allow you to perform a section of code multiple times.
+   In our example, let’s do the same thing with a for loop.
+</p>
+<pre id="code-style"><code class="python">for i in range(1, 10):
+  print('Keep cooking')</code></pre>
+<p id="text-style">This looks a bit different to a while loop.
+   The first thing different is i, which is a variable that is used
+   to store the integer value of the current position in the range of
+   the loop (it might seem complicated right now so don't worry if you don't
+   completely understand it).</p>
+   <p id="text-style">Range is an in built function that creates a
+     sequence of numbers from 1 to 10. (1, 2, 3, 4, 5, 6, 7, 8, 9).
+     One thing to note about the range function is that the last number
+     it gives you is the final number minus 1. In the first iteration i is
+     assigned to 1, then 2 on the second time through the loop etc. We can
+     see this if we print out i.
+</p>
+<pre id="code-style"><code class="python">for i in range(1,10):
+  print(i)</code></pre>
+<pre id="code-style"><code class="python">1
+2
+3
+4
+5
+6
+7
+8
+9
+</code></pre>
+<p id="text-style"> This is very useful when coding and we will cover some
+   examples and other uses soon!</p>
+{% endblock %}
