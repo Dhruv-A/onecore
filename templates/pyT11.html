@@ -1,0 +1,190 @@
+{% extends "./basepy.html" %}
+{% block title %}11. Files{% endblock %}
+{% block article %}
+<h1 id="top-head">11. Files</h1>
+<h2 id="sub-head">11.1 Reading from files</h2>
+<p id="text-style">In python, there are times when we need to get data from
+   a file. Python has a way to read files and we'll be looking at how to read
+   from text files.</p>
+<p id="text-style">First, download the file of names <a id="link-style"
+   href="{{ url_for('static', filename='pyCode/11-names.txt') }}"
+   download>here</a>. This contains several names. Create a python file and
+   save both the python file and the text file with names in the same folder.
+   It is very important for the files you are reading from to be in the same
+   folder as the python file that is trying to read from them.</p>
+<p id="text-style">Let's say that we want to read the names in the file
+   of names and store them all in a dictionary, firstly, we open the file:</p>
+<pre id="code-style"><code class="hljs perl">names = open('names-11.txt')</code></pre>
+<p id="text-style">Now, we will loop through each line in the file, which
+   we can do using a for loop. We have to create an empty list first and then
+   we can append each name to the list as we get to it.:</p>
+<pre id="code-style"><code class="hljs perl">nameList = []
+for person in names:
+  nameList.append(person)</code></pre>
+<p id="text-style">Now we have a list of the names and you can see the result
+   if you print it out.</p>
+<pre id="code-style"><code class="hljs perl">print(nameList)
+
+['Alex\n', 'Angus\n', 'Hunter\n', 'Jett\n', 'Oscar\n', 'Patrick\n', 'Andrew\n', 'Sebastian']</code></pre>
+<p id="text-style">As you can see, we get a list with all the names! However,
+   you'll notice that all the names except for the last one end in a \n. This
+   is called a newline character and I'll cover what it is and how to remove it
+   below.</p>
+<hr id="art-div">
+<h2 id="sub-head">11.2 The newline character</h2>
+<p id="text-style">In python, we use \n to signify a new line. Let's say
+   we wanted to print <em>Hello</em> on one line and <em>World</em> on the next,
+   we have a few options. One way is to print each word out separately:</p>
+<pre id="code-style"><code class="hljs perl">print('Hello')
+print('World')
+
+Hello
+World</code></pre>
+<p id="text-style">What the print function in python does is, by default, add
+   \n to the end of the string you are printing so that the next thing you
+   print will be on another line. We can do this ourselves. Another way to
+   print Hello and World on separate lines is to do the following:</p>
+<pre id="code-style"><code class="hljs perl">>>> print('Hello\nWorld')
+Hello
+World</code></pre>
+<p id="text-style">As you can see, the newline character is a part of the
+   string itself and must be like that.</p>
+<p id="text-style">Back to the example with the file of names! Because each
+   name is on a separate line, each name ends with a newline character (even
+   though you can't see it when you look at the text file itself). Python has
+   a way to remove newline characters from strings. It is called the rstrip
+   method.</p>
+<pre id="code-style"><code class="hljs perl">>>> print('Hello\n'.rstrip())
+
+Hello</code></pre>
+<p id="text-style">So, let's edit the previous code so that the newline
+   character is removed before you append a name to the list.</p>
+<pre id="code-style"><code class="hljs perl">names = open('names-11.txt')
+nameList = []
+for person in names:
+  person = person.rstrip()
+  nameList.append(person)
+print(nameList)</code></pre>
+<p id="text-style">You can download this code <a id="link-style"
+   href="{{ url_for('static', filename='pyCode/11-reading-files.py') }}"
+   download>here</a>. If you run it yourself, it will output:</p>
+<pre id="code-style"><code class="hljs perl">['Alex', 'Angus', 'Hunter', 'Jett', 'Oscar', 'Patrick', 'Andrew', 'Sebastian']</code></pre>
+<hr id="art-div">
+<h2 id="sub-head">11.3 Writing to files</h2>
+<p id="text-style">Now that you've learnt how to read from files, we
+   can learn how to write to them! The process is slightly different
+   but starts in the same way. You start off by specifying the file
+   you want to write to. If a file with the name doesn't exist, the
+   python program will create a new file. If a file does exist, it will be
+   completely overwritten, so make sure you don't choose a file with anything
+   valuable. Firstly, we open the file and specify we want to write to it:</p>
+<pre id="code-style"><code class="hljs perl">numbers = open('numbers.txt', 'w')</code></pre>
+<p id="text-style">When we read from files, we don't need to specify a
+   second argument in the open(). It automatically sets it to read mode if
+   as a default. However, you can manually set it using 'r' as the second
+   argument like this:</p>
+<pre id="code-style"><code class="hljs perl">numbers = open('numbers.txt', 'r')</code></pre>
+<p id="text-style">This is only if you want to read from the file.</p>
+<p id="text-style">If you want to write to a file, that second argument needs
+   to be 'w'. Note that it needs to be a string with the specific letter.</p>
+<p id="text-style">Next, let's say we want to write the number 1 in the file.
+   We can simply use the write method.</p>
+<pre id="code-style"><code class="hljs perl">numbers.write('1')</code></pre>
+<p id="text-style">In this, numbers is that file that we opened, and then
+   the string in the brackets is what we want to write to the file. Note
+   that I had to use the string '1' instead of the integer 1. This is because
+   write() only takes in strings.</p>
+<p id="text-style">Let's see what would happen if we tried to put in
+   an integer.</p>
+<pre id="code-style"><code class="hljs perl">numbers.write(1)
+
+Traceback (most recent call last):
+  File "C:/Users", line 2, in <module>
+    numbers.write(1)
+TypeError: write() argument must be str, not int</code></pre>
+<p id="text-style">As you can see, we get an error. Make sure to always convert
+   what you want to write to a file into a string!</p>
+<p id="text-style">This is what our code looks like so far:</p>
+<pre id="code-style"><code class="hljs perl">numbers = open('numbers.txt', 'w')
+numbers.write('1')</code></pre>
+<p id="text-style">Let's say that now we want to write the number 2 on the
+   line below the 1. We can do this by simply adding another write
+   function:</p>
+<pre id="code-style"><code class="hljs perl">numbers.write('2')</code></pre>
+<p id="text-style">Try adding that to your python code so run it. It should
+   look like this:</p>
+<pre id="code-style"><code class="hljs perl">numbers = open('numbers.txt', 'w')
+numbers.write('1')
+numbers.write('2')</code></pre>
+<p id="text-style">If you run this and check the text file, you'll see that
+   the 1 and 2 are next to each other instead of on separate lines. This
+   is because there isn't a newline character after the 1. When you use
+   the write method, you need to add a newline character to the end of
+   your string. We can then modify the code and it will end up looking
+   like this:</p>
+<pre id="code-style"><code class="hljs perl">numbers = open('numbers.txt', 'w')
+numbers.write('1\n')
+numbers.write('2')</code></pre>
+<hr id="art-div">
+<h2 id="sub-head">11.4 Closing files</h2>
+<p id="text-style">We'll cover another way to write to files below, however
+   first, it's important to learn how to close files. Whenever you open a
+   file to write content to it, you need to close the file after you're done.
+   This is an extremely important step to make sure that your code works
+   properly! We can do this very simply by using the close method
+   at the end of our code. Let's say that we were writing to the file
+   above (numbers.txt) and now wanted to close it. We put this line
+   at the bottom of our code:</p>
+<pre id="code-style"><code class="hljs perl">numbers.close()</code></pre>
+<p id="text-style">This means that the whole code to write those 2
+   numbers is now:</p>
+<pre id="code-style"><code class="hljs perl">numbers = open('numbers.txt', 'w')
+numbers.write('1\n')
+numbers.write('2')
+numbers.close()</code></pre>
+<hr id="art-div">
+<h2 id="sub-head">11.5 Revisiting the print function</h2>
+<p id="text-style">When writing to files using the write method, you
+   need to add newline characters yourself. But why don't you need
+   to add them to print function? The print function adds a newline
+   character by default every time you print something. You can change
+   that very easily by specifying what you want it to end the print with. Let's
+   first create a file and run two normal print functions.</p>
+<pre id="code-style"><code class="hljs perl">print('Hello')
+print('World')
+
+Hello
+World</code></pre>
+<p id="text-style">Now, let's see what happens if we specify not to end the
+   print with a newline character.</p>
+<pre id="code-style"><code class="hljs perl">print('Hello', end='')
+print('World', end='')
+
+HelloWorld</code></pre>
+<p id="text-style">As you can see, we use an argument called <em>end</em>.
+   We set this to an empty string '' so that it doesn't add anything
+   to the end of our print. And you end up with the two words on the same
+   line instead of different ones!</p>
+<hr id="art-div">
+<h2 id="sub-head">11.6 Writing to files with the print function</h2>
+<p id="text-style">Now that we know that the print function adds newline
+   characters by default, we can use those to write to files and not
+   have to worry about adding them ourselves! The process is very similar
+   to before. You start by opening/creating a file:</p>
+<pre id="code-style"><code class="hljs perl">textFile = open('helloworld.txt', 'w')</code></pre>
+<p id="text-style">Now, we just need to print like we usually would, but add
+   an extra argument specifying that we want to print it out to a
+   certain file.</p>
+<pre id="code-style"><code class="hljs perl">print('Hello', file=textFile)</code></pre>
+<p id="text-style">Now, if you run this, it will give you a file
+   called helloworld.txt which will have the word Hello in it. If we
+   wanted the next line to have World on it, we simply use another print
+   function.</p>
+<pre id="code-style"><code class="hljs perl">print('World', file=textFile)</code></pre>
+<p id="text-style">The print function adds a newline for us!</p>
+<p id="text-style">Remember to close the file. Here's all the code:</p>
+<pre id="code-style"><code class="hljs perl">textFile = open('helloworld.txt', 'w')
+print('Hello', file=textFile)
+print('World', file=textFile)
+textFile.close()</code></pre>
+{% endblock %}

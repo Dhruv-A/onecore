@@ -1,0 +1,40 @@
+{% extends "./baseinfo.html" %}
+{% block title %}2. Orac{% endblock %}
+{% block article %}
+<h1 id="top-head">2. Orac</h1>
+<h2 id="sub-head">2.1 Using orac</h2>
+<i>The origins and meaning of "orac have remained unknown for many generations. Some say it is short for "oracle". Some say it stands for "orac recursive acronym competition". It will probably forever remain a mystery...</i>
+<p id="text-style">orac is an online judge. There are problems, and you can submit your solution to see if it works. My username on orac is "ryno" (you can find me on the <a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/fame2.pl">leaderboard</a>). Most of my solutions are readable, so it is worthwhile to have a look after you have finished a problem.<br></p>
+<p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/register.pl">Make an account by following this link.</a><br>
+We will be using orac to revise our new C++ and informatics knowledge at the end of every lesson</p>
+<hr id="art-div">
+
+
+<h2 id="sub-head">2.2 Files</h2>
+<p id="text-style">To read and write to files, you need <span id="code-style">#include &lt;fstream></span> at the top of your program (f stands for file).</p>
+<p id="text-style">Then you can open a file for reading using <span id="code-style">ifstream</span> (Input File stream)</p>
+<pre id="code-style"><code class="c++">ifstream fin {"filenamein.txt"};</code></pre>
+<p id="text-style">Or similarly open a file for writing using <span id="code-style">ofstream</span> (Output File stream)</p>
+<pre id="code-style"><code class="c++">ofstream fout {"filenameout.txt"};</code></pre>
+<p id="text-style"><br></p>The following program reads a number from a file "in.txt", displays the number, and writes "Sup World" to a file "out.txt"</p>
+<pre id="code-style"><code class="c++">#include &lt;iostream>
+#include &lt;fstream>
+using namespace std;
+int main() {
+	ifstream fin{"in.txt"};
+	ofstream fout{"out.txt"};
+
+	// write some code
+	int num;
+	fin >> num;
+	cout << "The file contains the number " << num;
+	fout << "Sup world";
+}</code></pre>
+<p id="text-style">NOTE: It is not advised to read and write from the same file simultaneously.</p>
+<p id="text-style">Have a look <a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/sample.pl#cpp">here</a> for more examples</p>
+<hr id="art-div">
+
+
+<h2 id="sub-head">2.3 Homework</h2>
+<p id="text-style">Solve <a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=333">Addition</a></p>
+{% endblock %}

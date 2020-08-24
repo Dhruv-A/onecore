@@ -27,10 +27,18 @@
 }
 #link-style {
   text-decoration: none;
-  color: gray;
+  color: rgb(66, 138, 245);
   line-height: 1.38;
   font-size: 12pt;
 }
 #art-div {
   margin: 3rem 0;
+}
+#hint-style:hover {
+    color: black;
+    background-color: white;
+}
+#hint-style {
+    color: gray;
+    background-color: gray;
 }

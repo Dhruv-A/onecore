@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block body %}
+<main>
+  <section class="section-container" id="course-container">
+  <div class="section-content" id="course-content">
+    <aside id="course-sidebar">
+      <div id="sidebar-title">Lessons</div>
+        <!-- A list of all the lessons in this course -->
+        <a class="lesson-card" href="/react/1">1. Introduction</a>
+
+        <a class="lesson-card" href="/react/2">2. Fundamental Theory</a>
+
+        <a class="lesson-card" href="/react/3">3. Components</a>
+
+        <a class="lesson-card" href="/react/4">4. Project 1</a>
+
+        <a class="lesson-card" href="#">5. Placeholder</a>
+
+        <a class="lesson-card" href="#">6. Placeholder</a>
+
+        <a class="lesson-card" href="#">7. Placeholder</a>
+
+        <a class="lesson-card" href="#">8. Placeholder</a>
+
+        <a class="lesson-card" href="#">9. Placeholder</a>
+
+        <a class="lesson-card" href="#">10. Placeholder</a>
+
+        <a class="lesson-card" href="#">11. Placeholder</a>
+
+        <a class="lesson-card" href="#">12. Placeholder</a>
+
+        <a class="lesson-card" href="#">13. Placeholder</a>
+
+        <a class="lesson-card" href="#">14. Placeholder</a>
+
+    </aside>
+      <article id="course-lesson">
+        {% block article %}
+        {% endblock %}
+      </article>
+  </div>
+  </section>
+</main>
+{% endblock %}

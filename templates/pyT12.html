@@ -1,0 +1,80 @@
+{% extends "./basepy.html" %}
+{% block title %}12. Libraries{% endblock %}
+{% block article %}
+<h1 id="top-head">12. Libraries</h1>
+<h2 id="sub-head">12.1 What is a library?</h2>
+<p id="text-style">Python libraries are collections of code that
+   has already been written and provides a lot of extra functionality
+   to your code. There are python libraries for everything from
+   maths to gaming to web development and many other areas!</p>
+<hr id="art-div">
+<h2 id="sub-head">12.2 The math library</h2>
+<p id="text-style">One very basic library is the math library. It gives
+   you lots of maths functions that you. These include:</p>
+<ul id="text-style" style="margin: 1rem;">
+  <li>ceil - rounds up floats to the higher integer</li>
+  <li>sqrt - gives you the square root</li>
+  <li>factorial - finds the factorial of a number</li>
+  <li>trig functions - finds the value of sines, cosines etc</li>
+</ul>
+<p id="text-style">These maths functions are sometimes useful and in those
+   cases, you should use the math library!</p>
+<hr id="art-div">
+<h2 id="sub-head">12.3 The import statement</h2>
+<p id="text-style">To import a specific library, you should put
+   an import statement at the top of all your code. Let's say we wanted
+   to use the math library, we put this line at the top:</p>
+<pre id="code-style"><code class="python">import math</code></pre>
+<p id="text-style">This lets the code know that we want to use
+   functions from the math library. Let's say we want to find
+   5 factorial (5x4x3x2x1), we use the factorial function from
+   the math library. Firstly you type the name of the library, math,
+   and then the function we want separated with a . and then we
+   can specify arguments in brackets, like this:</p>
+<pre id="code-style"><code class="python">import math
+print(math.factorial(5))
+
+120</code></pre>
+<p id="text-style">We do the same thing with other functions
+   from the library.</p>
+<pre id="code-style"><code class="python">>>> import math
+>>> print(math.factorial(5))
+120
+>>> print(math.sqrt(100))
+10
+>>> print(math.ceil(9.9))
+10</code></pre>
+<hr id="art-div">
+<h2 id="sub-head">12.4 Importing specific functionality</h2>
+<p id="text-style">It can be tedious having to write the library
+   name before each function every time you use it and sometimes,
+   you only need specific functions. In this case, there's a way
+   to import something specific from a library. Let's say we wanted
+   only the factorial function from the math library, instead of
+   the import statement from before, you can use the following:</p>
+<pre id="code-style"><code class="python">from math import factorial</code></pre>
+<p id="text-style">Now, you can use the factorial function as if it was any
+   other function! You don't need to add math. before it.</p>
+<pre id="code-style"><code class="python">>>> from math import factorial
+>>> print(factorial(5))
+120</code></pre>
+<hr id="art-div">
+<h2 id="sub-head">12.5 Permutations and Combinations</h2>
+<p id="text-style">Another simple and useful library is <em>itertools</em>.
+   It has many useful functions, like ones for finding permutations and
+   combinations. Let's say we want to find all the possible ways to
+   arrange the letters 'a', 'b', 'c' in a line. We can use permutations.
+   First, we get the permutations function from the itertools library.</p>
+<pre id="code-style"><code class="python">from itertools import permutations</code></pre>
+<p id="text-style">Next, we use the function as we would any other function,
+   however, we need to convert the output to a list. Here's all the code:</p>
+<pre id="code-style"><code class="python">from itertools import permutations
+letters = ['a', 'b', 'c']  # create a list with the letters
+possible = permutations(letters)  # use the function normally
+possible = list(possible)  # convert it to a list
+print(possible)</code></pre>
+<p id="text-style">And this will give us a list with all the possible ways
+   to arrange those three letters in a line. We'll be looking at other useful
+   libraries in the next module! Make sure to do your own research to
+   find libraries that interest you!</p>
+{% endblock %}

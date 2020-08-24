@@ -1,0 +1,195 @@
+{% extends "base.html" %}
+{% block title %}Core: Courses{% endblock %}
+{% block body %}
+<section class="section-container" id="courses-container">
+  <div class="section-content">
+    <ul id="flex-container">
+      <li class="course-box">
+    <div id="course-cards">
+      <div class="course-card">
+        <img
+          src="{{ url_for('static', filename='images/chem-pic.jpg') }}"
+          alt="chemistry"
+          id="course-image-container"
+          class="roundedcorner"
+        />
+        <!-- <div class="course-card-title">Python Fundamentals</div> -->
+        <div class="course-card-desc">
+          <br><br>
+        </div>
+        <div class="course-card-button-container">
+          <a href="/chem/1" class="course-card-button"
+            >Start</a
+          >
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="course-box">
+    <div id="course-cards">
+      <div class="course-card">
+        <img
+          src="./static/images/phys-pic.png"
+          alt="physics"
+          id="course-image-container"
+          class="roundedcorner"
+        />
+        <!-- <div class="course-card-title">Python Fundamentals</div> -->
+        <div class="course-card-desc">
+          <br><br>
+        </div>
+        <div class="course-card-button-container">
+          <a href="/phys/1" class="course-card-button"
+            >Start</a
+          >
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="course-box">
+<div id="course-cards">
+  <div class="course-card">
+    <img
+      src="{{ url_for('static', filename='images/english-pic.jpg') }}"
+      alt="english"
+      id="course-image-container"
+      class="roundedcorner"
+    />
+    <!-- <div class="course-card-title">Python Fundamentals</div> -->
+    <div class="course-card-desc">
+      <br><br>
+    </div>
+    <div class="course-card-button-container">
+      <a href="/english/1" class="course-card-button"
+        >Start</a
+      >
+    </div>
+  </div>
+</div>
+</li>
+    </ul>
+    <ul id="flex-container">
+  <li class="course-box">
+    <div id="course-cards">
+      <div class="course-card">
+        <img
+          src="./static/images/triangle-inequality-pic.png"
+          alt="maths"
+          id="course-image-container"
+          class="roundedcorner"
+        />
+        <!-- <div class="course-card-title">Python Fundamentals</div> -->
+        <div class="course-card-desc">
+          <br><br>
+        </div>
+        <div class="course-card-button-container">
+          <a href="/maths/1" class="course-card-button"
+            >Start</a
+          >
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="course-box">
+<div id="course-cards">
+  <div class="course-card">
+    <img
+      src="{{ url_for('static', filename='images/3u-maths-pic.png') }}"
+      alt="maths"
+      id="course-image-container"
+      class="roundedcorner"
+    />
+    <!-- <div class="course-card-title">Python Fundamentals</div> -->
+    <div class="course-card-desc">
+      <br><br>
+    </div>
+    <div class="course-card-button-container">
+      <a href="/e1maths/1" class="course-card-button">Start</a>
+    </div>
+  </div>
+</div>
+</li>
+<li class="course-box">
+<div id="course-cards">
+<div class="course-card">
+  <img
+    src="{{ url_for('static', filename='images/4u-maths-pic.png') }}"
+    alt="maths"
+    id="course-image-container"
+    class="roundedcorner"
+  />
+  <!-- <div class="course-card-title">Python Fundamentals</div> -->
+  <div class="course-card-desc">
+    <br><br>
+  </div>
+  <div class="course-card-button-container">
+    <a href="/e2maths/1" class="course-card-button">Start</a>
+  </div>
+</div>
+</div>
+</li>
+    </ul>
+    <ul id="flex-container">
+  <li class="course-box">
+    <div id="course-cards">
+      <div class="course-card">
+        <img
+          src="./static/images/bio-dna-pic.jpg"
+          alt="bio"
+          id="course-image-container"
+          class="roundedcorner"
+        />
+        <!-- <div class="course-card-title">Python Fundamentals</div> -->
+        <div class="course-card-desc">
+          <br><br>
+        </div>
+        <div class="course-card-button-container">
+          <a href="/bio/1" class="course-card-button"
+            >Start</a
+          >
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="course-box">
+<div id="course-cards">
+  <div class="course-card">
+    <img
+      src="{{ url_for('static', filename='images/econ-pic.jpg') }}"
+      alt="eco"
+      id="course-image-container"
+      class="roundedcorner"
+    />
+    <!-- <div class="course-card-title">Python Fundamentals</div> -->
+    <div class="course-card-desc">
+      <br><br>
+    </div>
+    <div class="course-card-button-container">
+      <a href="/eco/1" class="course-card-button">Start</a>
+    </div>
+  </div>
+</div>
+</li>
+<li class="course-box">
+<div id="course-cards">
+<div class="course-card">
+  <img
+    src="{{ url_for('static', filename='images/ext-english-pic.png') }}"
+    alt="ext-english"
+    id="course-image-container"
+    class="roundedcorner"
+  />
+  <!-- <div class="course-card-title">Python Fundamentals</div> -->
+  <div class="course-card-desc">
+    <br><br>
+  </div>
+  <div class="course-card-button-container">
+    <a href="/e1english/1" class="course-card-button">Start</a>
+  </div>
+</div>
+</div>
+</li>
+    </ul>
+  </div>
+</section>
+{% endblock %}

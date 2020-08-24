@@ -1,0 +1,100 @@
+{% extends "basehtml.html" %}
+{% block title %}3. Basic CSS{% endblock %}
+{% block article %}
+<h1 id="top-head">3. Basic CSS</h1>
+<h2 id="sub-head">3.1 Linking Stylesheets</h2>
+<p id="text-style">It is very common to find, on any professional website, that in the head of the website HTML, a link element will connect a "stylesheet" to the page. this will normally look like <kbd>&lt;link rel='stylesheet' href='main.css'></kbd>. In this example, inside of the link tag, 2 other attributes are set, these attributes are rel and href. The rel attribute defines the relation that the linked file has to the website. In this case, the linked file, main.css, is a stylesheet. And the href attribute gives the location of the file relative to the opened html page. If you're on Chrome, and press <kbd>Ctrl+Shift+I</kbd>, and select Elements, you can see the HTML code of this website, and see the link element in action.
+</p>
+
+
+<hr id="art-div">
+
+<h2 id="sub-head">3.2 What are stylesheets, and what's CSS?</h2>
+<p id="text-style">Stylesheets, are files that contain CSS code, that can be quickly linked to each website's individual pages, in order to reduce file size and increase the readability of a website's code.
+</p>
+<p id="text-style">
+   CSS is a language seperate to HTML, used to style websites. An example of CSS code, is shown below.
+</p>
+
+
+<pre id="code-style"><code class="css">body {
+   background-color: red;
+   font-family: monospace, serif;
+   color: red;
+   font-size: 16px;
+}
+</code></pre>
+
+<p id="text-style">
+   In the above example, the style of the body element is being edited.
+
+</p>
+<p id='text-style'>
+In the above CSS, the styling is setting the background image of the website to 'red' (remember the body element is the element in which the entire website is placed).
+</p>
+
+<p id='text-style'>
+   The font-family is then set to monospace, with serif as a backup. This set's the font of all the text in the body element. The reason 2 fonts are supplied, is if a browser or computer is incapable of rendering the first font, they can have a backup before defaulting to a standard font.
+</p>
+
+<p id='text-style'>
+   The color attribute, defines the color of the text within the body element, the color attribute accepts HTML colors, (i.e. red, blue, skyblue, rebeccapurple), but also accepts hex codes, and rgb codes. To input hex code, you must place a # before the hex code. To input rgb or rgba code, you must format it as rgb(r, g, b) or rgba(r, g, b, a), with the r, g, b representing the 8bit color values [0-255] of each color, red, green and blue. The a in rgba represents the opacity of the color, and is a float value between 0 and 1.
+</p>
+
+<p id='text-style'>
+   The font-size attribute, sets the size of the text in the element. This is comparable to setting the font size of a paragraph of text in a word-processing program.
+</p>
+
+<hr id='art-div'>
+
+<h2 id="sub-head">3.3.1 CSS Syntax explained</h2>
+<p id="text-style">
+   Starting off, in the CSS example in 3.2 the body element, is the selector. It points the the element in the HTML which you want to style.<br>
+   Inside of the curly brackets are a series of declarations. A declaration is made up of a property, and a value. For instance the declaration "color: red;" is made up of the property: "color" being set to the value "red".
+</p>
+
+<hr id='art-div'>
+
+
+<h2 id="sub-head">3.3.2 CSS Selector syntax</h2>
+<p id="text-style">
+   As explained in 3.3.1, the selector points to the HTML element being styled, however there are many ways a selector can be defined, in order to style specific situations.</p>
+<p id="text-style">
+   Class Styling: When you want to style a certain class, all you need to do is place a <strong>.</strong> before the class name. <br>i.e. the following CSS hides all elements with the class 'hidden'.
+</p>
+
+<pre id="code-style"><code class="css">.hidden {
+   display: none;
+}
+</code></pre>
+
+<p id="text-style">
+   Element specific Class Styling: When you only want to style a specific element that has a Class attached to it, when you write the Selector, all you need to do is follow the format : "ELEMENT.CLASS". This is so you can seperately edit multiple elements that contain the same class. <br>i.e. the following CSS sets the text-color all paragraph elements with the class 'red' to red, but sets the background-color of all div elements with the class 'red', to red.
+</p>
+
+<pre id="code-style"><code class="css">p.red {
+   color: red;
+}
+
+div.red {
+   background-color: red;
+}
+</code></pre>
+
+<p id="text-style">
+   ID Styling: When you only want to style a specific ID, all you need to do is place a <strong>#</strong> before the name of the ID. <br>i.e the following CSS sets the margin all elements with the ID 'dogPhoto1' to auto, which horizontally centers an element.
+</p>
+
+<pre id="code-style"><code class="css">#dogPhoto1 {
+   margin: auto;
+}
+</code></pre>
+
+<p id="text-style">
+   Universal Styling: When you want to apply the same style to every element, just make the selector the Universal selector, <strong>*</strong> <br>i.e. the following CSS sets the text-color of every element to red.
+</p>
+
+<pre id="code-style"><code class="css">* {
+   color: red;
+}</code></pre>
+{% endblock %}

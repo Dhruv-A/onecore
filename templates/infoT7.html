@@ -1,0 +1,80 @@
+{% extends "./baseinfo.html" %}
+{% block title %}7. Functions{% endblock %}
+{% block article %}
+<h1 id="top-head">7 Functions</h1>
+<h2 id="sub-head">7.1 Functions</h2>
+<p id="text-style">A function is a group of code that which can be run repeatedly (when called repeatedly). It allows you to define code once and reuse it many times (to avoid writing out the same coude multiple times). You can pass functions data (known as parameters), and the function can return data.</p
+<p id="text-style">For example, I can make a (trivial) function to do addition, which takes 2 parameters (a, b) and returns their sum:</p>
+<pre id="code-style"><code class="c++">int add(int a, int b) {
+  int output = a + b;
+  return output;
+}
+</code></pre>
+<p id="text-style">You can then use the function by calling it:</p>
+<pre id="code-style"><code class="c++">cout << add(2, 3) << "\n";
+cout << add(-1, add(7, 8)) << "\n";</code></pre>
+<p id="text-style">You can have a function without a return value by using <span id="code-style">void</span></p>
+<pre id="code-style"><code class="c++">void sayHi() {
+	cout << "Sup world!";
+}
+</code></pre>
+<p id="text-style">More generally, a function will have the form: <span id="code-style">return_type function_name(parameter1, parameter2, ...) {</span></p>
+<p id="text-style">In fact, <span id="code-style">int main()</span> is a function, which is called when code is executed. (The return value, known as the exit code, is by default 0, unless the program has an error)</p>
+<p id="text-style">It is essential you use functions. It makes debugging easier, since you can divide your code into functions and check that each function works. Also, it is cleaner to read (and when other people read your code).</p>
+<hr id="art-div">
+
+<h2 id="sub-head">7.2 Recursive Functions</h2>
+<p id="text-style">"Why are recursive functions so narcissistic? Because they always call themselves."</p>
+<p id="text-style">An example recursive function may look like this:</p>
+<pre id="code-style"><code class="c++">int factorial(int n) {
+	if (n == 1) {
+		return 1; // termination condition OR initial condition
+	}
+	return n * factorial(n - 1); // recurrence relation
+}</code></pre>
+<p id="text-style">What does this code do?</p>
+<p id="text-style">ANSWER: <span id="hint-style"><a id="link-style" href="https://en.wikipedia.org/wiki/Recurrence_relation#Factorial">Factorial recursive definition</a>
+</span><br>
+NOTE: you may want to break recursive functions down into its termination condition and recurrance relation.</p>
+<p id="text-style">Recursive functions are going to be handy later on, since it allows you to define a complex thing by defining simpler versions of it.<br>
+For example, I have to smh before i shake my smh.</p>
+<p id="text-style">TASK: print all combinations of the numbers 1 to 3 in increasing order (don't hard code it).<br>
+Also, what is the time complexity, if it was combinations from 1 to n?</p>
+<p id="text-style">HINT: <span id="hint-style">First, try doing it without the spaces</span></p>
+<pre id="code-style"><code> 1
+  1
+   1
+   2
+   3
+  2
+   1
+   2
+   3
+...</code></pre>
+<p id="text-style">ANSWER: </p>
+<span id="hint-style"><pre id="code-style"><code class="c++">void printCombinations(int depth) {
+	if (depth > 3) return; // termination condition
+	for (int i = 1; i <= 3; i++) {
+		// output i, padded with sufficient spaces
+		for (int rep = 0; rep < depth; rep++) {
+			cout << " ";
+		}
+		cout << i << "\n";
+		
+		// recurrence relation
+		printCombinations(depth + 1);
+	}
+}
+
+printCombinations(1);</code></pre></span>
+<hr id="art-div">
+
+<h2 id="sub-head">7.3 Homework</h2>
+<p id="text-style">Its a good idea to practise using functions, even if they arenot necessary</p>
+<p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=688">Archery</a><br>
+HINT: <span id="hint-style">make a function to return the larger of 2 numbers</span></p>
+<p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=981">Snake Charmer</a><br>
+HINT: <span id="hint-style">make a function to change direction</span></p>
+<p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=248">Chimpanzee</a><br>
+HINT: <span id="hint-style">make a function to test your solution in a square region, and print the values accordingly. (good for debugging)</span></p>
+{% endblock %}

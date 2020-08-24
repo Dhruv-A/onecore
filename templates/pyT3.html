@@ -90,7 +90,7 @@ Hi Dhruv</code></pre>
    will look at reasons why integers and floats are
    important later!</p>
 <hr id="art-div">
-<h2 id="sub-head">3.5 Type casting</h2>
+<h2 id="sub-head">3.6 Type casting</h2>
 <p id="text-style">Sometimes, we want to convert between
    integers and strings. We can only concatenate strings, therefore,
    in order to join a string and an integer, we need to convert
@@ -108,7 +108,23 @@ TypeError: can only concatenate str (not "int") to str</code></pre>
 <pre id="code-style"><code class="python">>>> temp = 20
 >>> print('It is ' + str(temp) + ' degrees today!')
 It is 20 degrees today!</code></pre>
-<p id="text-style">Conversely, we sometimes want to convert strings
-   to integers so that we can do some maths with them. This will be covered
-   in the next article!</p>
+<hr id="art-div">
+<h2 id="sub-head">3.7 f-Strings</h2>{% raw %}
+<p id="text-style">Python has another way to connect multiple
+   strings without using + to concatenate them. This is done
+   using f-strings. A f-string is like a normal string, except
+   if you want to add variables you add them as if they were
+   part of the string, and surround them with {}. For example,
+   let's say that we wanted to ask the user for a name and
+   then greet them, we could do it in two ways. The first is:</p>
+<pre id="code-style"><code class="python">name = input('What is your name? ')
+print('Hi, ' + name)</code></pre>
+<p id="text-style">This is the way we've already learnt: using + to concatenate
+   two strings. The way below uses an f-string to do that:</p>
+<pre id="code-style"><code class="python">name = input('What is your name? ')
+print(f'Hi, {name}')</code></pre>
+<p id="text-style">F-strings are much more readable and mean that we don't
+   need to deal with multiple strings. Because of this, these modules will mostly
+   be using f-strings.</p>
+{% endraw %}
 {% endblock %}

@@ -1,0 +1,70 @@
+{% extends "basehtml.html" %}
+{% block title %}2. Basic Layout{% endblock %}
+{% block article %}
+<h1 id="top-head">2. Basic Layout</h1>
+<h2 id="sub-head">2.1 Tags</h2>
+<p id="text-style">Tags are the building blocks of all websites written in HTML. Without them, the actual code couldn't be interpreted.
+   Different tags are used for certain circumstances, in order to help the web developer give meaning to certain parts of their website.
+   For example, the <span id='code-style'>&lt;p>&lt;/p></span> tag, is used to wrap paragraphs of text, in order to help give a standardised
+   design across the website. In fact, this text you're reading right now, is wrapped in a paragraph tag.
+</p>
+<p id='text-style'>Some common tags include <span id='code-style'>&lt;p></span>, <span id='code-style'>&lt;html></span>, <span id='code-style'>&lt;body></span>, <span id='code-style'>&lt;head></span>, <span id='code-style'>&lt;h1></span> and <span id='code-style'>&lt;title></span>
+</p>
+
+<hr id="art-div">
+
+<h2 id="sub-head">2.2 Main Structure of a Website</h2>
+<p id="text-style">Almost every website ever written in HTML have a few things in common.
+    For starters, every single HTML document will start with the declaration <span id='code-style'>&lt;!DOCTYPE html></span>
+   This is so the program interpreting the document, i.e. Chrome, knows that the site is written in HTML.
+</p>
+<p id="text-style">
+   Every website will also have a <span id='code-style'>&lt;html></span> tag, which denotes the HTML portion of the website.
+   Then, most well designed websited will include a <span id='code-style'>&lt;head></span> tag, which will normally wrap the
+   <span id='code-style'>&lt;title></span> tag <i>(the title tag wraps the text which will become the title of the page, which is the text in the tab of a browser)</i>,
+   and any links to other pages, i.e. CSS Style sheets or javaScript pages.
+</p>
+<p id="text-style">
+   Next, the websites actual content is usually wrapped in a <span id='code-style'>&lt;body></span> tag. In most cases, if your HTML document does not contain these tags,
+    any good interpreter, will add them in automatically. Most websites will follow this general structure, an example of which is given below.
+</p>
+
+<pre id="code-style"><code class="html">&lt;!DOCTYPE html>
+   &lt;html>
+      &lt;head>
+         &lt;title>Awesome Website&lt;/title>
+         &lt;link rel='stylesheet' href='style.css'>
+      &lt;/head>
+      &lt;body>
+         &lt;h1>Heading of the page&lt;/h1>
+         &lt;p>Some information in a paragraph&lt;/p>
+         &lt;p>More information in a different paragraph&lt;/p>
+      &lt;/body>
+   &lt;/html>
+</code></pre>
+
+<p id="text-style">
+   Which will look like:
+</p>
+
+<p><img src="/static/images/htmlT2E1.png"
+   alt="Example of shown HTML Code"
+   width=30% height=70% style="margin-left:12.5rem;"
+   ></p>
+
+<hr id="art-div">
+
+<h2 id="sub-head">2.3 How to view a HTML file locally</h2>
+<p id="text-style">
+   For starters, you will need to create a HTML file. If you are using any of the text editors mentioned in lesson 1, you will just need to create a file, within your project folder.
+   Suitable tutorials for each of these programs can be found on their websites.
+</p>
+
+<p id='text-style'>
+   When creating a HTML file, the main things to remember, are getting the file extention right (.html), and following proper basic design principles.
+   Go ahead and create a new HTML file, named index.html, and copy paste the code above into it, using your text editor. Then go back to your file explorer,
+   and open the file with your prefered web browser (As mentioned before, Chrome is the prefered choice for this course, as it has certain shortcuts that will be utlisised later in the course).
+   If you don't know how to open a file using your web browser, on windows, just right click your file, and click "open with", and then select your web browser.
+</p>
+<hr id="art-div">
+{% endblock %}

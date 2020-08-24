@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block body %}
+<main>
+  <section class="section-container" id="course-container">
+  <div class="section-content" id="course-content">
+    <aside id="course-sidebar">
+      <div id="sidebar-title">Folders</div>
+        <!-- A list of all the lessons in this course -->
+        <a class="lesson-card" href="/english/1">1. Past Papers</a>
+
+        <a class="lesson-card" href="/english/2">2. Essays</a>
+
+        <a class="lesson-card" href="/english/3">3. Notes</a>
+
+        <a class="lesson-card" href="/hsc">BACK</a>
+    </aside>
+      <article id="course-lesson">
+        {% block article %}
+        {% endblock %}
+      </article>
+  </div>
+  </section>
+</main>
+{% endblock %}

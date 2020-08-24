@@ -1,0 +1,112 @@
+{% extends "./basereact.html" %}
+{% block title %}1. Introduction{% endblock %}
+{% block article %}
+<h1 id="top-head">Introduction</h1>
+<h2 id="sub-head">1.1 What is react?</h2>
+<p id="text-style">React is a javascript library, whose
+   purpose is to show content (HTML) to users and handle user
+   interaction. What gives it so much of an edge to other frameworks,
+   or simple HTML is how it renders components
+   (what the user can see on the browser).</p>
+<p id="text-style">
+   A component is a basic piece of React. The goal of a
+   component is going to be to create some amount of HTML
+   and have it react to user input. In simple terms:</p>
+<ul id="text-style" style='margin-left: 1rem;'>
+  <li>
+    A react component is a function or a class &#8594; that produces
+    HTML &#8594; and handles feedback from the user.
+  </li>
+</ul>
+<hr id="art-div">
+<h2 id="sub-head">1.2 Course Requirements</h2>
+<ul id="text-style" style='margin-left: 1rem;'>
+  <li>A fast web browser (preferably Chrome)</li>
+  <li>A Text Editor (Programs such as Atom, Sublime Text or Visual Studio)</li>
+  <li>You must install
+    <a href="https://nodejs.org/en/download/" id="link-style">node</a>
+    - we’ll be using a few
+    npm and npx commands to install packages and dependencies</li>
+  <li>Take notes! (React is hard to use, unless you understand the
+    fundamental theory behind everything)</li>
+</ul>
+<hr id="art-div">
+<h2 id="sub-head">1.3 Hello World Part 1</h2>
+<p id="text-style">Basic setup to deploy the default React
+  interface in your localhost browser (it will run just on your computer).
+  Go to your command prompt. There are two ways to install react:</p>
+<p id="text-style"><strong>NPM - This will install the package
+   globally on your computer (Not Recommended)</strong></p>
+<pre id="code-style"><code class="javascript">npm install -g -create-react-app [name of app]</code></pre>
+<p id="text-style">Let's break down that command:</p>
+<ul style='margin-left: 1rem;' id="text-style">
+  <li>npm is the <em>node package manager</em></li>
+  <li>-g means it installs the package globally so we can run it from the terminal</li>
+  <li>create-react-app is the name of the package</li>
+</ul>
+<p id="text-style">Essentially, this will include 3 dependencies:</p>
+<ul id="text-style" style='margin-left: 1rem;'>
+  <li>Babel (A command line tool which can take any version of
+    Javascript and spit out an ES5 version from your newer
+    version, because not all browsers support ES2015+)</li>
+  <li>Webpack</li>
+  <li>Dev Server</li>
+</ul>
+<p id="text-style">I recommend the next way instead. Don't worry if
+   you're confused about what you've been learning so far. Just follow
+   the instructions and try to remember what each step does!</p>
+<hr id="art-div">
+<h2 id="sub-head">1.4 Hello World Part 2</h2>
+<p id="text-style"><strong>NPX - It will get downloaded - not
+   installed globally on your system. This is great
+   if you don’t want to pollute your system with packages
+   that get used every 2 months.</strong></p>
+<pre id="code-style"><code class="javascript">npx create-react-app [name of app]</code></pre>
+  <p><img src="/static/images/reactL1a.png"
+     alt="Example of shown React Code"
+     width=80% height=100% style="margin-left:4rem;"
+     ></p>
+<p id="text-style">This will make an App called SBHS.</p>
+<p><img src="/static/images/reactL1b.png"
+   alt="Example of shown React Code"
+   width=80% height=100% style="margin-left:4rem;"
+   ></p>
+<hr id="art-div">
+<h2 id="sub-head">1.5 Fundamental Terms</h2>
+<ul id="text-style" style='margin-left: 1rem;'>
+  <li>src (source) - Where you add your code in the directory</li>
+  <li>public - Contains different static files, for example, images
+  and HTML files which don't change</li>
+  <li>node_modules -All the different dependencies (all the packages)</li>
+  <li>package.json -Project config and records our dependencies</li>
+  <li>package-lock - Records the exact version of all the dependencies</li>
+  <li>readme.md -Tells you how to run the files</li>
+  <li>gitignore - Lists out different files git should
+  ignore, when it’s tracking our project</li>
+</ul>
+<hr id="art-div">
+<h2 id="sub-head">1.6 Running your files</h2>
+<p id="text-style">Once you have all these files set up, go back to
+   to the command prompt and change the folder directory to your project.
+   You do this by finding the path to your project folder and
+   typing <em>cd</em> followed by the path in command prompt. For my project,
+   that looks like this:</p>
+<pre id="code-style"><code class="javascript">cd C:\Users\[your name]\Desktop\Coding\React\SBHS</code></pre>
+<p id="text-style">The above will be a different path for you.
+   Once you are in the file path type the following in and press enter</p>
+<pre id="code-style"><code class="javascript">npm start</code></pre>
+<p id="text-style">Wait a bit and you should see the following page launch up
+   in your browser. You can visit your app through typing localhost:3000,
+   in your browser as well.</p>
+   <p><img src="/static/images/reactL1c.png"
+      alt="Example of shown React Code"
+      width=80% height=100% style="margin-left:4rem;"
+      ></p>
+<p id="text-style"><strong>Congratulations! You just
+   launched your first react app.</strong> To stop it,
+   go to the command prompt where it's
+   running and press ctrl+c.</p>
+<p id="text-style">There's a lot of content to remember so make
+   sure to keep looking back at previous modules! I hope you enjoy
+   learning react!</p>
+{% endblock %}

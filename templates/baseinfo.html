@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block body %}
+<main>
+  <section class="section-container" id="course-container">
+  <div class="section-content" id="course-content">
+    <aside id="course-sidebar">
+      <div id="sidebar-title">Lessons</div>
+        <!-- A list of all the lessons in this course -->
+        <a class="lesson-card" href="/informatics/1">1. Introduction</a>
+
+        <a class="lesson-card" href="/informatics/2">2. Orac</a>
+
+        <a class="lesson-card" href="/informatics/3">3. Numbers</a>
+
+        <a class="lesson-card" href="/informatics/4">4. Control Statements</a>
+
+        <a class="lesson-card" href="/informatics/5">5. Algorithms Introduction</a>
+
+        <a class="lesson-card" href="/informatics/6">6. Arrays</a>
+
+        <a class="lesson-card" href="/informatics/7">7. Functions</a>
+
+        <a class="lesson-card" href="/informatics/8">8. Prefix and Suffix Sums</a>
+
+        <a class="lesson-card" href="/informatics/9">9. Pointers & References & Iterators</a>
+
+        <a class="lesson-card" href="/informatics/10">10. Binary Search</a>
+
+        <a class="lesson-card" href="/informatics/11">11. 1-Dimensional Dynamic Programming</a>
+
+        <a class="lesson-card" href="/informatics/12">12. 2-Dimensional Dynamic Programming</a>
+
+    </aside>
+      <article id="course-lesson">
+        {% block article %}
+        {% endblock %}
+      </article>
+  </div>
+  </section>
+</main>
+{% endblock %}

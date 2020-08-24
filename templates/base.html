@@ -40,8 +40,10 @@
       <div class="sidebar-container bar-block sidebar-collapse" id="mySidebar">
       <ul class="side-link-list">
         <li id="sidebar-link-item">
-      <button class="side-link-item side-button course-card-button-nav"
-      onclick="sidebar_close()">Close</button>
+          <a id="brand-container-mobile" href="/">
+            <img id="brand-icon-mobile" src="{{ url_for('static', filename='images/logo-core.png') }}" alt="rocket-icon" />
+            <div id="brand-name"></div>
+          </a>
         </li>
         <li id="sidebar-link-item">
       <a href="/" class="side-link-item side-button course-card-button-nav">Home</a>
@@ -57,23 +59,6 @@
         </li>
       </ul>
     </div>
-
-    <div class="sidebar-main" style="margin-right:200px">
-      <button id="navbutton" onclick="sidebar_open()">&#9776;</button>
-    </div>
-
-    <script>
-    function sidebar_open() {
-      document.getElementById("mySidebar").style.display = "block";
-      document.getElementById("navbutton").style.display = "none";
-    }
-
-    function sidebar_close() {
-      document.getElementById("mySidebar").style.display = "none";
-      document.getElementById("navbutton").style.display = "block";
-    }
-    sidebar_close();
-    </script>
     </nav>
     <script>
       var prevScrollpos = window.pageYOffset;
@@ -94,9 +79,6 @@
         <div class="footer-description">
           <ul class="footer-list">
             <li><p>Copyright &copy 2020 CORE</p>
-            </li>
-            <li class="credit-link-list">
-          <a class="credit-link" href="https://www.vecteezy.com/free-vector/galaxy">Galaxy Vectors (background) by Vecteezy</a>
             </li>
             </ul>
         </div>

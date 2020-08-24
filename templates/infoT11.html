@@ -1,0 +1,140 @@
+{% extends "./baseinfo.html" %}
+{% block title %}11. 1-Dimensional Dynamic Programming{% endblock %}
+{% block article %}
+<h1 id="top-head">11 1-Dimensional Dynamic Programming</h1>
+<h2 id="sub-head">11.1 The Idea</h2>
+<p id="text-style">DP (short for dynamic programming), is a method for solving complex problems by breaking them down into simpler problems. This seems very similar to recursion!</p>
+<p id="text-style">How to successfully create a dp:<br>
+ 1. Define subproblems<br>
+ 2. Define recurrance relation<br>
+ 3. Order of computation<br>
+ 3. Recognise base cases</p>
+<hr id="art-div">
+
+<h2 id="sub-head">11.2 Fibonacci</h2>
+<b>1. Define subproblems</b>
+<p id="text-style"><span id="code-style">fib(n)</span> is the nth fibbonacci number</p>
+<b>2. Define recurrance relation</b>
+<p id="text-style"><span id="code-style">fib(n) = fib(n - 2) + fib(n - 1)</span>, so we need to define <span id="code-style">fib(n - 2)</span> and <span id="code-style">fib(n - 1)</span> first.</p>
+<b>3. Order of computation</b>
+<p id="text-style">There is never a situation where <span id="code-style">fib(x)</span> requires <span id="code-style">fib(y)</span> and <span id="code-style">fib(y)</span> requires <span id="code-style">fib(x)</span></p>
+<p id="text-style">This means you can compute <span id="code-style">fib(0)</span>, <span id="code-style">fib(1)</span>, ... in that order without any complications</p>
+<b>4. Recognise base cases</b>
+<p id="text-style">We have to predefine some value to start from, so that our dp can build up from there.</p>
+<p id="text-style">Calling <span id="code-style">fib(0)</span> and <span id="code-style">fib(1)</span> will call <span id="code-style">fib</span> with negative values. We do not want that, so we pre-define those values as the base case:<br>
+<pre id="code-style">fib(0) = 1
+fib(1) = 1</pre></p>
+<b>5. Implementation</b>
+<p id="text-style"><span id="code-style">fib(n)</span> calls <span id="code-style">fib(n - 2)</span> and <span id="code-style">fib(n - 1)</span><br>
+<span id="code-style">fib(n-1)</span> calls <span id="code-style">fib(n - 3)</span> and <span id="code-style">fib(n - 2)</span><br>
+So some functions, such as <span id="code-style">fib(n - 2)</span>, are called multiple times.<br>
+Since they will always return the same value, it is faster to store the value</p>
+<pre id="code-style"><code class="c++">int N, cache[100005]; // if seen[i], then cache[i] stores fib(i)
+bool seen[100005];
+int fib(int n) {
+	if (seen[n]) { // value computed already, pls don't do it again
+		return cache[n];
+	)
+	// recurrance relation
+	cache[n] = fib(n - 2) + fib(n - 1);
+	seen[n] = true;
+	return cache[n];
+}
+
+int main() {
+	cin >> N;
+	// base cases
+	seen[0] = seen[1] = true;
+	cache[0] = cache[1] = 1;
+	cout << fib(N);
+}</code></pre>
+<p id="text-style">or defined non-recursively</p>
+<pre id="code-style"><code class="c++">int N, cache[100005]; // no need for "seen", since you are computing everything at once
+
+int main() {
+	cin >> N;
+	// base cases
+	cache[0] = cache[1] = 1;
+
+	// order of computation
+	for (int n = 2; n <= N; n++) {
+		// recurrance relation
+		cache[n] = cache[n - 2] + cache[n - 1];
+	}
+	cout << cache[N];
+}</code></pre>
+<p id="text-style">NOTE: You should get comfortable with both ways of thinking, since one way is usually easier than the other.</p>
+<hr id="art-div">
+
+<h2 id="sub-head">11.3 Coin Problem</h2>
+<p id="text-style">You have <span id="code-style">N</span> coins with value <span id="code-style">A0</span>, <span id="code-style">A1</span>, ..., <span id="code-style">An-1</span> in a row. (values may be negative)<br>
+You want to maximise the sum of the coins you pick, but you can't pick 2 adjacent coins.<br>
+What is the maximum sum you can achieve? desired time complexity is <span id="code-style">O(n)</span></p>
+<br>
+<p id="text-style">Your first thought might be a greedy algorithm: choose the highest coin, then the next highest if possible, ...</p>
+<p id="text-style">nope. heres a breaking case: <span id="code-style">4 5 4</span></p>
+<b>1. Define subproblems</b>
+<p id="text-style"><span id="code-style">f(i)</span> is the highest score when considering all elements [0..i]</p>
+<b>2. Define recurrance relation</b>
+<p id="text-style">There are 2 options every time to expand from <span id="code-style">[0..i-1]</span> to <span id="code-style">[0..i]</span><br>
+<p id="text-style">Take the current coin: <span id="code-style">Ai + f(i-2)</span><br>
+Don't take the current coin: <span id="code-style">f(i-1)</span></p>
+<p id="text-style"><span id="code-style">f(i) = max(Ai + f(i-2), Ai + f(i-1))</span></p>
+<p id="text-style"></p>
+<b>3. Order of computation</b>
+<p id="text-style">There is never a situation where <span id="code-style">f(x)</span> requires <span id="code-style">f(y)</span> and <span id="code-style">f(y)</span> requires <span id="code-style">f(x)</span></p>
+<p id="text-style">Similarly to fibonacci, you want to process <span id="code-style">f(0)</span>, <span id="code-style">f(1)</span>, ...</p>
+<b>4. Recognise base cases</b>
+<p id="text-style">Calling <span id="code-style">f(0)</span> and <span id="code-style">f(1)</span> will call <span id="code-style">f</span> with negative values. We do not want that, so we pre-define those values as the base case:<br>
+<pre id="code-style">f(0) = A0
+f(1) = A1
+</pre>
+<b>5. Implementation</b>
+<pre id="code-style"><code class="c++">int N, A[100005], cache[100005]; // if seen[i], then cache[i] stores fib(i)
+bool seen[100005];
+int f(int n) {
+	if (seen[n]) { // value computed already, pls don't do it again
+		return cache[n];
+	)
+	// recurrance relation
+	cache[n] = max(A[n] + f(n - 2), fib(n - 1));
+	seen[n] = true;
+	return cache[n];
+}
+
+int main() {
+	cin >> N;
+	for (int i = 0; i < N; ++i) {
+		cin >> A[i];
+	}
+	seen[0] = seen[1] = true;
+	cache[0] = A[0];
+	cache[1] = max(A[0], A[1]);
+	cout << f(N);
+}</code></pre>
+<p id="text-style">or defined non-recursively</p>
+<pre id="code-style"><code class="c++">int N, cache[100005]; // no need for "seen", since you are computing everything at once
+
+int main() {
+	cin >> N;
+	for (int i = 0; i < N; ++i) {
+		cin >> A[i];
+	}
+	// base cases
+	cache[0] = A[0];
+	cache[1] = max(A[0], A[1]);
+
+	// order of computation
+	for (int n = 2; n <= N; n++) {
+		// recurrance relation
+		cache[n] = max(A[n] + f(n - 2), fib(n - 1));
+	}
+	cout << cache[N];
+}</code></pre>
+<hr id="art-div">
+
+
+<h2 id="sub-head">11.4 Homework</h2>
+<p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=337">Superphone</a><br>
+HINT: <span id="hint-style">Be careful about "Order of Computation".</span></p>
+{% endblock %}

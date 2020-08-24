@@ -1,0 +1,60 @@
+{% extends "./basepy.html" %}
+{% block title %}8. Additional Loops{% endblock %}
+{% block article %}
+<h1 id="top-head">8. Additional Loops</h1>
+<h2 id="sub-head">8.1 Nested Loops</h2>
+<p id="text-style">A nested loop is a loop within another loop. These
+   are sometimes useful, such as when you want to print all your
+   multiplication tables from 1-12. This can be done with the following:</p>
+<pre id="code-style"><code class="python">for i in range(1,13):
+  for j in range(1, 13):
+    print(f'{i} x {j} = {i*j}')</code></pre>
+<p id="text-style">The output will be all your multiplication tables from 1-12.
+   You can download and run this python file
+   <a id="link-style" href="{{ url_for('static', filename='pyCode/8-multiplication-table.py') }}"
+      download>here</a>. Basically what the code above does is, firstly, assigns
+   i = 1, and then goes to j and loops it from j = 1 to j = 12. This prints out
+   the 1 multiplication-tables. Next, it assigns i = 2 and does the same, repeating
+   until it does that for all j values from 1 - 12.</p>
+<hr id="art-div">
+<h2 id="sub-head">8.2 Break</h2>
+<p id="text-style">Break is used to exit a loop. Let's say that we want
+   to keep printing out multiples of 9 until we reach a number greater
+   than 100.</p>
+<pre id="code-style"><code class="python">num = 1  # setting our initial number
+while True: # setting an infinite loop
+  if 9*num > 100:
+    break # exits loop if multiple of 9 is greater than 100
+  print(9*num) # prints multiple of 9
+  num = num + 1 # adds 1 to the number
+</code></pre>
+<a id="link-style" href="{{ url_for('static', filename='pyCode/8-break-example.py') }}"
+   download>Download Example</a>
+<p id="text-style">Of course, there are better ways to do this and there are
+   only a few cases when you will need to use <em>break</em>. For example,
+   the above could be done using a while loop which goes until the multiple of
+   9 is greater than 100:</p>
+<pre id="code-style"><code class="python">num = 1
+while 9*num < 100:
+  print(9*num)
+  num = num + 1
+</code></pre>
+<a id="link-style" href="{{ url_for('static', filename='pyCode/8-while-alternative.py') }}"
+   download>Download Example</a>
+<hr id="art-div">
+<h2 id="sub-head">8.3 Continue</h2>
+<p id="text-style">Continue skips the current iteration of the loop and goes
+   to the next one. Let's say that we wanted to print out all numbers from 1-10
+   except the ones that are multiples of 3.</p>
+<pre id="code-style"><code class="python">for i in range(1, 11): # iterates through numbers 1 to 10
+  if i % 3 == 0: # if it is a multiple of 3, skip this iteration
+    continue
+  print(i) # print out the number</code></pre>
+  <a id="link-style" href="{{ url_for('static', filename='pyCode/8-continue-example.py') }}"
+     download>Download Example</a>
+<p id="text-style">There are many cases when there are many different ways to
+   solve problems. It's good to know multiple ways to do different problems
+   because sometimes there are certain ways that won't work. You probably
+   won't need to use <em>break</em> and <em>continue</em> often but it's
+   still important to know what they do.</p>
+{% endblock %}

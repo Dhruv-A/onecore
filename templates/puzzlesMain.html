@@ -2,16 +2,51 @@
 {% block title %}Puzzles{% endblock %}
 {% block body %}
 <main>
+<style media="screen">
+  table {
+    border-collapse: collapse;
+    margin: 0 auto;
+  }
+  td, th {
+    border: 1px solid #999;
+    padding: 0.5rem;
+    text-align: center;
+  }
+  th {
+    background: black;
+    color: white;
+  }
+  a {
+    text-decoration: none;
+    color: rgb(33, 33, 32);
+    line-height: 1.38;
+    font-size: 12pt;
+  }
+</style>
 <article id="course-lesson" class="about-content-container">
 <h1 class="about-title">Puzzles</h1>
 <p class="about-para">
-  Welcome to Puzzles by CORE! We'll be posting weekly puzzles here.
-  The solutions will be revealed a week after the problem is released
-  and will always be in python. However, you can use whichever languages
-  you are most comfortable with.<br>
-  The problems will range in difficulty on a scale from 1-10. If you're
-  finding past questions too difficult, we recommend trying easier ones!
+  Welcome to our redesigned Puzzles! We'll be posting weekly puzzles here.
+  Although some may be very hard, we won't release any solutions
+  because we think it's more effective if you keep trying different ways!
+  We recommend you use whichever language you are most comfortable with.<br>
+  If you're   finding past questions too difficult, we recommend
+  trying easier ones. Don't forget to use the sample
+  cases we provide to check whether your code works!
 </p>
+<div>
+  <table>
+    <tr>
+      <th>Week</th>
+      <th>Problem</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td><a href="/puzzles/1">Puzzle 1</a></td>
+    </tr>
+  </table>
+</div>
 </article>
 </main>
 {% endblock %}
+
