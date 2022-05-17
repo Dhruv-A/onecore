@@ -1,8 +1,6 @@
 {% extends "./baseinfo.html" %}
 {% block title %}3. Numbers{% endblock %}
 {% block article %}
-
-
 <h1 id="top-head">3 Numbers</h1>
 <h2 id="sub-head">3.1 Declaration & initialisation</h2>
 <p id="text-style">When declaring, you need to specify the variable type and the variable name.</p>
@@ -13,24 +11,15 @@
 <pre id="code-style"><code class="c++">int x = 1;</pre></code>
 <p id="text-style">Another way to initialise a variable is from user input:</p>
 <pre id="code-style"><code class="c++">cin >> x;</pre></code>
-<p id="text-style">Note that you have to declare a variable before you initialise it.</p>
+<p id="text-style">NOTE: you have to declare a variable before you initialise it.</p>
+<p id="text-style">NOTE: <span id="code-style">=</span> is used when <b>assigning</b> a value to a variable. For example, <br>
+<span id="code-style">x = x + 2</span> means take the value of x + 2, and assign it to the variable x (increment x by 2)<br>
+It does not mean solve the equation "<span id="code-style">x = x + 2</span>"</p>
 <hr id="art-div">
 
 
-<h2 id="sub-head">3.2 Display (cout)</h2>
-<p id="text-style">Displaying a number is similar to displaying text in Sup World</p>
-<pre id="code-style"><code class="c++">cout << 1</pre></code>
-<p id="text-style">You can also display a space</p>
-<pre id="code-style"><code class="c++">cout << " ";</pre></code>
-<p id="text-style">or display a new line</p>
-<pre id="code-style"><code class="c++">cout << "\n";</pre></code>
-<p id="text-style">or display multiple things on a single line</p>
-<pre id="code-style"><code class="c++">cout << "Sup to " << x << " worlds" << "\n";</pre></code>
-<hr id="art-div">
-
-
-<h2 id="sub-head">3.3 Number Variable Types</h2>
-<p id="text-style">To store a number in programming, you typically use an <span id="code-style">int</span>. If you an extra long number, use <span id="code-style">long long</span> (hahaha funny joke). If you have decimal, use <span id="code-style">double</span> or <span id="code-style">long double</span>. All of these can do the same operations, so for brevity I will only demonstrate its usage using only <span id="code-style">int</span></p>
+<h2 id="sub-head">3.2 Number Variable Types</h2>
+<p id="text-style">To store a number in programming, you typically use an <span id="code-style">int</span>. If you an extra long number, use <span id="code-style">long long</span> (hahaha funny joke). If you have decimal, use <span id="code-style">double</span> or <span id="code-style">long double</span>. All of these can do the same operations, so for brevity I will demonstrate its usage using <span id="code-style">int</span></p>
 
 <p id="text-style"><b>Operators</b></p>
 <table style="width:100%">
@@ -48,11 +37,11 @@
 	</tr>
 	<tr>
 		<td><pre id="code-style"><code class="c++">x++</pre></code></td>
-		<td><p id="text-style">increment x by 1 (i.e. x = x + 1)<br>see <a id="link-style" href="https://www.geeksforgeeks.org/pre-increment-and-post-increment-in-c/">here</a> if you’re interested in the differences between <span id="code-style">x++</span> and <span id="code-style">++x</span></p></td>
+		<td><p id="text-style">increment x by 1<br>see <a id="link-style" href="https://www.geeksforgeeks.org/pre-increment-and-post-increment-in-c/">here</a> if you’re interested in the differences between <span id="code-style">x++</span> and <span id="code-style">++x</span></p></td>
 	</tr>
 	<tr>
 		<td><pre id="code-style"><code class="c++">x += y</pre></code></td>
-		<td><p id="text-style">increment x by y (i.e. x = x + y)</p></td>
+		<td><p id="text-style">increment x by y</p></td>
 	</tr>
 	<tr>
 		<td><pre id="code-style"><code class="c++">x - y</pre></code></td>
@@ -60,31 +49,36 @@
 	</tr>
 	<tr>
 		<td><pre id="code-style"><code class="c++">x--</pre></code></td>
-		<td><p id="text-style">decrement x by 1 (i.e. x = x - 1)<br>see <a id="link-style" href="https://www.geeksforgeeks.org/pre-increment-and-post-increment-in-c/">here</a> if you’re interested in the differences between <span id="code-style">x--</span> and <span id="code-style">--x</span></p></td>
+		<td><p id="text-style">decrement x by 1</p></td>
 	</tr>
 	<tr>
 		<td><pre id="code-style"><code class="c++">x -= y</pre></code></td>
-		<td><p id="text-style">decrement x by y (i.e. x = x + y)</p></td>
+		<td><p id="text-style">decrement x by y</p></td>
 	</tr>
 	<tr>
 		<td><pre id="code-style"><code class="c++">x % y</pre></code></td>
-		<td><p id="text-style">modulus, take the remainder when x is divided by y (only applies to <span id="code-style">int</span> and <span id="code-style">long long</span>)</p></td>
+		<td><p id="text-style">modulus, take the remainder when x is divided by y (only applies to <span id="code-style">int</span> and <span id="code-style">long long</span>)<br>For example, <span id="code-style">x % 2</span> will be 1 if <span id="code-style">x</span> odd or 0 if <span id="code-style">x</span> is even</p></td>
 	</tr>
 </table>
 <br>
-<p id="text-style">The order of operations is consistent with BODMAS, and is computed form left to right:</p>
-<pre id="code-style"><code class="c++">cout << 2 + 13 * 5 + 2 << "\n";
-cout << (2 + (13 * 5) ) + 2 << "\n"</pre></code>
+<p id="text-style">The order of operations is consistent with BODMAS, and is computed from left to right:</p>
+<pre id="code-style"><code class="c++">cout &lt;&lt; 2 + 13 * 5 + 2 &lt;&lt; "\n";
+cout &lt;&lt; (2 + (13 * 5) ) + 2 &lt;&lt; "\n"</pre></code>
 <p id="text-style">If you are interested, <a id="link-style" href="https://en.cppreference.com/w/cpp/language/operator_precedence">here</a> is a comprehensive list of operations and the operator precedence</p>
 <hr id="art-div">
 
 
-<h2 id="sub-head">3.4 Homework</h2>
+<h2 id="sub-head">3.3 Homework</h2>
+<p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=342">Sitting or Standing?</a><br>
+HINT: <span class="hint-style">There is a walkthrough <a id="link-style" href="http://orac.amt.edu.au/aioc/tutorials/walkthroughs/02.html">here</a>, although they do file input differently.</span></p>
+<p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=362">Mixed Fraction</a><br>
+HINT: <span class="hint-style">There is a walkthrough <a id="link-style" href="http://orac.amt.edu.au/aioc/tutorials/walkthroughs/03.html">here</a>, although they do file input differently.
+</span></p>
 <p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=628">NORT</a><br>
-<a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=852">Snap Dragons II</a><br></p>
-<p id="text-style">
-HINT 1: <span id="hint-style">Try many possible initial configurations, and try to find a pattern from there.</span><br>
-HINT 2: <span id="hint-style">The size of grid does not matter.</span><br>
-HINT 3: <span id="hint-style">It has something to do with the distance between Rose and Scarlet</span>
+HINT: <span class="hint-style">It has something to do with the area of the grid</span></p>
+<p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=852">Snap Dragons II</a><br>
+HINT 1: <span class="hint-style">Try many possible initial configurations, and try to find a pattern from there.</span><br>
+HINT 2: <span class="hint-style">The size of grid does not matter.</span><br>
+HINT 3: <span class="hint-style">It has something to do with the distance between Rose and Scarlet</span>
 </p>
 {% endblock %}

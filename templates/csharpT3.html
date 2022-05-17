@@ -1,0 +1,148 @@
+{% extends "basecsharp.html" %}
+{% block title %}3. Data Types{% endblock %}
+{% block article %}
+<h1 id="top-head">3. Data Types</h1>
+<h2 id="sub-head">3.1 Integers</h2>
+<p id="text=style">In C# the variables you need to have an identifier.
+   For example, to define a string in python you would write
+   <em>Number = 5</em>
+   However, in C# our integer needs to have the
+   <span style="color: red">int</span> keyword (which defines positive
+   and negative numbers). Hence, to define the same statement in C# it is
+   <em><span style="color: red">int</span> Number = 5</em>
+   Run the following code in the mainline of your HelloWord file:</p>
+<pre id="code-style"><code class="C#">int a = 18;
+int b = 6;
+int c = a + b;
+Console.WriteLine(c);</code></pre>
+<p id="text-style">When you run it, it should output 24. Other
+   common mathematical operations for integers include:
+<ul style="margin-left: 1rem">
+    <li>- for subtraction</li>
+    <li>* for multiplication</li>
+    <li>/ for division</li>
+</ul>
+<br>
+   Question: try multiplying and substring the a and b, then add a third
+   variable d, and add all of the variables.<br><br>
+You may have noticed that integer operations always produce an
+integer, even when you’d expect the result to print out a decimal.
+It is important to note that integers round down. For example,
+try running this code:
+</p>
+<pre id="code-style"><code class="C#">int a = 7;
+int b = 4;
+int c = 3;
+int d = (a + b) / c;
+Console.WriteLine(d);</code></pre>
+<p id="text-style">As we can see the expected output of 3.67
+  (2 decimal places) rounded down to 3. The integer
+  value has an upper and lower value, to run these we can
+  call the MaxValue and MinValue attribute of the integer.</p>
+<pre id="code-style"><code class="C#">int max = int.MaxValue;
+int min = int.MinValue;
+Console.WriteLine($"The range of integers is {min} to {max}");</code></pre>
+<p id="text-style">New concept: you may have noticed
+  that we have used the dollar sign ($). It is used in a
+  formatted string (like f strings in python), and allows
+  us to include the variables in our string with the curly braces.
+  It outputs:</p>
+<pre id="code-style"><code class="C#">The range of integers is -2147483648 to 2147483647</code></pre>
+<pre id="code-style"><code class="C#">using System;
+
+namespace HelloWorld
+{
+  class Program
+  {
+    static void Main(string[], args)
+    {
+      Console.WriteLine("Hello World!");
+      int a = 7;
+      int b = 4;
+      int c = 3;
+      int d = (a + b) / c;
+      Console.WriteLine(d);
+    }
+  }
+}</code></pre>
+<p id="text-style">This outputs:</p>
+<pre id="code-style"><code class="C#">Hello World!
+3</code></pre>
+<img src="https://drive.google.com/uc?export=view&id=18zOj8SMa3nxXSPcfseE2fqq6ZN59SUfu"
+alt="csharp-image">
+<p id="text-style">In order to get the remainder of our
+  integer division, we can use the remainder operator %.
+  For example, 9 divided by 4 equals 2 with a remainder of 1.
+  In C# performing the operation 9 / 4 would output 2 and 9 %
+  4 would output one 1.</p>
+<p id="text-style">As we can see the range of the integer
+  variable is very large, we can use. Here is a table that
+  summarises the range of different data types. If our calculation
+  produces a value that exceeds these ranges, we get an underflow
+  or overflow condition. Think of a number line of all integers
+  between -200 and 200. If our calculation equals 202, C# will
+  output -198. It has essentially wrapped our result. If the
+  result is above the maximum range, it is know as an overflow.
+  Meanwhile, if the result is below the negative limit, it is
+  called an underflow error.</p>
+<p id="text-style">Question: in our above example where we
+  have defined an integer to be between -200 and 200 for
+  simplicity, what will the code output if our calculation
+  equals -208?</p>
+<p id="text-style">Answer: It will output 208, known as an underflow.</p>
+<p id="text-style">To test this out, add the following lines to your code.</p>
+<pre id="code-style"><code class="C#">int what = max + 30;
+Console.WriteLine($"An example of overflow: {what}");</code></pre>
+<hr id="art-div">
+<h2 id="sub-head">3.2 Doubles</h2>
+<p id="text-style">Another common data type that you will
+  need is the double – which represents double-precision
+  floating points (15 – 16 digits after the decimal place).
+  Let’s try our same example using doubles and see if it
+  outputs 3.67 (two decimal places).</p>
+<pre id="code-style"><code class="C#">using System;
+
+namespace HelloWorld
+{
+  class Program
+  {
+    static void Main(string[], args)
+    {
+      Console.WriteLine("Hello World!");
+      double a = 7;
+      double b = 4;
+      double c = 3;
+      double d = (a + b) / c;
+      Console.WriteLine(d);
+    }
+  }
+}</code></pre>
+<p id="text-style">And this outputs:</p>
+<pre id="code-style"><code class="C#">3.6666666666666665</code></pre>
+<hr id="art-div">
+<h2 id="sub-head">3.3 Challenge</h2>
+<p id="text-style">Write code to calculate the area of a circle
+  whose radius is 2.50 centimetres. The area of a
+  circle is the radius squared multiplied by PI.
+  One hint: .NET contains a constant for PI, Math.PI
+  that you can use for that value. Math.PI, like all
+  constants declared in the System.Math namespace, is a double value.</p>
+<hr id="art-div">
+<h2 id="sub-head">3.4 Solution</h2>
+<pre id="code-style"><code class="C#">using System;
+
+namespace HelloWorld
+{
+  class Program
+  {
+    static void Main(string[], args)
+    {
+      double radius = 2.5;
+      double area = Math.PI * radius;
+      System.Console.WriteLine(area);
+    }
+  }
+}</code></pre>
+<p id="text=style">which gives you</p>
+<pre id="code-style"><code class="C#">19.634954084936208</code></pre>
+{% endblock %}

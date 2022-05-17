@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Core: Puzzle 3{% endblock %}
+{% block body %}
+<main>
+<article id="course-lesson" class="about-content-container">
+<h1 class="about-title">Puzzle 3</h1>
+<p class="about-para">
+  <iframe src="{{ url_for('static', filename='puzzles/Weekly_Puzzle_3.pdf') }}" width="100%" height="600rem"></iframe>
+</p>
+</article>
+</main>
+{% endblock %}

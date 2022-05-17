@@ -1,0 +1,107 @@
+{% extends "./basereact.html" %}
+{% block title %}3. Functional Components{% endblock %}
+{% block article %}
+<h1 id="top-head">3. Functional Components</h1>
+<h2 id="sub-head">3.1 Main parts of a component</h2>
+<p id="text-style">It is important to understand the 3 main parts of a component:</p>
+<ul id="list-style" style="margin-left: 1rem">
+  <li>Component Nesting</li>
+  <li>Component Reusability</li>
+  <li>Component Configuration</li>
+</ul>
+<p id="text-style">I'll be covering these over several modules.</p>
+<hr id="art-div">
+<h2 id="sub-head">3.2 Component Nesting</h2>
+<p id="text-style">Let's start by editing the app we created
+   in the <a id="link-style"
+   href="https://onecore.tech/react/1">introduction</a>
+   </p>
+<p id="text-style">Step 1: You’ll likely see many files under
+   the src folder of your newly generated application. Surprisingly
+   enough, these are all pre-generated and you can actually
+   delete all of them<br>
+   Step 2: Create an empty file called index.js
+   (This will serves as the root file for your entire application)</p>
+<img src="https://drive.google.com/uc?export=view&id=1NMXIvFI1LXrmLBg_-ojtSTlfukugKT4z"
+alt="react-image">
+<p id="text-style">Step 3: Now inside the file, we’ll start by
+   importing two PACKAGES (These are essential for rendering our
+   components onto).<br>
+   Importing react allows the Javascript file to interpret JSX, you
+   are telling the code compiler, “Hey! I’m providing you JSX in the file”<br>
+   ReactDOM allows us to render elements onto the dom with ReactDOM.render<br>
+   <strong>NOTE: It is case sensitive - make sure your imports
+   are defined as follows in index.js:</strong></p>
+<pre id="code-style"><code class="javascript">import React from 'react';
+import ReactDOM from 'react-dom';</code></pre>
+<img src="https://drive.google.com/uc?export=view&id=1HYkD5x9po6mvx-KxyuQ0KAlMtS3Q60JZ"
+alt="react-image-2">
+<p id="text-style">Step 4: Now that you’ve got your imports create a new
+   file called App.js (in the src folder) and try importing React. Also
+   note that, this time we do not need to import ReactDOM as the rendering
+   stuff is done in the root index.js file.</p>
+<pre id="code-style"><code class="javascript">import React from 'react';
+
+const App = () => {
+  return (
+    &lt;div>Hello World&lt;/div>
+  );
+};
+
+export default App;</code></pre>
+<img src="https://drive.google.com/uc?export=view&id=1d1pa7bPhCcv_xCcpAZ1z_QphmXJFL3Vw"
+alt="react-image-2">
+<hr id="art-div">
+<h2 id="sub-head">3.3 Explaining the previous code</h2>
+<p id="text-style">Alright now breaking down this chunk of code. Here
+   I’ve created a functional component, making use of the
+   <a id="link-style"
+   href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">ES6
+   Arrow function</a>
+   to define a component called App and returning the text Hello World.
+   By convention, it is common to name the component the name you have named the file e.g [Name of app].js
+</p>
+<pre id="code-style"><code class="javascript">const [Name of App] = () => {</code></pre>
+<p id="text-style">Whatever element you return from the component should
+   be wrapped in div tags. Finally to make this component accessible
+   to the rest of the app we need to export it with export default
+   [name of App].<p>
+<p id="text-style">Step 5: Cycling back to the root index.js file</p>
+<pre id="code-style"><code class="javascript">import React from 'react';
+import ReactDOM from 'react-dom';
+
+//Import the App file
+import App from './App';
+
+//Rendering out the App component
+ReactDOM.render(
+  &lt;App />,
+  //rendering it out on the div with root id in index.html [public folder]
+  document.querySelector('#root')
+)</code></pre>
+<img src="https://drive.google.com/uc?export=view&id=1EYTnQcDh18ru2Sl0pCEEllSTb-pCo15C"
+alt="react-image-3">
+<p id="text-style">In the previous step we exported the
+   App functional component we created. Now it only makes
+   sense to import it to our root file and render the App component into
+   the DOM -> This will allow us to see it on our browser. Note: import
+   App from ‘./App’; the ‘./’ syntax means from the current directory
+   (See how App.js and index.js are in the same folder?).</p>
+<p id="text-style">Making use of the ReactDOM library to manipulate
+   the dom, we use ReactDOM.render() to render out the app component.</p>
+<ul id="list-style" style="margin-left: 1rem">
+  <li>Imported components are represented in the syntax
+    <[component] /> and finally we use document.querySelector(‘#root’) to
+    tell the compiler where to render it. If you look in the public folder,
+    index.html you will see a div with the id root. This is essentially where
+    we render the component.</li>
+  <li>Now to see it all in your browser, head
+    over to command prompt or Terminal if you’re using a mac and type npm
+    start.</li>
+</ul>
+<p id="text-style">
+<img src="https://drive.google.com/uc?export=view&id=1HuiaqpMbyPFgDmBLI6OYnyEMciUI66fC"
+alt="react-image-4">
+</p>
+<p id="text-style">Congratulations! You just made a functional component.</p>
+{% endblock %}

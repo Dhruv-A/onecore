@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
 
 
 app = Flask(__name__)
@@ -6,7 +6,7 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 @app.route('/')
 def homepage():
-  return render_template('home.html')
+  return render_template('homenew.html')
 
 @app.route('/courses')
 def coursepage():
@@ -34,7 +34,9 @@ def devpage():
 
 @app.route('/python/<int:postID>')
 def pyTutorial(postID):
-  return render_template(f'pyT{postID}.html')
+  prev = postID - 1
+  next = postID + 1
+  return render_template(f'pyT{postID}.html', prev=prev, next=next)
 
 @app.route('/html/<int:postID>')
 def htmlTutorial(postID):
@@ -46,46 +48,18 @@ def reactTutorial(postID):
 
 @app.route('/informatics/<int:postID>')
 def infoTutorial(postID):
-  return render_template(f'infoT{postID}.html')
+  prev = postID - 1
+  next = postID + 1
+  return render_template(f'infoT{postID}.html', prev=prev, next=next)
 
-@app.route('/hsc')
-def getHsc():
-  return render_template(f'hsccourses.html')
+@app.route('/csharp/<int:postID>')
+def csharpTutorial(postID):
+  prev = postID - 1
+  next = postID + 1
+  return render_template(f'csharpT{postID}.html', prev=prev, next=next)
 
-@app.route('/maths/<int:postID>')
-def mathsTutorial(postID):
-  return render_template(f'mathsT{postID}.html')
-
-@app.route('/e1maths/<int:postID>')
-def e1mathsTutorial(postID):
-  return render_template(f'e1mathsT{postID}.html')
-
-@app.route('/e2maths/<int:postID>')
-def e2mathsTutorial(postID):
-  return render_template(f'e2mathsT{postID}.html')
-
-@app.route('/chem/<int:postID>')
-def chemTutorial(postID):
-  return render_template(f'chemT{postID}.html')
-
-@app.route('/phys/<int:postID>')
-def physTutorial(postID):
-  return render_template(f'physT{postID}.html')
-
-@app.route('/english/<int:postID>')
-def englishTutorial(postID):
-  return render_template(f'englishT{postID}.html')
-
-@app.route('/bio/<int:postID>')
-def bioTutorial(postID):
-  return render_template(f'bioT{postID}.html')
-
-@app.route('/eco/<int:postID>')
-def ecoTutorial(postID):
-  return render_template(f'ecoT{postID}.html')
-
-@app.route('/e1english/<int:postID>')
-def e1englishTutorial(postID):
-  return render_template(f'e1englishT{postID}.html')
+@app.route('/invite')
+def discordinv():
+  return redirect('https://discord.com/invite/2d27eyG')
 
 app.run(host='0.0.0.0', threaded=True)

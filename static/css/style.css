@@ -12,13 +12,31 @@ box-sizing: border-box;
 #sidebar {
   display: none;
 }
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: gray;
+}
 }
 
 main {
   width: 100%;
   height: 100%;
 }
-
+img {
+  max-width: 100%;
+}
 body {
   font-family: "Nunito Sans", sans-serif;
   background:#092f83;
@@ -110,7 +128,7 @@ nav {
   padding: 2rem 2.5rem;
 }
 #landing-container {
-  height: 550px;
+  height: 650px;
 }
 #landing-image {
   width: 100%;
@@ -481,7 +499,6 @@ footer {
   }
   .puzzle-content {
     text-align: center;
-    margin-left: 1rem;
   }
   footer {
     height: 160px;
@@ -620,7 +637,7 @@ footer {
     width: 50%;
   }
   #course-image-container.cpp-image {
-  width: 30%;
+  width: 10%;
   margin: 15px auto;
   }
 }

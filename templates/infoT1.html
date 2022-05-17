@@ -1,14 +1,24 @@
 {% extends "./baseinfo.html" %}
 {% block title %}1. Introduction{% endblock %}
 {% block article %}
-
-<h1 id="top-head">1. Introduction</h1>
+<h1 id="top-head">1 Introduction</h1>
 <h2 id="sub-head">1.1 Basics</h2>
-<p id="text-style">Hello! Welcome to the C++ and informatics course. I’m Ryan, a programmer and content writer at CORE.</p>
+<p id="text-style">Hello! Welcome to the C++ and informatics course! I’m Ryan, currently a year 12 student at Sydney Boys (as of 2021).</p>
+<p id="text-style">Feel free to contact me if you would like help with the problems / homeowork in each chapter. <br>
+You can contact me on Discord: <pre id="code-style"><code class="Discord ID">Ryno#6737</code></pre> or email me at: <pre id="code-style"><code class="Email">ryan.ong@student.sbhs.nsw.edu.au</code></pre></p>
+<p id="text-style">Also, please join our <a id="link-style" href="https://discord.gg/VE4WEdM">Discord server</a> to be part of a community of programmers!</p>
+<br>
+<br>
 <p id="text-style">Informatics is an area of programming focused on solving algorithmic problems. Typically, you are provided with a problem (i.e. sort an array), and you have to figure out a fast and optimal way to solve the problem, and implement it in a chosen language.</p>
-<p id="text-style">In my opinion, C++ is a really useful language to know. Although it may not be used as much in industry, it has many advantages such as fast runtimes and high-level built-in functions which come in very handy for informatics. It is quite common for professional informatics programmers to use C++.</p>
+<p id="text-style">In my opinion, C++ is a really useful language to know. It has many advantages such as fast runtimes and high-level built-in functions which come in very handy for informatics. It is quite common for professional informatics programmers to use C++.</p>
 <p id="text-style">This course aims to teach C++ as in introduction to programming and informatics, and will hopefully encourage you to continue your journey in aspects of programming. As such, I may not cover certain aspects of the language which are not necessary for informatics</p>
-<p id="text-style">In each lesson, I will provide some tutorials on either C++ functionality or a new algorithm, followed by some exercises or problems on <a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/hub.pl?expand=all">orac</a> to solve. You are not required to solve all of the problems since some may be quite challenging. It is ok to read over each lesson several times or revisit previous lessons, since I will write them as succinctly as possible.</p>
+<p id="text-style">In each lesson, I will provide:
+<li>some tutorials and new content (on either C++ functionality or a new algorithm)</li>
+<li>template implementations and code</li>
+<li>exercises or problems on <a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/hub.pl?expand=all">ORAC</a> to solve</li></p>
+<p id="text-style">NOTE: You are not required to solve all of the problems since some may be quite challenging. It is ok to read over each lesson several times or revisit previous lessons, since I will write them as succinctly as possible.</p>
+
+
 <hr id="art-div">
 
 
@@ -18,23 +28,22 @@ using namespace std;
 
 int main() {
 	// This is a comment
-	cout << "Sup world!";
+	cout &lt;&lt; "Sup world!";
 }</code></pre>
 <p id="text-style">Sup world is a very basic program, which displays the text "Sup world!"</p>
 <p id="text-style"><b>Line 1</b><span id="code-style"> #include &lt;iostream></span><br>
-#include means it includes a module. You are able to use the functionality from this module. In this case, you are able to use the functionality in “iostream”, which consists of displaying text.</p>
+#include is a way of includes a library of functions so that you are able to use them in your code. In this case, you are able to use the functionality in "iostream", which allows you to display text. (iostream stands for Input/Output stream)</p>
 <p id="text-style"><b>Line 2</b><span id="code-style"> using namespace std;</span><br>
-This means that you can say “cout” instead of “std::cout” (line 5). Basically means your code can be shorter and more readable<br>
-"std" is short for standard</p>
+This means that you can say "cout" instead of "std::cout" (line 6). Basically means your code can be shorter and more readable ("std" is short for standard)</p>
 <p id="text-style"><b>Line 3</b><br>
 Whitespace is good. Don’t write code like this!<br>
-<span id="code-style">int a,b,c,d;int e[1001];int main(){f=fopen("listin.txt","r");g=fopen("listout.txt","w");fscanf(f,"%d",&a);for(int i=0;i<a;i++){fscanf(f,"%d%d",&b,&c);e[b]++;e[c]++;}for(int i=0;i<1001;i++){if(e[i]>d){d=e[i];}}for(int i=0;i<1001;i++){if(e[i]==d){fprintf(g,"%d\n",i);}}}</span></1001;i++){if(e[i]==d){fprintf(g,"%d\n",i);}}}</span></p>
+<span id="code-style">int a,b,c,d,e[1001];int main(){cin>>a;for(int i=0;i&lt;a;i++){cin>>b>>c;e[b]++;e[c]++;}for(int i=0;i&lt;1001;i++)d=max(d,e[i]);for(int i=0;i&lt;1001;i++)if(e[i]==d)cout&lt;&lt;i&lt;&lt;"\n";}</span></p>
 <p id="text-style"><b>Line 4</b><span id="code-style"> int main() {</span><br>
-Notice that since it starts with a <span id="code-style">{</span>, it needs to close with a <span id="code-style">}</span> (line 7)<br>
+Every program has an <span id="code-style">int main()</span>, which contains the body of the program. Notice that since it starts with a <span id="code-style">{</span>, it needs to close with a <span id="code-style">}</span> (line 7)<br>
 Sometimes, you might see the <span id="code-style">{</span> on the line after <span id="code-style">int main()</span>. There is no difference, and I may use them both interchangeably</p>
 <p id="text-style"><b>Line 5</b><span id="code-style"> // This is a comment</span><br>
-Everything after <span id="code-style">//</span> is a comment, and is usually highlighted a different colour</p>
-<p id="text-style"><b>Line 6</b><br><span id="code-style">cout << "</span>
+Everything after <span id="code-style">//</span> is a comment, and is usually highlighted a different colour (in this case, light grey)</p>
+<p id="text-style"><b>Line 6</b><span id="code-style"> cout &lt;&lt; "Sup world!"</span><br>
 This means display to screen. Don’t forget the <span id="code-style">;</span> at the end of the line<br>
 NOTE: As a general rule of thumb, there is a <span id="code-style">;</span> on every line which doesn’t end with a <span id="code-style">{</span> and doesn’t start with a <span id="code-style">#</span></p>
 <hr id="art-div">
@@ -46,7 +55,9 @@ I use <a id="link-style" href="https://visualstudio.microsoft.com/vs/community">
 There are many other programs you can use, but it comes down to personal preference.
 </p>
 <p id="text-style"><b>Linux users</b><br>
-Lucky you! C++ compiler should be already installed on your machine. After creating your program file, use <span id="code-style">g++ -o output my_code.cpp</span> to compile and <span id="code-style">./output</span> to run. Note that you can use <a id="link-style" href="https://caiorss.github.io/C-Cpp-Notes/compiler-flags-options.html">additional flags on compilation</a> which you might find useful
-</p>
-<p id="text-style">Once you have installed C++, try to implement Sup World without referring back to it</p>
+Lucky you! C++ compiler should be already installed on your machine. After creating your program file, use <span id="code-style">g++ -o output my_code.cpp</span> to compile and <span id="code-style">./output</span> to run. Note that you can use <a id="link-style" href="https://caiorss.github.io/C-Cpp-Notes/compiler-flags-options.html">additional flags on compilation</a> which you might find useful. I use <span id="code-style">-Wall -Ofast</span></p>
+<hr id="art-div">
+
+<h2 id="sub-head">1.4 Homework</h2>
+<p id="text-style">Try to implement "Sup World" without referring back to it</p>
 {% endblock %}

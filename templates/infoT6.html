@@ -2,7 +2,7 @@
 {% block title %}6. Arrays{% endblock %}
 {% block article %}
 <h1 id="top-head">6 Arrays</h1>
-<h2 id="sub-head">6.1 int Arrays</h2>
+<h2 id="sub-head">6.1 Single Dimensional Arrays</h2>
 <p id="text-style">Arrays are used to hold a collection of items. The data type must be the same for all elements. They can only hold 1 data type (e.g. <span id="code-style">int</span>), and the size of the array is fixed. It is a good idea to declare arrays only directly after <span id="code-style">using namespace std;</span>. There are 2 ways to declare arrays:</p>
 <p id="text-style">(most commonly used) Array declaration by specifying a constant size, elements are by default initialised to <span id="code-style">0</span></p>
 <pre id="code-style"><code class="c++">int foo[5];</pre></code>
@@ -17,7 +17,7 @@
 <h2 id="sub-head">6.2 Multidimensional Arrays</h2>
 <p id="text-style">Multidimensional arrays are "arrays of arrays". For example, a 2D array can be likened to a grid (all of some data type). For example, a tic tac toe board can be represented as <span id="code-style">int grid[3][3];</span></p>
 <p><img src="https://i2.wp.com/www.rubyguides.com/wp-content/uploads/2017/10/grid.png" alt="Depiction of 2d array indexing" width=400px style="display: block; margin-left: auto; margin-right: auto;"></p>
-<pre id="code-style"><code class="c++">grid[1][1] = 1; // center cell
+<pre id="code-style"><code class="c++">grid[1][1] = 1; // centre cell
 grid[0][1] = 2; // top edge cell
 grid[2][0] = grid[0][1]; // bottom right cell
 cout << grid[2][0];
@@ -28,11 +28,11 @@ cout << grid[2][0];
 
 <h2 id="sub-head">6.3 Homework</h2>
 <p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=412">Encyclopædia</a><br>
-HINT: <span id="hint-style">There is a walkthrough <a id="link-style" href="http://orac.amt.edu.au/aioc/tutorials/walkthroughs/09.html">here</a>, although they implement file input differently.</p>
+HINT: <span class="hint-style">There is a walkthrough <a id="link-style" href="http://orac.amt.edu.au/aioc/tutorials/walkthroughs/09.html">here</a>, although they implement file input differently.</p>
 <p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=413">Dictionary</a><br>
-HINT: <span id="hint-style">There is a walkthrough <a id="link-style" href="http://orac.amt.edu.au/aioc/tutorials/walkthroughs/10.html">here</a>, although they implement file input differently.</p>
+HINT: <span class="hint-style">There is a walkthrough <a id="link-style" href="http://orac.amt.edu.au/aioc/tutorials/walkthroughs/10.html">here</a>, although they implement file input differently.</p>
 <p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=414">Triple Hunting</a><br>
-HINT: <span id="hint-style">There is a walkthrough <a id="link-style" href="http://orac.amt.edu.au/aioc/tutorials/walkthroughs/11.html">here</a>, although they implement file input differently.</p>
+HINT: <span class="hint-style">There is a walkthrough <a id="link-style" href="http://orac.amt.edu.au/aioc/tutorials/walkthroughs/11.html">here</a>, although they implement file input differently.</p>
 <p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=416">Friendlist</a><br>
-HINT: <span id="hint-style">start with <span id="code-style">int friends[1000005];</span></span></p>
+HINT: <span class="hint-style">start with <span id="code-style">int friends[1000005];</span></span></p>
 {% endblock %}

@@ -22,18 +22,25 @@
 
         <a class="lesson-card" href="/informatics/8">8. Prefix and Suffix Sums</a>
 
-        <a class="lesson-card" href="/informatics/9">9. Pointers & References & Iterators</a>
+        <a class="lesson-card" href="/informatics/9">9. Data Structures</a>
 
         <a class="lesson-card" href="/informatics/10">10. Binary Search</a>
 
         <a class="lesson-card" href="/informatics/11">11. 1-Dimensional Dynamic Programming</a>
 
-        <a class="lesson-card" href="/informatics/12">12. 2-Dimensional Dynamic Programming</a>
+        <a class="lesson-card" href="/informatics/12">12. Advanced Dynamic Programming</a>
+
+        <a class="lesson-card" href="/informatics/13">13. Congratulations</a>
+        
 
     </aside>
       <article id="course-lesson">
         {% block article %}
         {% endblock %}
+        <hr id="art-div">
+        <a href="/informatics/{{ prev }}" id="link-style" style="{% if prev < 1 %}display: none{% endif %}";>Previous</a>
+        <a href="/informatics/{{ next }}" id="link-style" style="text-align: right; float: right;{% if next > 13 %}display: none{% endif %}";>Next</a>
+
       </article>
   </div>
   </section>

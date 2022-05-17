@@ -8,10 +8,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/fontstyle.css') }}" />
     <link rel="icon" href="{{ url_for('static', filename='images/logo-core-small.png') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/foundation.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>{% block title %}{% endblock %}</title>
     {% endblock %}
   </head>
   <body>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
     <nav id="navbar">
@@ -41,7 +44,7 @@
       <ul class="side-link-list">
         <li id="sidebar-link-item">
           <a id="brand-container-mobile" href="/">
-            <img id="brand-icon-mobile" src="{{ url_for('static', filename='images/logo-core.png') }}" alt="rocket-icon" />
+            <img id="brand-icon-mobile" style="max-width: none" src="{{ url_for('static', filename='images/logo-core.png') }}" alt="rocket-icon" />
             <div id="brand-name"></div>
           </a>
         </li>
@@ -61,7 +64,7 @@
     </div>
     </nav>
     <script>
-      var prevScrollpos = window.pageYOffset;
+      var prevScrollpos = window.page YOffset;
       window.onscroll = function() {
         var currentScrollPos = window.pageYOffset;
         if (prevScrollpos > currentScrollPos) {
@@ -74,6 +77,47 @@
     </script>
     {% block body %}
     {% endblock %}
+    <!-- BEGIN highlight.js copy -->
+    <script src="https://unpkg.com/highlightjs-badge/highlightjs/highlight.pack.js"></script>
+    <script src="https://unpkg.com/highlightjs-badge/highlightjs-badge.min.js"></script>
+      <script>
+let hints = document.getElementsByClassName("hint-style");
+for (let i = 0; i < hints.length; i++) {
+    hints[i].dataset["text"] = hints[i].innerHTML;
+    hints[i].textContent = "█".repeat(Math.random() * 40 + 20); // between 20 and 60 inclusive
+    hints[i].onclick = function() {
+        [hints[i].innerHTML, hints[i].dataset["text"]] = [hints[i].dataset["text"], hints[i].innerHTML]; // swap text and redacted
+    }
+}
+</script>
+    <script>
+      setTimeout(function () {
+        var pres = document.querySelectorAll("pre>code");
+        for (var i = 0; i < pres.length; i++) {
+          hljs.highlightBlock(pres[i]);
+        }
+        var options = {
+          contentSelector: "body>main",
+          // Delay in ms used for `setTimeout` before badging is applied
+          // Use if you need to time highlighting and badge application
+          // since the badges need to be applied afterwards.
+          // 0 - direct execution (ie. you handle timing
+          loadDelay:0,
+
+          // CSS class(es) used to render the copy icon.
+          copyIconClass: "fa fa-copy",
+          // CSS class(es) used to render the done icon.
+          checkIconClass: "fa fa-check text-success",
+
+          // hook to allow modifying the text before it's pasted
+          onBeforeTextCopied: function(text, codeElement) {
+            return text;   //  you can fix up the text here
+          }
+        };
+        window.highlightJsBadge(options);
+      },10);
+    </script>
+    <!-- END highlight.js copy -->
     <footer>
       <div class="footer-container">
         <div class="footer-description">

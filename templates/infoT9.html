@@ -1,19 +1,139 @@
-{% extends "./baseinfo.html" %}
-{% block title %}9. Pointers & References & Iterators{% endblock %}
+{% extends "baseinfo.html" %}
+{% block title %}9. Data Structures{% endblock %}
 {% block article %}
-<h1 id="top-head">9 Pointers & References & Iterators</h1>
+<h1 id="top-head">9 Data Structures</h1>
 <h1 id="sub-head">9.1 Pointers</h1>
+<p id="text-style">Computer memory can be thought of as a long row of houses. Each house has a fixed width of 1 byte (4 bits) in size, and each byte of data lives in a specific, unique address. In particular, each address is a number (in hexadecimal). A pointer is a variable which holds the memory address of another variable.<br>
+NOTE: The memory addresses of variables may change every time the program is executed, since fixed memory addresses tend to cause security issues. Nevertheless, the memory address for a variable will never change during execution.</p>
+<img src="{{ url_for('static', filename='images/house-pic.png') }}"alt="Illustration of computer memory">
+<br>
+<pre id="code-style"><code class="c++">int x = 1;
+cout << &x << "\n"; // view the memory address of x
+int* xptr = &x; // &x is of type int* (pointer to an int)
+cout << xptr << "\n"; // view the memory address of x (again)
+cout << *objPointer << "\n"; // view the value at the memory address of x
+</code></pre>
+<br>
+<p id="text-style">You can also access data if you know its specific address.</p>
+<pre id="code-style"><code class="c++">int arr[] = { -2, 21, 42, 0 };
+int* ptr = begin(arr); // pointer to arr[0], equivalent to &arr[0]
+cout << *ptr << " "; // view arr[0]
+++ptr; // increments ptr, so it now points to arr[1]
+cout << *(ptr) << " "; // view arr[1]
+cout << *(ptr+1) << " "; // view arr[2]
+--ptr; // decrements ptr, so it now points to arr[0]
+cout << &arr[3] - ptr << "\n"; // distance between 2 memory addresses
+</code></pre>
+
+<br>
+<p id="text-style">Pointers are useful for:
+<li>Stepping through an array of an unknown size (see below)</li>
+<li>Dynamically allocating memory (not in this course)</li>
+<pre id="code-style"><code class="c++">// an alternative to stepping through an array, when its size is unknown
+int arr[] = { -2, 21, 42, 0 };
+for (int* i = begin(arr); i != end(arr); ++i) { // end(arr) points to address after &arr[3], 
+	cout << *i << " ";
+}
+</code></pre>
+<p id="text-style">WARNING: Pointers may be very unsafe, since they can access memory they are not supposed to (without raising an error). This may happen when you are accessing values past the end of an array.</p>
+<pre id="code-style"><code class="c++">int x = 1;
+cout << *(&x + 100); // dereference a garbage pointer, may return 0 ¯\_(ツ)_/¯
+</code></pre>
 <hr id="art-div">
 
-<h1 id="sub-head">9.2 References</h1>
+
+
+<h2 id="sub-head">9.2 #include &lt;algorithm></h2>
+<p id="text-style">There are many other functions in the algorithm library which will definitely come in useful. The functions that I use most often are:
+<li><a id="link-style" href="https://en.cppreference.com/w/cpp/algorithm/sort">sort</a></li>
+<li><a id="link-style" href="https://en.cppreference.com/w/cpp/algorithm/fill">fill</a></li>
+<li><a id="link-style" href="https://en.cppreference.com/w/cpp/algorithm/min">min</a> (also see <a id="link-style" href="https://en.cppreference.com/w/cpp/algorithm/max">max</a>)</li>
+<li><a id="link-style" href="https://en.cppreference.com/w/cpp/algorithm/lower_bound">lower_bound</a> (also see <a id="link-style" href="https://en.cppreference.com/w/cpp/algorithm/upper_bound">upper_bound</a>, <a id="link-style" href="https://en.cppreference.com/w/cpp/algorithm/binary_search">binary_search</a></li>
+<li><a id="link-style" href="https://en.cppreference.com/w/cpp/algorithm/min_element">min_element</a> (also see <a id="link-style" href="https://en.cppreference.com/w/cpp/algorithm/max_element">max_element</a>)</li>
+<li><a id="link-style" href="https://en.cppreference.com/w/cpp/algorithm/copy">copy</a></li>
+<li><a id="link-style" href="https://en.cppreference.com/w/cpp/algorithm/reverse">reverse</a></li>
+<li><a id="link-style" href="https://en.cppreference.com/w/cpp/algorithm/next_permutation">next_permutation</a></li>
+<br>
+View all functions in the algorithm library <a id="link-style" href="https://en.cppreference.com/w/cpp/header/algorithm">here</a>.
+</p>
+<hr id="art-div"> 
+
+<h2 id="sub-head">9.3 Vectors</h2>
+<p id="text-style">Vectors (from <span id="code-style">#include &lt;vector></span>) are dynamic arrays which resize when an element is inserted or deleted. Please don't get them confused with <a id="link-style" href="https://en.wikipedia.org/wiki/Vector_(mathematics_and_physics)">maths / physics vectors</a>, they are not related in any way.</p>
+<p id="text-style">Using vectors or arrays is up to personal preference, but there are sometimes cases where one datastructure would work better than the other.</p>
+<pre id="code-style"><code class="c++">vector&lt;int> v; // you have to declare the type, but not the size
+for (int i = 0; i < 10; ++i) {
+	v.push_back(i); // O(1) add to right side of the vector
+}
+
+for (int element : v) { // O(n)
+	cout << element << " "; // iterate over the vector from left to right
+}
+cout << "\n";
+
+cout << "removing last element: " << v.back(); // O(1)
+v.pop_back();
+
+v.clear(); // O(n) v is now empty
+v.push_back(100); // O(1)
+v.push_back(12); // O(1)
+v[0] = 5; // O(1)
+
+// v.begin(), v.end() can be used for functions such as:
+cout << *max_element(v.begin(), v.end()); // O(n)
+</code></pre>
 <hr id="art-div">
 
-<h1 id="sub-head">9.3 Iterators</h1>
+<h2 id="sub-head">9.4 Sets</h2>
+<p id="text-style">Sets (from <span id="code-style">#include &lt;set></span>) hold unique values and are are inherently sorted. They provide logn queries, insertions and deletions (using a variation of a binary search), but values cannot be modified once have been inserted.</p>
+<pre id="code-style"><code class="c++">set&lt;int> s;
+s.insert(12); // O(logn)
+s.insert(8);
+s.insert(8); // 8 is already in s
+s.insert(150);
+s.insert(-1);
+
+for (int element : s) {
+	cout << element << " ";
+}
+cout << "\n";
+
+cout << (s.find(2) != s.end()) << "\n"; // O(logn) is 2 in s?
+cout << (s.find(-1) != s.end()) << "\n"; // O(logn) is -1 in s?
+cout << *s.lower_bound(11) << "\n"; // // O(logn) first element >= 11
+
+// replace -1 with -10
+s.erase(s.find(-1)); // O(logn)
+s.insert(-10); // O(logn)
+
+cout << *s.begin(); // O(1) first element in s
+</code></pre>
 <hr id="art-div">
 
-<h2 id="sub-head">9.4 #include &lt;algorithm></h2>
-<p id="text-style">The <a id="link-style" href="http://www.cplusplus.com/reference/algorithm/">algorithm library</a> contains many helpful algorithms.</p>
+<h2 id="sub-head">9.5 Maps</h2>
+<p id="text-style">Maps (from <span id="code-style">#include &lt;map></span>) hold unique sorted keys that correspond to values.</p>
+<pre id="code-style"><code class="c++">map&lt;char, int> m;
+m['c'] = 3;
+m['b'] = 2;
+m['a'] = 2;
+m['a'] = 1; // overwrites previous value
+cout << m['b'] << "\n\n";
+
+m.erase('c');
+for (pair<char, int> kvPair : m) {
+	cout << kvPair.first << " " << kvPair.second << "\n";
+}
+
+cout << (*m.lower_bound('a')).second; // first value where key >= 'a'
+</code></pre>
 <hr id="art-div">
 
-<h1 id="sub-head">9.5 Homework</h1>
+
+<h1 id="sub-head">9.6 Homework</h1>
+<p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?set=aio20&problemid=1129">Ghost Encounters</a><br>
+HINT: <span class="hint-style">Why doesn't an array work?</span></p>
+<p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=904">Time warp</a><br>
+HINT: <span class="hint-style">Use the <span id="code-style">.push_back</span> and <span id="code-style">.pop_back </span> operations of a vector</span></p>
+<p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=519">House of a Thousand Blades</a><br>
+HINT: <span class="hint-style">Use the <span id="code-style">.push_back</span> and <span id="code-style">.pop_back </span> operations of a vector</span></p>
 {% endblock %}

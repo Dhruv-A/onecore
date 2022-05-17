@@ -1,0 +1,208 @@
+{% extends "basehtml.html" %}
+{% block title %}6. Styling 2{% endblock %}
+{% block article %}
+<h1 id="top-head">6. Styling 2</h1>
+<h2 id="sub-head">6.1 Getting online fonts</h2>
+<p id="text-style">You might've noticed that the font used in this course
+   isn't any of the fonts we've covered. We selected this font
+   because it fits the design of this website and is easy to read. You
+   can find fonts online and add them to your website. One really easy
+   way to get fonts from online is using
+   <a href="https://fonts.google.com/" id="link-style">Google Fonts</a>. The
+   process is really simple. Firstly, find the font you want. We're going
+   to choose <em>Roboto</em> for this example. Click on it and select the
+   style you want. Once you click <em>Select this style</em>, a sidebar will
+   pop up on the right. Go to the tab with <em>Embed</em>.<br>Now, there are
+   two options:
+   <ol style="margin-left: 1rem">
+     <li>&lt;link></li>
+     <li>@import</li>
+   </ol>
+   Either option works fine! The options for <em>Roboto</em> are</p>
+<pre id="code-style"><code class="html">&lt;link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"></code></pre>
+<p id="text-style">and</p>
+<pre id="code-style"><code class="html">@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');</code></pre>
+<p id="text-style">Note that the second option needs to be put in your
+   CSS file (we'll cover this later) or in style tags (we'll cover this when
+   we move on to internal styling). After you import a font, you can use it
+   inside the font-family property. Make sure to surround the font with
+   quotation marks!</p>
+<pre id="code-style"><code class="html">&lt;p style="font-family: 'Roboto', Helvetica, sans-serif;">Lorem ipsum dolor sit amet&lt;/p></code></pre>
+<hr id="art-div">
+<h2 id="sub-head">6.2 Text Align</h2>
+<p id="text-style">Sometimes, we want our text to be at the right side
+   or centre. This can be specified using the <em>text-align</em> property.
+   It can take in many different values:</p>
+<ul id="list-style" style="margin-left: 1rem;">
+  <li><em>left</em> is the default value which aligns the text to the left</li>
+  <li><em>center</em> aligns the text to the centre</li>
+  <li><em>right</em> aligns the text to the right</li>
+  <li><em>justify</em> adjusts the text so that each line has
+      the same width</li>
+</ul>
+<pre id="code-style"><code class="html">&lt;p style="text-align: left; width: 50%;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p></code></pre>
+<iframe srcdoc='<p style="text-align: left; width: 50%;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>' width="100%"></iframe>
+<pre id="code-style"><code class="html">&lt;p style="text-align: center; width: 50%;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p></code></pre>
+<iframe srcdoc='<p style="text-align: center; width: 50%;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>' width="100%"></iframe>
+<pre id="code-style"><code class="html">&lt;p style="text-align: right; width: 50%;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p></code></pre>
+<iframe srcdoc='<p style="text-align: right; width: 50%;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>' width="100%"></iframe>
+<pre id="code-style"><code class="html">&lt;p style="text-align: justify; width: 50%;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p></code></pre>
+<iframe srcdoc='<p style="text-align: justify; width: 50%;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>' width="100%"></iframe>
+<hr id="art-div">
+<h2 id="sub-head">6.3 Width</h2>
+<p id="text-style">As you might've noticed above, I also specified
+   <em>width: 50%</em> in the previous examples. This was to make it
+    easier to notice different values of text-align. The <em>width</em>
+    property is very versatile and is used to specify the width of an
+    element. Like with font size from before, it can take in a range
+    of values. The most common one we will look at is percentage values.
+    Percentages are relative values and depend on the original size
+    of an element.</p>
+<pre id="code-style"><code class="html">&lt;p style="width: 20%;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p></code></pre>
+<iframe srcdoc='<p style="width: 20%;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>' width="100%"></iframe>
+<pre id="code-style"><code class="html">&lt;p style="width: 50%;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p></code></pre>
+<iframe srcdoc='<p style="width: 50%;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>' width="100%"></iframe>
+<pre id="code-style"><code class="html">&lt;p style="width: 70%;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p></code></pre>
+<iframe srcdoc='<p style="width: 70%;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>' width="100%"></iframe>
+<pre id="code-style"><code class="html">&lt;p style="width: 100%;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p></code></pre>
+<iframe srcdoc='<p style="width: 100%;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>' width="100%"></iframe>
+<p id="text-style">The <em>width</em> property is useful for much more
+   than paragraphs. It cam control the sizing of almost every element
+   you will use. In the below example, I am using width to change the width
+   of the display box. I won't show you the code for the box itself as it
+   is more complicated than what we have learnt so far, however, I will
+   be using the width property to alter its size.</p>
+<iframe srcdoc='<p style="width: 100%;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>' width="50%"></iframe>
+<iframe srcdoc='<p style="width: 100%;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>' width="80%"></iframe>
+<iframe srcdoc='<p style="width: 100%;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>' width="100%"></iframe>
+<hr id="art-div">
+<h2 id="sub-head">6.4 Text Decoration</h2>
+<p id="text-style">Text decoration defines certain decorative properties
+   of text. This includes underlined and strikethrough text. Remember the
+   default appearance of hyperlinks was not very pleasing. We can change
+   that using the <em>text-decoration</em> property. Below is a normal
+   link:</p>
+<pre id="code-style"><code class="html">&lt;a href="https://onecore.tech/">CORE Website&lt;/a></code></pre>
+<iframe srcdoc='<a href="https://onecore.tech/">CORE Website</a>' width="100%"></iframe>
+<p id="text-style">We can set the <em>text-decoration</em> property to
+   <em>none</em> to remove the underline from the link.</p>
+<pre id="code-style"><code class="html">&lt;a style="text-decoration: none;" href="https://onecore.tech/">CORE Website&lt;/a></code></pre>
+<iframe srcdoc='<a style="text-decoration: none" href="https://onecore.tech/">CORE Website</a>' width="100%"></iframe>
+<p id="text-style">Additionally, we can change the colour of the link to
+   something that matches the website better.</p>
+<pre id="code-style"><code class="html">&lt;a style="text-decoration: none; color: rgb(66, 138, 245);" href="https://onecore.tech/">CORE Website&lt;/a></code></pre>
+<iframe srcdoc='<a style="text-decoration: none; color: rgb(66, 138, 245);" href="https://onecore.tech/">CORE Website</a>' width="100%"></iframe>
+<p id="text-style">Conversely, we can underline text to make it stand out.
+   Let's take the bookshop example from before and underline the heading to
+   make it stand out.</p>
+<pre id="code-style"><code class="html">&lt;p style="text-decoration: underline blue ;">CORE's Bookshop&lt;/p></code></pre>
+<iframe srcdoc="<p style='text-decoration: underline blue ;'>CORE's Bookshop</p>" width="100%"></iframe>
+<p id="text-style">Within the property, we can specify multiple conditions.</p>
+<pre id="code-style"><code class="html">&lt;p style="text-decoration: underline blue wavy;">CORE's Bookshop&lt;/p></code></pre>
+<iframe srcdoc="<p style='text-decoration: underline blue wavy;'>CORE's Bookshop</p>" width="100%"></iframe>
+<pre id="code-style"><code class="html">&lt;p style="text-decoration: underline red dotted;">CORE's Bookshop&lt;/p></code></pre>
+<iframe srcdoc="<p style='text-decoration: underline red dotted;'>CORE's Bookshop</p>" width="100%"></iframe>
+<p id="text-style">There are other things you can do with text-decoration.</p>
+<pre id="code-style"><code class="html">&lt;p style="text-decoration: overline blue;">CORE's Bookshop&lt;/p></code></pre>
+<iframe srcdoc="<p style='text-decoration: overline blue;'>CORE's Bookshop</p>" width="100%"></iframe>
+<hr id="art-div">
+<h2 id="sub-head">6.5 Line Height</h2>
+<p id="text-style">The <em>line-height</em> property defines the height
+   of a line.</p>
+<pre id="code-style"><code class="html">&lt;p style="line-height: 80%;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p></code></pre>
+<iframe srcdoc="<p style='line-height: 80%;'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>" width="100%"></iframe>
+<pre id="code-style"><code class="html">&lt;p style="line-height: 100%;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p></code></pre>
+<iframe srcdoc="<p style='line-height: 100%;'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>" width="100%"></iframe>
+<pre id="code-style"><code class="html">&lt;p style="line-height: 200%;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p></code></pre>
+<iframe srcdoc="<p style='line-height: 200%;'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>" width="100%"></iframe>
+<hr id="art-div">
+<h2 id="sub-head">6.6 Internal Styling</h2>
+<p id="text-style">Styling within elements is sometimes really convenient,
+   however, it can make the HTML really hard to read and is all over the place.
+   Another way to style our HTML is using <em>internal styling</em>. We will
+   discuss the layout for this in the next module, however, I'll go through
+   the basics here.</p>
+<p id="text-style">Firstly, you need to use style tags at top of the page to
+   specify that you will put styling there.</p>
+<pre id="code-style"><code class="html">&lt;style>
+
+&lt;/style>
+
+
+&lt;p>This is a paragraph&lt;/p></code></pre>
+<p id="text-style">Let's say that we want all paragraphs to be coloured blue.
+   We can specify this inside the style tags. We first specify the
+   element we want to style and then use curly braces {} to put
+   the styling in.</p>
+<pre id="code-style"><code class="html">&lt;style>
+p {
+  color: red;
+}
+&lt;/style>
+
+
+&lt;p>This is a paragraph&lt;/p></code></pre>
+<iframe srcdoc="<style>
+p {
+  color: red;
+}
+</style>
+
+
+<p>This is a paragraph</p>" width="100%"></iframe>
+<p id="text-style">Every single paragraph will be coloured red because of
+   this styling. If we want all paragraphs to also be 50% width
+   and all h1 headings to be blue at the same time, we can also specify those
+   as well.</p>
+<pre id="code-style"><code class="html">&lt;style>
+p {
+  color: red;
+  width: 50%;
+}
+h1 {
+  color: blue;
+}
+&lt;/style>
+
+&lt;h1>This is the heading&lt;/h1>
+&lt;p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p></code></pre>
+<iframe srcdoc="<style>
+p {
+  color: red;
+  width: 50%;
+}
+h1 {
+  color: blue;
+}
+</style>
+
+<h1>This is the heading</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>" width="100%"></iframe>
+<hr id="art-div">
+<h2 id="sub-head">6.7 Background Colour</h2>
+<p id="text-style">The background colour of the page can be set using
+   <em>background-color</em>. When we want the whole page to be a specific
+   colour, we can set the background colour of the <em>body</em> to that
+   colour.</p>
+<pre id="code-style"><code class="html">&lt;style>
+body {
+  background-color: black;
+}
+p {
+  color: white;
+}
+&lt;/style>
+
+&lt;p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p></code></pre>
+<iframe srcdoc="<style>
+body {
+  background-color: black;
+}
+p {
+  color: white;
+}
+</style>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>" width="100%"></iframe>
+
+{% endblock %}

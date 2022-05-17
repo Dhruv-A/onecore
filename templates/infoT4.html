@@ -13,7 +13,6 @@ cout &lt;&lt; (3 > 4) &lt;&lt; "\n"; // is 3 more than 4?
 cout &lt;&lt; (10 >= 9) &lt;&lt; "\n"; // is 10 more than or equal to 9?
 cout &lt;&lt; (2 != 5) &lt;&lt; "\n"; // is 2 not equals to 5?
 </code></pre>
-<p id="text-style">NOTE: <span id="code-style">=</span> is used when assigning a value to a variable, but <span id="code-style">==</span> is used to check if 2 things are equal</p>
 <p id="text-style"><b>Some further conditions</b></p>
 <table style="width:300px">
 	<tr>
@@ -33,29 +32,40 @@ cout &lt;&lt; (2 != 5) &lt;&lt; "\n"; // is 2 not equals to 5?
 <pre id="code-style"><code class="c++">bool canDrive = (age >= 16) && (hasLplate || hasPplate || hasLicense) && !isDrunk;</code></pre>
 <br>
 <p id="text-style">TASK: Write a simple program to check a customer's movie ticket. It is a valid ticket if it is at least 10 minutes before the movie starts, and the customer is accompanied by an adult if he/she is less than 12 years old.</p>
-<p id="text-style">HINT: <span id="hint-style">consider 2 cases: the person is less than 12 years old, the person is more than or equal to 12 years old</p>
+<p id="text-style">HINT: <span class="hint-style">consider 2 cases: the person is less than 12 years old, the person is more than or equal to 12 years old</p>
 <p id="text-style">SOLUTION:</p>
-<span id="hint-style"><pre id="code-style"><code class="c++">bool valid = (time <= starTime - 10) && ((age < 12 && accompanied) || age >= 12);</code></pre></span>
+<span class="hint-style"><pre id="code-style"><code class="c++">bool valid = (time <= startTime - 10) && ((age < 12 && accompanied) || age >= 12);</code></pre></span>
 <hr id="art-div">
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 <h2 id="sub-head">4.2 If Statements</h2>
-<p id="text-style">If statments allow the program to execute certain code when a condition is met. It must consist of the <span id="code-style">if</span> keyword, followed by the condition in parenthesis. For example:</p>
+<p id="text-style">If statments allow the program to execute certain code when a condition is met. It must consist of the <span id="code-style">if</span> keyword, followed by the condition in parentheses. For example:</p>
 <pre id="code-style"><code class="c++">if (isRainy) {
 	// bring an umbrella
 }
 else if (isCoronavirus) {
-	// otherwise, wear a mask
+	// wear a mask
 }
 else if (isCold) {
-	// otherwise, bring a jumper
+	// wear a jumper
 }
 else {
-	// otherwise, bring a hat
+	// wear a hat
 }
 </code></pre>
-<p id="text-style">NOTE: if 1 condition is true, the following conditionals are not considered.  This means 1 action will be done.</p>
+<p id="text-style">NOTE: only 1 of these actions will be done. (i.e. if <span id="code-style">isRainy == true</span>, the code does not consider any following options)</p>
 <p id="text-style">NOTE: you can only use the <span id="code-style">else if</span> or <span id="code-style">else</span> keyword after you have used the <span id="code-style">if</span> keyword</p>
 <hr id="art-div">
 
@@ -69,18 +79,19 @@ while (i < 10) {
 }
 </pre></code>
 <p id="text-style">What is the output of the program?</p>
-<p id="text-style">ANSWER: <span id="hint-style"><span id="code-style">"0 1 2 3 4 5 6 7 8 9"</span><br>10 was not printed, because when <span id="code-style">i = 0</span>, the condition <span id="code-style">(i < 10)</span> will be false, and the while loop will terminate</span></p>
+<p id="text-style">ANSWER: <span class="hint-style"><span id="code-style">"0 1 2 3 4 5 6 7 8 9"</span><br>10 was not printed, because when <span id="code-style">i = 10</span>, the condition <span id="code-style">(i < 10)</span> will be false, and the while loop will terminate</span></p>
 <br>
-<p id="text-style">TASK: write a program to accept integer input until it encounters <span id="code-style">0</span>. The print the sum of the integer inputs.</p>
+<p id="text-style">TASK: write a program to accept integer inputs until it encounters <span id="code-style">0</span>. Then print the sum of the integer inputs.</p>
 <p id="text-style">ANSWER:</p>
-<span id="hint-style"><pre id="code-style"><code class="c++">int num;
+<span class="hint-style"><pre id="code-style"><code class="c++">int num;
 int total = 0;
 cin >> num;
 total += num;
 while (num != 0) {
 	cin >> num;
 	total += num;
-}</code></pre></span>
+}
+cout << "The sum is " << total;</code></pre></span>
 <hr id="art-div">
 
 
@@ -95,7 +106,7 @@ while (num != 0) {
 <p id="text-style"><b>iteration execution</b> This statement gets executed after the loop body, ahead of the next condition evaluation. You can enter multiple statements in the iteration execution part, such as <span id="code-style">a++, b+=10, c=b+a</span>.</p>
 <p id="text-style">TASK: Write code to print integers from 0 to 9 (inclusive) using a for loop?</p>
 <p id="text-style">ANSWER:</p>
-<span id="hint-style"><pre id="code-style"><code class="c++">for (int i = 0; i < 10; i++) {
+<span class="hint-style"><pre id="code-style"><code class="c++">for (int i = 0; i < 10; i++) {
 	cout << i << " ";
 }</code></pre></span>
 <p id="text-style">NOTE: do not <span id="code-style">cout &lt;&lt; i;</span> outside the loop. It only "exists" inside the loop</p>
@@ -104,11 +115,11 @@ while (num != 0) {
 
 <h2 id="sub-head">4.5 Homework</h2>
 <p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=382">The Tremendous Tak-Tak Tree</a><br>
-HINT: <span id="hint-style">There is a walkthrough <a id="link-style" href="http://orac.amt.edu.au/aioc/tutorials/walkthroughs/05.html">here</a>, although they do file input differently.</p>
+HINT: <span class="hint-style">There is a walkthrough <a id="link-style" href="http://orac.amt.edu.au/aioc/tutorials/walkthroughs/05.html">here</a>, although they do file input differently.</p>
 <p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=383">Counting To Infinity</a><br>
-HINT: <span id="hint-style">There is a walkthrough <a id="link-style" href="http://orac.amt.edu.au/aioc/tutorials/walkthroughs/06.html">here</a>, although they do file input differently.</p>
+HINT: <span class="hint-style">There is a walkthrough <a id="link-style" href="http://orac.amt.edu.au/aioc/tutorials/walkthroughs/06.html">here</a>, although they do file input differently.</p>
 <p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=397">A Dish Best Served Cold</a><br>
-HINT: <span id="hint-style">There is a walkthrough <a id="link-style" href="http://orac.amt.edu.au/aioc/tutorials/walkthroughs/07.html">here</a>, although they do file input differently.</p>
+HINT: <span class="hint-style">There is a walkthrough <a id="link-style" href="http://orac.amt.edu.au/aioc/tutorials/walkthroughs/07.html">here</a>, although they do file input differently.</p>
 <p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=398">Drought</a><br>
-HINT: <span id="hint-style">There is a walkthrough <a id="link-style" href="http://orac.amt.edu.au/aioc/tutorials/walkthroughs/08.html">here</a>, although they do file input differently.</p>
+HINT: <span class="hint-style">There is a walkthrough <a id="link-style" href="http://orac.amt.edu.au/aioc/tutorials/walkthroughs/08.html">here</a>, although they do file input differently.</p>
 {% endblock %}

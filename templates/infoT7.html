@@ -3,7 +3,7 @@
 {% block article %}
 <h1 id="top-head">7 Functions</h1>
 <h2 id="sub-head">7.1 Functions</h2>
-<p id="text-style">A function is a group of code that which can be run repeatedly (when called repeatedly). It allows you to define code once and reuse it many times (to avoid writing out the same coude multiple times). You can pass functions data (known as parameters), and the function can return data.</p
+<p id="text-style">A function is a group of code that which can be run repeatedly (when called repeatedly). It allows you to define code once and reuse it many times (to avoid writing out the same code multiple times). You can pass functions data (known as parameters), and the function can return data.</p
 <p id="text-style">For example, I can make a (trivial) function to do addition, which takes 2 parameters (a, b) and returns their sum:</p>
 <pre id="code-style"><code class="c++">int add(int a, int b) {
   int output = a + b;
@@ -24,39 +24,37 @@ cout << add(-1, add(7, 8)) << "\n";</code></pre>
 <hr id="art-div">
 
 <h2 id="sub-head">7.2 Recursive Functions</h2>
-<p id="text-style">"Why are recursive functions so narcissistic? Because they always call themselves."</p>
-<p id="text-style">An example recursive function may look like this:</p>
+<p id="text-style"><i>"Why are recursive functions so narcissistic? Because they always call themselves."</i></p>
+<p id="text-style">Recursive functions allow a complex idea or problem to be defining by simpler versions of itself. They are functions which call themselves to solve a smaller subproblem of the original problem. Usually, there is a base case to stop the function from calling itself infinitely. <br>
+For example, "I think you think I love you" contains the sentence "You think I love you", contains the sentence "I love you".</p>
+<p id="text-style">Another example is the recursive definition of the factorial function:<br>
 <pre id="code-style"><code class="c++">int factorial(int n) {
 	if (n == 1) {
-		return 1; // termination condition OR initial condition
+		return 1; // base case
 	}
 	return n * factorial(n - 1); // recurrence relation
-}</code></pre>
-<p id="text-style">What does this code do?</p>
-<p id="text-style">ANSWER: <span id="hint-style"><a id="link-style" href="https://en.wikipedia.org/wiki/Recurrence_relation#Factorial">Factorial recursive definition</a>
-</span><br>
-NOTE: you may want to break recursive functions down into its termination condition and recurrance relation.</p>
-<p id="text-style">Recursive functions are going to be handy later on, since it allows you to define a complex thing by defining simpler versions of it.<br>
-For example, I have to smh before i shake my smh.</p>
+}</code></pre></p>
+<p id="text-style">What does this code do?<br>
+ANSWER: <span class="hint-style"><a id="link-style" href="https://en.wikipedia.org/wiki/Recurrence_relation#Factorial">Factorial recursive definition</a></span></p>
 <p id="text-style">TASK: print all combinations of the numbers 1 to 3 in increasing order (don't hard code it).<br>
 Also, what is the time complexity, if it was combinations from 1 to n?</p>
-<p id="text-style">HINT: <span id="hint-style">First, try doing it without the spaces</span></p>
-<pre id="code-style"><code> 1
+<p id="text-style">HINT: <span class="hint-style">First, try doing it without the whitespace</span></p>
+<pre id="code-style"><code>1
+ 1
   1
-   1
-   2
-   3
   2
-   1
-   2
-   3
+  3
+ 2
+  1
+  2
+  3
 ...</code></pre>
 <p id="text-style">ANSWER: </p>
-<span id="hint-style"><pre id="code-style"><code class="c++">void printCombinations(int depth) {
+<span class="hint-style"><pre id="code-style"><code class="c++">void printCombinations(int depth) {
 	if (depth > 3) return; // termination condition
 	for (int i = 1; i <= 3; i++) {
 		// output i, padded with sufficient spaces
-		for (int rep = 0; rep < depth; rep++) {
+		for (int rep = 1; rep < depth; rep++) {
 			cout << " ";
 		}
 		cout << i << "\n";
@@ -70,11 +68,10 @@ printCombinations(1);</code></pre></span>
 <hr id="art-div">
 
 <h2 id="sub-head">7.3 Homework</h2>
-<p id="text-style">Its a good idea to practise using functions, even if they arenot necessary</p>
 <p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=688">Archery</a><br>
-HINT: <span id="hint-style">make a function to return the larger of 2 numbers</span></p>
+HINT: <span class="hint-style">make a function to return the larger of 2 numbers</span></p>
 <p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=981">Snake Charmer</a><br>
-HINT: <span id="hint-style">make a function to change direction</span></p>
+HINT: <span class="hint-style">make a function to change direction</span></p>
 <p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=248">Chimpanzee</a><br>
-HINT: <span id="hint-style">make a function to test your solution in a square region, and print the values accordingly. (good for debugging)</span></p>
+HINT: <span class="hint-style">make a function to test your solution in a square region, and print the values accordingly. (good for debugging)</span></p>
 {% endblock %}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% block head %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylenew.css') }}" />
+    <link rel="icon" href="{{ url_for('static', filename='images/logo-core-small.png') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>ONECORE</title>
+    {% endblock %}
+  </head>
+  <body>
+    <div id="page-container">
+      <div id="content-wrap">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <nav>
+        <img class="home-image-core" src="{{ url_for('static', filename='images/logo-core.png') }}" alt="">
+        <div class="nav-container">
+        <ul class="nav-links-container">
+          <li class="nav-link-item">
+            <a class="nav-link-text-left" href="/courses">Courses</a>
+          </li>
+          <li class="nav-link-item">
+            <a class="nav-link-text-right" href="/puzzles">Puzzles</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+
+    <section class="body-content-text">
+    <div class="body-content">
+      <p>Learning made easy</p>
+      <p class="home-small-text">Learn how to code with our simple tutorials</p>
+    </div>
+    </section>
+
+    <section class="python-home-section">
+    <ul class="python-home-list">
+      <li>
+      <div class="python-home-paragraph">
+      <p class="python-home-text">Learn about competitive programming
+          in C++, a great way to prepare for
+          competitions.</p>
+      <ul class="python-home-flex-container">
+        <li class="python-home-nav python-home-nav-left">
+        <div class="course-home-button-container">
+          <a href="/python/1" class="python-home-nav-button">Python</a>
+        </div>
+      </li>
+        <li class="python-home-nav python-home-nav-right">
+        <div class="course-home-button-container">
+          <a href="/courses" class="python-home-nav-button">Courses</a>
+        </div>
+      </li>
+      </ul>
+    </div>
+  </li>
+  <li>
+      <div class="python-course-card">
+        <div class="course-card">
+          <img src="./static/images/cpp-logo.png" alt="C++" class="course-image cpp-image"/>
+          <!-- <div class="course-card-title">Python Fundamentals</div> -->
+          <div class="course-card-button-container">
+            <a href="/informatics/1" class="course-card-button">Start</a>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+    </section>
+    <section>
+      <p class="home-puzzle-text">Try out our puzzles</p>
+      <div class="puzzle-home-button-container">
+        <a href="/puzzles" class="python-home-nav-button puzzle-home-button">Puzzles</a>
+      </div>
+    </section>
+  </body>
+</html>

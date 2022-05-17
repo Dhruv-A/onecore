@@ -1,0 +1,75 @@
+{% extends "basecsharp.html" %}
+{% block title %}1. Introduction{% endblock %}
+{% block article %}
+<h1 id="top-head">1. Introduction</h1>
+<h2 id="sub-head">1.1 Setting up the project</h2>
+<p id="text=style">Hi, I’m Cristina and I will be taking you through
+   the C# course. This course is for intermediate coders who have
+   complete the Introduction to Python course. We will be using
+   Visual Studio (VS) code for this course. Installation instructions can
+   be found <a id="link-style" href="https://code.visualstudio.com/download">here</a>. Once you
+   have set up VS Code we need to install the C# extension, you
+   can install it from within VS Code by searching for 'C#' in the
+   Extensions view (Ctrl+Shift+X). You also need to
+   download the <a id="link-style" href="https://dotnet.microsoft.com/download">.NET
+   Core application</a>.</p>
+<p id="text-style">We will create a .NET Core console app project named "HelloWorld".</p>
+<ol style="margin-left: 1rem;">
+  <li>Select File > Open Folder (File > Open... on macOS) from the main menu.</li>
+  <li>In the Open Folder dialog, create a HelloWorld folder
+      and click Select Folder (Open on macOS).</li>
+  <li>The folder name becomes the project name and the
+      namespace name by default. You'll add code later in the
+      tutorial that assumes the project namespace is HelloWorld.</li>
+  <li>Open the Terminal in Visual Studio Code by selecting View >
+      Terminal from the main menu.</li>
+  <li>The Terminal opens with the command prompt in the HelloWorld folder.</li>
+  <li>In the Terminal, enter the following command:
+  dotnet new console</li>
+</ol>
+<p id="text-style"><strong>Important:</strong> Remember when you are creating the
+   dot net application it needs to be in the folder. For
+   example, if the terminal does not open in the correct
+   directory of your HelloWorld file, type cd HelloWorld into
+   the terminal to redirect the terminal to the file. </p>
+<img src="https://drive.google.com/uc?export=view&id=1raYOOjuN7sl3ohANp_s5YNhQEyiW-Odk"
+alt="csharp-image">
+<p id="text-style">As we can see from this screenshot, we have
+   successfully created the folder HelloWorld (under the Explorer
+   tab), however, as highlighted the terminal is pointing to the
+   wrong directory.</p>
+<img src="https://drive.google.com/uc?export=view&id=1yHuKn8nK01JjyRGgHWT6qklgYAA9Vv6Q"
+alt="csharp-image">
+<p id="text-style">However, as our HelloWorld file is
+   within the “CORE” file (directory above the folder we can’t),
+   we can perform a cd (change directory command). Remember
+   the cd command in terminal is just for relative file
+   access. This means that it only works if you’re in the
+   immediate file structure. In our current directory, we
+   wouldn’t be able to use this method to jump to a directory
+   nested two levels down.<br>Once you have created the
+   application (dotnet new console), this should appear
+   under the explorer. In the terminal, type dotnet run console.
+   “Hello World!” should be printed to the screen.</p>
+<img src="https://drive.google.com/uc?export=view&id=1WSzPY5txeZfBBnD_9Gus3W6daJ7-7HUA"
+alt="csharp-image">
+<hr id="art-div">
+<h2 id="sub-head">1.2 About the .NET framework</h2>
+<p id="text-style">C# relies on the .NET framework, and is a language
+  mainly used for app development. This framework refers to a
+  collection of application programming interfaces (APIs) and a shared
+  library of code that developers can call when building applications.
+  For example, rather than a developer having to write code to interpret
+  what a ping result may mean, they can use code from the library to
+  perform that function. Furthermore, the .NET framework provides a
+  runtime environment. Say you have a piece of code (exe file) that works
+  on a certain machine, e.g. a windows computer. When you try to run
+  the exe file on a MAC-OS device it doesn’t work because the code
+  is dependent on the operating system. The .NET framework’s runtime
+  environment can be thought of as a “virtual machine” allowing the
+  code to run independently from the computer’s hardware. One way to
+  think about this is that the .NET framework is a universal driver
+  that allows your code to work with many devices.
+For more information, check out <a id="link-style" href="https://docs.microsoft.com/en-gb/dotnet/framework/get-started/#Introducing">this article from Microsoft</a>
+</p>
+{% endblock %}

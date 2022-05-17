@@ -6,7 +6,7 @@
 <p id="text-style">Invariants are rules that are always true. For prefix sums, the invariant is: <br>
 <span id="code-style">prefix[i]</span> holds the sum of <span id="code-style">arr[1] + arr[2] + ... + arr[i]</span></p>
 <p id="text-style">These allow you to make safe assumptions and figure out which conditions need to be satisfied. By restraining what you code can and can't do, you can reduce logical errors.</p>
-<p id="text-style">For a Rubiks Cube, one invariant is that each face has 9 coloured squares. If this invariant is satisfied after every move, you don't have a "malfunctioning" cube. This means you can work towards the solution more easily.</p>
+<p id="text-style">For example, a trivial <a id="link-style" href="https://deepblue.lib.umich.edu/bitstream/handle/2027.42/143508/Online%20Appendix%202.pdf">Rubik's Cube invariant</a> is that each face has 9 coloured squares. If this invariant is satisfied after every move, you don't have a "malfunctioning" cube. This means you can work towards the solution more easily.</p>
 <hr id="art-div">
 
 
@@ -20,16 +20,16 @@ let <span id="code-style">m = (l+r)/2</span><br>
 if <span id="code-style">arr[m] < K</span>, the answer is either in the range <span id="code-style">[l..m)</span><br>
 Otherwise, the answer is in the range <span id="code-style">[m..r)</span><br>
 The answer can't be in both ranges, because there is only 1 answer.</p>
-<p id="text-style">NOTE: binary search works for a sorted array, because it is monotonically increasing. In other words:
-<p id="text-style">if <span id="code-style">arr[i] > K</span>, then <span id="code-style">arr[i..N] > K</span></p></p>
-<p id="text-style">if <span id="code-style">arr[i] < K</span>, then <span id="code-style">arr[0..i] < K</span></p></p>
+<p id="text-style">NOTE: binary search works for a sorted array, because it is monotonically increasing. In other words:<br>
+if <span id="code-style">arr[i] > K</span>, then <span id="code-style">arr[i..N] > K</span><br>
+if <span id="code-style">arr[i] < K</span>, then <span id="code-style">arr[0..i] < K</span></p>
 <hr id="art-div">
 
 <h2 id="sub-head">10.3 Time Complexity Analysis</h2>
 <p><img src="https://miro.medium.com/max/890/1*1nOsAVYmvY48FgMVLNIZ5Q.jpeg" alt="Binary Search Visualisation"></p>
 <p id="text-style">The number of steps you take is equivalent to how many times you can divide <span id="code-style">N</span> by 2.</p>
 <p id="text-style">If you divided <span id="code-style">N</span> by 10 at each step, the number steps is be approximately the number of digits in <span id="code-style">N</span> (<span id="code-style">logN</span> base 10)<br>
-So, if you divide <span id="code-style">N</span> by 2 at each step, the number of steps is approximately the number of digits in <span id="code-style">N</span> base 2 (<span id="code-style">logN</span> base 2)<p>
+So, if you divide <span id="code-style">N</span> by 2 at each step, the number of steps is approximately the number of digits in <span id="code-style">N base 2</span> (<span id="code-style">logN</span> base 2)<p>
 <p id="text-style">Thus binary search takes <span id="code-style">O(logn)</span></p></p>
 <hr id="art-div">
 
@@ -94,14 +94,15 @@ cout << upper_bound(begin(arr), end(arr), 42) - begin(arr) << "\n"; // outputs 6
 <h2 id="sub-head">10.6 Homework</h2>
 <p id="text-style">The following problems are not directly binary search problems. Instead, they require you to find some condition or value to binary search for</p>
 <p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=1080">Medusa's Snakes</a><br>
-HINT: <span id="hint-style">It's obvious that it is a binary search, but what are you binary searching for?</span></p>
+HINT: <span class="hint-style">It's obvious that it is a binary search, but what are you binary searching for?</span></p>
 <p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=985">Lollipops, Sweets and Chocolates</a><br>
-HINT: <span id="hint-style">Similarly to "Medusa's Snakes", what are you binary searching for?</span></p>
+HINT: <span class="hint-style">Similarly to "Medusa's Snakes", what are you binary searching for?</span></p>
 <p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=1082">Lollipops, Sweets and Chocolates II</a><br>
-HINT: <span id="hint-style">Similarly to "Lollipops, Sweets and Chocolates", what are you binary searching for?</span></p>
+HINT: <span class="hint-style">Similarly to "Lollipops, Sweets and Chocolates", what are you binary searching for?</span></p>
 <p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=255">Spies V: Voices in the Dark</a><br>
-HINT: <span id="hint-style">Try creating an <span id="code-style">O(jg)</span> algorithm first, then optimise it.</span></p>
+HINT: <span class="hint-style">Try creating an <span id="code-style">O(jg)</span> algorithm first, then optimise it.</span></p>
+<p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=853">Wet Chairs</a><br>
+HINT: <span class="hint-style">How do you answer queries of the form "What is the smallest distance possible if the leftmost person sits on chair <span id="code-style">i</span>?"</span></p>
 <p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=269">Cats III: Off With Their Heads</a><br>
-HINT: <span id="hint-style">How can you find the number of cats less than k?</span></p>
-(Wet chairs: https://orac.amt.edu.au/cgi-bin/train/problem.pl?set=aio15int&problemid=853)
+HINT: <span class="hint-style">How can you find the number of cats less than k?</span></p>
 {% endblock %}

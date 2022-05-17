@@ -44,12 +44,12 @@ for (int rep = 0; rep < 10; ++rep) {
 }</code></pre>
 <br>
 <p id="text-style">TASK: What is the time complexity of: <span id="code-style">a++</span></p>
-<p id="text-style">ANSWER: <span id="hint-style"><span id="code-style">O(1)</span>, since it only requires a constant number of operations</span></p>
+<p id="text-style">ANSWER: <span class="hint-style"><span id="code-style">O(1)</span>, since it only requires a constant number of operations</span></p>
 <hr id="art-div">
 
 
 <h2 id="sub-head">5.3 Homework</h2>
-<i>NOTE: as you do these questions, consider the time complexity of each solution.</i>
+<p id="text-style">NOTE: as you do these questions, consider the time complexity of each solution.</p>
 <p id="text-style">TASK:<br>
 Accept an integer <span id="code-style">n</span> from the user, and print a triangle of size <span id="code-style">n</span>. For example, when <span id="code-style">n = 5</span>:</p>
 <pre id="code-style"><code class="c++">#
@@ -58,11 +58,11 @@ Accept an integer <span id="code-style">n</span> from the user, and print a tria
 ####
 #####</code></pre>
 <p id="text-style">ANSWER:</p>
-<p id="hint-style"><pre id="code-style"><code class="c++">/* 
-It does 1 + 2 + 3 + ... + n operations
+<p class="hint-style"><pre id="code-style"><code class="c++">/* 
+The program does 1 + 2 + 3 + ... + n operations
 This is equivalent to n*(n+1)/2
 You could also calculate it visually as "half the n*n square"
-Thus the time complexity is O(n) - the constant factor is ignored
+Thus the time complexity is O(n), since the constant factor is ignored
 */
 for (int rowWidth = 1; rowWidth <= N; ++rowWidth) {
 	for (int col = 0; col < rowWidth; ++col) {
@@ -72,10 +72,10 @@ for (int rowWidth = 1; rowWidth <= N; ++rowWidth) {
 }</code></pre></p>
 <br>
 <p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=372">A Mindbending Scenario</a><br>
-HINT: <span id="hint-style">There is a walkthrough <a id="link-style" href="http://orac.amt.edu.au/aioc/tutorials/walkthroughs/04.html">here</a>, although they do file input differently.</p>
+HINT: <span class="hint-style">There is a walkthrough <a id="link-style" href="http://orac.amt.edu.au/aioc/tutorials/walkthroughs/04.html">here</a>, although they do file input differently.</p>
 <p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=1077">Vases</a><br>
-HINT: <span id="hint-style">Break it into cases.</p>
+HINT: <span class="hint-style">Break it into cases.</p>
 <p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=973">Missing Mango</a><br>
-HINT: <span id="hint-style">Break it into cases.</p>
-<hr id="art-div">
+HINT: <span class="hint-style">Break it into cases.</p>
+
 {% endblock %}

@@ -1,20 +1,169 @@
-{% extends "./baseinfo.html" %}
-{% block title %}12. 2-Dimensional Dynamic Programming{% endblock %}
+{% extends "baseinfo.html" %}
+{% block title %}12. Advanced Dynamic Programming{% endblock %}
 {% block article %}
-<h1 id="top-head">12 2-Dimensional Dynamic Programming</h1>
-<h2 id="sub-head">12.? Template</h2>
-<b>1. Define subproblems</b>
-<b>2. Define recurrance relation</b>
-<b>3. Order of computation</b>
-<b>4. Recognise base cases</b>
-<b>5. Implementation</b>
+<h1 id="top-head">12 Advanced Dynamic Programming</h1>
+<h2 id="sub-head">12.1 Problem: LIS (Longest Increasing Subsequence)</h2>
+<pre id="code-style"><code class="c++">Input:      stdin (cin)
+Output:     stdout (cout)
+Time Limit: 1s
+</code></pre>
+<p id="text-style">The input will contain 2 integers: <span id="code-style">R, C</span> (<span id="code-style">1 <= R, C <= 1000</span>), followed by an R lines of C integers, representing the total number of flowers on that square (there are less than <span id="code-style">1e9</span> flowers in total).<br>
+Bessie wants to walk from the top left to the bottom right corner, but she can only step left or down (she hasn't learnt otherwise). On each square, she eats all the flowers. What is the maximum number of flowers she can eat?</p>
+
+<p id="text-style"><b>Sample Input</b></p>
+<pre id="code-style"><code class="c++">5 5
+6 7 4 7 8
+7 6 1 1 4
+3 5 7 8 2
+2 6 7 0 2
+7 3 5 6 1</code></pre>
+
+<p id="text-style"><b>Sample Output</b></p>
+<pre id="code-style"><code class="c++">50</code></pre>
+
+<p id="text-style"><b>Explanation</b></p>
+<p id="text-style">By choosing the path below, Bessie is able to eat 50 flowers. This is the maximum number of flowers she can eat. Note that there are multiple paths where Bessie can eat 50 flowers.</p>
+<pre id="code-style"><code class="c++">
+6-7 4 7 8
+  |      
+7 6 1 1 4
+  |      
+3 5-7 8 2
+    |    
+2 6 7 0 2
+    |    
+7 3 5-6-1
+</code></pre>
 <hr id="art-div">
 
-<h2 id="sub-head">12.4 Homework</h2>
-<p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=116">Bouncy Ball</a><br>
-HINT: <span id="hint-style"></span></p>
+
+
+<h2 id="sub-head">12.2 Solution</h2>
+<p id="text-style"><b>1. Define subproblems</b></p>
+<p id="text-style"><span id="code-style">dp[i][j]</span> is the maximum number of flowers when Bessie reaches the square at row i and col j</p>
+<p id="text-style"><b>2. Define recurrence relation</b></p>
+<p id="text-style">Notice that if Bessie can get to <span id="code-style">(i, j)</span> and eat <span id="code-style">dp[i][j]</span> flowers, Bessie can get to:<br>
+<li><span id="code-style">(i, j+1)</span> and eat <span id="code-style">dp[i][j] + flowers[i][j+1]</span> flowers</li>
+<li><span id="code-style">(i+1, j)</span> and eat <span id="code-style">dp[i][j] + flowers[i+1][j]</span> flowers</li><br>
+This process creates a <b>push dp</b>, where the current states "push" data to new states.</p>
+
+<p id="text-style">This is analogous to saying: Bessie can get to (i, j) and eat either:
+<li><span id="code-style">dp[i-1][j] + flowers[i][j]</span> flowers</li>
+<li><span id="code-style">dp[i][j-1] + flowers[i][j]</span> flowers</li><br>
+This process creates a <b>pull dp</b>, where the new state "pulls" data from previous states.</p>
+<p id="text-style"><b>3. Order of computation</b></p>
+<p id="text-style"><span id="code-style">dp[i][j]</span> relies on <span id="code-style">dp[i-1][j]</span> and <span id="code-style">dp[i][j-1]</span><br>
+so compute <span id="code-style">i</span> from <span id="code-style">0 -> R-1</span>, compute <span id="code-style">j</span> from <span id="code-style">0 -> C-1</span></p>
+<p id="text-style"><b>4. Recognise base cases</b></p>
+<p id="text-style">You start from the top left corner, so <span id="code-style">dp[0][0] = flowers[0][0]</span><br>
+Howeveer, this question is analogous to asking: Bessie moves up and right, to get from the bottom right corner to the top left corner. A solution which solves for this is also valid.</p>
+<p id="text-style"><b>5. Implementation</b></p>
+<pre id="code-style"><code class="c++">// bottom up pull dp
+#include &lt;algorithm>
+#include &lt;iostream>
+using namespace std;
+
+int R, C, flowers[1005][1005], dp[1005][1005];
+int main() {
+	cin >> R >> C;
+	for (int r = 1; r <= R; ++r) {
+		for (int c = 1; c <= C; ++c) {
+			cin >> flowers[r][c];
+		}
+	}
+	
+	fill(dp[0], dp[1004], numeric_limits&lt;int>::min()); // initially, all squares are infinitely bad
+	dp[1][1] = flowers[1][1]; // base case
+	// order of computation
+	for (int r = 1; r <= R; ++r) {
+		for (int c = 1; c <= C; ++c) {
+			// recurrence relation
+			if (r - 1 >= 1) { // Bessie could have come from the square above
+				dp[r][c] = max(dp[r][c], dp[r-1][c] + flowers[r][c]);
+			}
+			if (c - 1 >= 1) { // Bessie could have come from the square to the left
+				dp[r][c] = max(dp[r][c], dp[r][c-1] + flowers[r][c]);
+			}
+		}
+	}
+	cout << dp[R][C];
+}
+</code></pre>
+<pre id="code-style"><code class="c++">// bottom up push dp
+#include &lt;algorithm>
+#include &lt;iostream>
+using namespace std;
+
+int R, C, flowers[1005][1005], dp[1005][1005];
+int main() {
+	cin >> R >> C;
+	for (int r = 1; r <= R; ++r) {
+		for (int c = 1; c <= C; ++c) {
+			cin >> flowers[r][c];
+		}
+	}
+	
+	fill(dp[0], dp[1004], numeric_limits&lt;int>::min()); // initially, all squares are infinitely bad
+	dp[1][1] = flowers[1][1]; // base case
+	// order of computation
+	for (int r = 1; r <= R; ++r) {
+		for (int c = 1; c <= C; ++c) {
+			// recurrence relation
+			// Bessie could go to the square below
+			dp[r+1][c] = max(dp[r+1][c], dp[r][c] + flowers[r+1][c]);
+			
+			// Bessie could go to the square on the right
+			dp[r][c+1] = max(dp[r][c+1], dp[r][c] + flowers[r][c+1]);
+		}
+	}
+	cout << dp[R][C];
+}
+</code></pre>
+<pre id="code-style"><code class="c++">// top down (pull) dp
+#include &lt;algorithm>
+#include &lt;iostream>
+#include &lt;limits>
+using namespace std;
+
+int R, C, flowers[1005][1005], cache[1005][1005];
+bool seen[1005][1005];
+
+int dp(int r, int c) {
+	if (seen[r][c]) {
+		return cache[r][c];
+	}
+	if (r < 0 || c < 0) { // this is not a valid square
+		return numeric_limits&ltint>::min();
+	}
+	
+	seen[r][c] = true;
+	if (r == 0 && c == 0) { // base case
+		cache[r][c] = 0;
+	}
+	else { // recurrence relation
+		cache[r][c] = max(
+			dp(r-1, c) + flowers[r][c], // Bessie could have come from the square above
+			dp(r, c-1) + flowers[r][c]  // Bessie could have come from the square to the left
+		);
+	}
+	return cache[r][c];
+}
+
+int main() {
+	cin >> R >> C;
+	for (int r = 1; r <= R; ++r) {
+		for (int c = 1; c <= C; ++c) {
+			cin >> flowers[r][c];
+		}
+	}
+	cout << dp(R, C);
+}
+</code></pre>
+<hr id="art-div">
+
+<h2 id="sub-head">12.3 Homework</h2>
 <p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=313">Graffiti</a><br>
-HINT: <span id="hint-style"></span></p>
+HINT: <span class="hint-style">Can you make the dp size dp[n][constant]</span></p>
 <p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=926">Pyramid Cake</a><br>
-HINT: <span id="hint-style"></span></p>
+HINT: <span class="hint-style">Are you able to take advantage of the shape of the cake?</span></p>
 {% endblock %}

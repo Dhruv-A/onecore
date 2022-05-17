@@ -1,0 +1,91 @@
+{% extends "basehtml.html" %}
+{% block title %}5. Styling 1{% endblock %}
+{% block article %}
+<h1 id="top-head">5. Styling 1</h1>
+<h2 id="sub-head">5.1 Inline, Internal and External Styling</h2>
+<p id="text-style">There are many different ways to style HTML content
+   using CSS.
+   <ul style="margin-left: 1rem;" id="list-style">
+   <li style="padding: 0.5rem;"><em>Inline Styling</em> is the first way to add styling.
+   It is not very efficient and hard to read but is quick and applies
+   to a single element. It works by adding the <em>style</em> attribute
+   to a HTML tag.</li>
+   <li style="padding: 0.5rem;"><em>Internal Styling</em> works by adding all the styling
+   at the top of a HTML file before the content that will be displayed.
+   This means we can put all our code in one file, however, it can
+   make the file really long.</li>
+   <li style="padding: 0.5rem;"><em>External Styling</em> is preferred for
+   most websites, especially bigger ones with multiple webpages. In this,
+   all the styling is put in a separate file which we link to the
+   HTML file. This is the method used to style this website and is the most
+   common method you'll find.</li></ul></p>
+<hr id="art-div">
+<h2 id="sub-head">5.2 Colour</h2>
+<p id="text-style">The first useful thing we will learn is changing the
+   colour of text. This can be used to change the colour of text
+   in headings, paragraphs, hyperlinks etc. When we program in HTML, we
+   use the American preferred spelling for words, so to change the colour,
+   we use the <em>color</em> property. Because we will implement this inline,
+   we will put the styling in the <em>style</em> attribute and surround the
+   styling with quotation marks.</p>
+<pre id="code-style"><code class="html">&lt;p style="color: green;">CORE Bookshop&lt;/p></code></pre>
+<iframe srcdoc='<p style="color: green;">CORE Bookshop</p>' width="100%"></iframe>
+<p id="text-style">There are many different colours you can specify by name.
+   However, you can also use the rgb value of a colour, or its hex value.</p>
+<pre id="code-style"><code class="html">&lt;p style="color: rgb(50, 168, 82);">CORE Bookshop&lt;/p></code></pre>
+<iframe srcdoc='<p style="color: rgb(50, 168, 82);">CORE Bookshop</p>' width="100%"></iframe>
+<p id="text-style">Let's break down the above examples. When we use CSS styling,
+   we always need to end each line with a semi-colon. This is so that the
+   code knows that is the end of a line. Additionally, after the property
+   name, such as color, we put in a colon before the value.</p>
+<hr id="art-div">
+<h2 id="sub-head">5.3 Font Size</h2>
+<p id="text-style">We can change the font size using the <em>font-size</em>
+   property. The value specified can range in terms of form. Let's look
+   at each type one by one. Firstly, we can specify words such as <em>
+   small</em> and <em>large</em>.</p>
+<pre id="code-style"><code class="html">&lt;p style="font-size: small;">Lorem ipsum dolor sit amet&lt;/p>
+&lt;p style="font-size: medium;">Lorem ipsum dolor sit amet&lt;/p>
+&lt;p style="font-size: large;">Lorem ipsum dolor sit amet&lt;/p></code></pre>
+<iframe srcdoc='<p style="font-size: small;">Lorem ipsum dolor sit amet</p>
+<p style="font-size: medium;">Lorem ipsum dolor sit amet</p>
+<p style="font-size: large;">Lorem ipsum dolor sit amet</p>' width="100%"></iframe>
+<p id=text-style>Another way to specify size is using pixels, which are
+   a set unit of measurement. This is denoted with <em>px</em>
+   as shown below.</p>
+<pre id="code-style"><code class="html">&lt;p style="font-size: 10px;">Lorem ipsum dolor sit amet&lt;/p>
+&lt;p style="font-size: 15px;">Lorem ipsum dolor sit amet&lt;/p>
+&lt;p style="font-size: 20px;">Lorem ipsum dolor sit amet&lt;/p></code></pre>
+<iframe srcdoc='<p style="font-size: 10px;">Lorem ipsum dolor sit amet</p>
+<p style="font-size: 15px;">Lorem ipsum dolor sit amet</p>
+<p style="font-size: 20px;">Lorem ipsum dolor sit amet</p>' width="100%"></iframe>
+<p id="text-style">The final way we will cover here is using a percent
+   proportion to the parent element. Basically, this is a relative size
+   and is good for adjusting to different screen sizes.</p>
+<pre id="code-style"><code class="html">&lt;p style="font-size: 50%;">Lorem ipsum dolor sit amet&lt;/p>
+&lt;p style="font-size: 70%;">Lorem ipsum dolor sit amet&lt;/p>
+&lt;p style="font-size: 90%;">Lorem ipsum dolor sit amet&lt;/p></code></pre>
+<iframe srcdoc='<p style="font-size: 50%;">Lorem ipsum dolor sit amet</p>
+<p style="font-size: 70%;">Lorem ipsum dolor sit amet</p>
+<p style="font-size: 90%;">Lorem ipsum dolor sit amet</p>' width="100%"></iframe>
+<hr id="art-div">
+<h2 id="sub-head">5.4 Font Family</h2>
+<p id="text-style">Changing the font style of the text is very common
+   and important for the style of our webpage. You can choose from various
+   provided font types and generic names. Some font names you can
+   use include <em>Times</em> and <em>Arial</em> and some generic names
+   include <em>serif</em> and <em>cursive</em>. It is common to provide
+   <strong>fallback fonts</strong> when we specify a font in case the desired
+   font cannot be found. Let's say I want a paragraph to have <em>Times
+   New Roman</em> as the font.</p>
+<pre id="code-style"><code class="html">&lt;p style="font-family: 'Times New Roman', Times, serif;">Lorem ipsum dolor sit amet&lt;/p></code></pre>
+<iframe srcdoc="<p style='font-family: Times, serif;'>Lorem ipsum dolor sit amet</p>" width="100%"></iframe>
+<p id="text-style">There are a few things to consider. What the styling
+   above does is try to make the text <em>Times New Roman</em> but
+   if the browser doesn't support that, it tries <em>Times</em> which is
+   less specific and more common. If this also fails, it defaults to
+   <em>serif</em> and lets the browser choose an available serif font. These
+   extra fonts we specify as backup are called fallback fonts. Note that
+   when you specify the name of an actual font like <em>Times New Roman</em>
+   and <em>Arial</em>, you have to put them in quotation marks.</p>
+{% endblock %}

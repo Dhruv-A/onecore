@@ -1,0 +1,92 @@
+{% extends "basecsharp.html" %}
+{% block title %}2. Classes{% endblock %}
+{% block article %}
+<h1 id="top-head">2. Classes</h1>
+<h2 id="sub-head">2.1 Classes</h2>
+<p id="text=style">In the explorer tab click on Program.cs, this
+  is the main code in our application. The other folders/files
+  contain code for the execution of C# in the .NET framework. We
+  do not have to worry about them in this course.<br>
+  When you create your VS project it should look like this, and
+  you might be wondering what it means.</p>
+<pre id="code-style"><code class="C#">using System;
+
+namespace HelloWorld
+{
+  class Program
+  {
+    static void Main(string[], args)
+    {
+      Console.WriteLine("Hello World!");
+    }
+  }
+}</code></pre>
+<p id="text-style">System is a namespace and Console is a
+   class in that namespace. A namespace is just the name of our
+   class. You can think of it now as a container that holds
+   functions defined in that namespace. The System namespace
+   contains fundamental classes and base classes that define
+   commonly used value and reference data types, events and event
+   handlers, interfaces, attributes, and processing exceptions.
+   You can think of it as the basic functions for running C#.</p>
+<p id="text-style">When you are using any objects within
+  the namespace, you need to call its Dispose method to
+  "clean up" the object when it is done (after
+  it has been handled by the system). The <span style="color: red">using</span>
+  statement simplifies the code that you have to
+  write as once the handling is done, it automatically
+  cleans up the object. Main is the application entry point, the
+  method that's called automatically by the runtime when it launches
+  the application. Any command-line arguments supplied when the
+  application is launched are stored in the args array.</p>
+<p id="text-style">Classes can be thought of as blueprints to an
+  ‘object’. For example, we want to create many houses, but houses
+  all have similar attributes e.g. a roof, front door, windows etc.
+  However, the specific type of these attributes vary e.g. one house
+  can have a blue roof, one a red roof etc, and one may have 4 windows
+  while one may have 6. Hence, we can use a class to define these
+  common attributes but not necessarily their value. This allows the
+  programmer to reuse attributes, saving coding time and space making
+  the entire project more efficient, as well as improving readability.
+  Methods are another term for functions, and these can also be
+  defined in our class. For example, we have a method to add cement
+  to our bricks, which occurs for all houses.</p>
+<p id="text-style">All methods within our class must be defined
+  before the “static void Main”, you can think of this main method
+  where you would normally write Python code. In Python, the “main
+  processing” is not written within a namespace and class, in C# this
+  takes place in the Main method. To demonstrate this, we’re going
+  to make our class define a house.</p>
+<pre id="code-style"><code class="C#">using System;
+
+namespace HelloWorld
+{
+  class Program
+  {
+    public int doors;
+
+    public void door_method() {
+      System.Console.WriteLine("The door count is: ");
+      System.Console.WriteLine(doors);
+    }
+    static void Main(string[], args)
+    {
+      Console.WriteLine("Hello World!");
+      Program core_house = new Program();
+      core_house.doors ++;
+      core_house.door_method();
+    }
+  }
+}</code></pre>
+<p id="text-style">Terminal:</p>
+<pre id="code-style"><code class="C#">Hello World!
+The door count is:
+1</code></pre>
+<p id="text-style">Here we have added an integer
+  called “door” and a “door_method” which simply tells
+  us what the door count is. In the main code we create an object,
+  and then increment that door value of that object and call the
+  “door_method”. This is a simple overview so that you get familiar
+  with the structure of C#, in the next part of the course we will
+  be looking at these in depth.</p>
+{% endblock %}

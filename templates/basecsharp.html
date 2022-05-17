@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block body %}
+<main>
+  <section class="section-container" id="course-container">
+  <div class="section-content" id="course-content">
+    <aside id="course-sidebar">
+      <div id="sidebar-title">Lessons</div>
+        <!-- A list of all the lessons in this course -->
+        <a class="lesson-card" href="/csharp/1">1. Introduction</a>
+
+        <a class="lesson-card" href="/csharp/2">2. Classes</a>
+
+        <a class="lesson-card" href="/csharp/3">3. Data Types</a>
+
+        <a class="lesson-card" href="/csharp/4">4. Decisions</a>
+
+        <a class="lesson-card" href="/csharp/5">5. Loops</a>
+
+        <a class="lesson-card" href="/csharp/6">6. Data collections and Arrays</a>
+
+    </aside>
+      <article id="course-lesson">
+        {% block article %}
+        {% endblock %}
+        <hr id="art-div">
+        <a href="/csharp/{{ prev }}" id="link-style" style="{% if prev < 1 %}display: none{% endif %}";>Previous</a>
+        <a href="/csharp/{{ next }}" id="link-style" style="text-align: right; float: right;{% if next > 6 %}display: none{% endif %}";>Next</a>
+
+      </article>
+  </div>
+  </section>
+</main>
+{% endblock %}

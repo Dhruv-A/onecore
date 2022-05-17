@@ -48,54 +48,58 @@
             </div>
           </div>
         </li>
-        <li class="course-box">
-          <div id="course-cards">
-            <div class="course-card">
-              <img
-                src="./static/images/html-logo.png"
-                alt="Python"
-                id="course-image-container" class="html-image"
-              />
-              <!-- <div class="course-card-title">Python Fundamentals</div> -->
-              <div class="course-card-desc">
-                Make your own website with our articles and
-                tutorials on HTML and CSS.
-              </div>
-              <div class="course-card-button-container">
-                <a href="#" class="course-card-button"
-                  >Upcoming</a
-                >
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="course-box">
+    <li class="course-box">
       <div id="course-cards">
         <div class="course-card">
           <img
-            src="{{ url_for('static', filename='images/react-logo.png') }}"
-            alt="React"
-            id="course-image-container"
-            class="react-image"
+            src="./static/images/cpp-logo.png"
+            alt="C++"
+            id="course-image-container" class="cpp-image"
           />
           <!-- <div class="course-card-title">Python Fundamentals</div> -->
           <div class="course-card-desc">
-            Built user interfaces and applications with React, an open
-            source Javascript library
+            Learn about competitive programming
+            in C++, a great way to prepare for
+            competitions.
           </div>
           <div class="course-card-button-container">
-            <a href="#" class="course-card-button">Upcoming</a>
+            <a href="/informatics/1" class="course-card-button"
+              >Start</a
+            >
           </div>
         </div>
       </div>
       </li>
+      <li class="course-box">
+        <div id="course-cards">
+          <div class="course-card">
+            <img
+              src="./static/images/csharp-logo.png"
+              alt="C#"
+              id="course-image-container"
+              class="cpp-image"
+            />
+            <!-- <div class="course-card-title">Python Fundamentals</div> -->
+            <div class="course-card-desc">
+              A C# course for students who have
+              completed the Python course and want to learn
+              something different.
+            </div>
+            <div class="course-card-button-container">
+              <a href="/csharp/1" class="course-card-button"
+                >Start</a
+              >
+            </div>
+          </div>
+        </div>
+    </li>
       </ul>
         </div>
       </section>
       <section class="section-container puzzle-container" id="courses-container">
         <div class="section-content puzzle-content" id="courses-content">
           <div id="courses-description" class="puzzle-description">
-            <div id="courses-desc-title" class="puzzle-title">Try out our puzzles!</div>
+            <div id="courses-desc-title" class="puzzle-title" style="margin-left: 1rem">Try out our puzzles!</div>
           </div>
           <div class="course-card-button-container">
             <a href="/puzzles" class="course-card-button">Start</a>

@@ -33,12 +33,4 @@
 }
 #art-div {
   margin: 3rem 0;
-}
-#hint-style:hover {
-    color: black;
-    background-color: white;
-}
-#hint-style {
-    color: gray;
-    background-color: gray;
-}
+  }
