@@ -80,9 +80,12 @@ nav {
 .body-content-text {
   height: 70vh;
 }
+.home-large-text {
+  font-size: 2.5rem;
+}
 .home-small-text {
-  font-size: 1rem;
-  padding-left: 1rem;
+  font-size: 1.5rem;
+  /* padding-left: 1rem; */
 }
 
 .python-home-section {
