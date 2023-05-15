@@ -4,43 +4,43 @@
 <h1 id="top-head">2 ORAC</h1>
 <h2 id="sub-head">2.1 Using ORAC</h2>
 <i>The origins and meaning of "ORAC have remained unknown for many generations. Some say it is short for "Oracle". Some say it stands for "ORAC Recursive Acronym Competition". It will probably forever remain a mystery...</i>
-<p id="text-style">ORAC is a online training site for the Australian Informatics Olympiad programme, which allows you to view past problems. <a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/register.pl">Register an account</a> to get your solutions marked by an online evaluator.</p>
+<p id="text-style">ORAC is a online training site for the Australian Informatics Olympiad programme, which allows you to view past problems. <a id="link-style" href="https://orac2.info/accounts/register/">Register an account</a> to get your solutions marked by an online evaluator.</p>
 <p id="text-style">We will be using ORAC to revise our C++ and informatics knowledge at the end of every lesson.</p>
 <hr id="art-div">
 
 <h2 id="sub-head">2.2 Standard Input/Output</h2>
-<p id="text-style">Displaying a number is similar to displaying text in Sup World</p>
+<p id="text-style">Displaying a number is similar to displaying text in Sup World:</p>
 <pre id="code-style"><code class="c++">cout &lt;&lt; 1;</pre></code>
-<p id="text-style">You can also display a space</p>
+<p id="text-style">You can also display a space:</p>
 <pre id="code-style"><code class="c++">cout &lt;&lt; " ";</pre></code>
-<p id="text-style">or display a new line</p>
+<p id="text-style">or display a new line:</p>
 <pre id="code-style"><code class="c++">cout &lt;&lt; "\n";</pre></code>
-<p id="text-style">or display multiple things on a single line</p>
+<p id="text-style">or display multiple things on a single line:</p>
 <pre id="code-style"><code class="c++">cout &lt;&lt; "Sup to " &lt;&lt; "the world of " &lt;&lt; "c++" &lt;&lt; "\n";</pre></code>
 <br>
-<p id="text-style">To receive input, use <span id="code-style">cin</span></p>
+<p id="text-style">To receive input, use <span id="code-style">cin</span>:</p>
 <pre id="code-style"><code class="c++">int num; // this creates a variable num which is an int (integer)
 cin >> num;</code></pre>
-<pre id="code-style"><code class="c++">string name; // this creates a variable name which is a string
-cin >> name;</code></pre>
+<pre id="code-style"><code class="c++">string your_name; // this creates a variable called you_name, stores some text
+cin >> your_name;</code></pre>
 <hr id="art-div">
 
 
 <h2 id="sub-head">2.3 File Input/Output</h2>
 <p id="text-style">To read and write to files, you need <span id="code-style">#include &lt;fstream></span> at the top of your program (f stands for file).</p>
-<p id="text-style">Then you can open a file for reading (called fin) which is an <span id="code-style">ifstream</span> (Input File stream)<br>
+<p id="text-style">Then you can open a file for reading (called fin) which is an <span id="code-style">ifstream</span> (Input File stream).<br>
 <pre id="code-style"><code class="c++">ifstream fin {"filenamein.txt"};</code></pre><br>
-Or similarly open a file for writing (called fout) which is an <span id="code-style">ofstream</span> (Output File stream)<br>
+Or similarly open a file for writing (called fout) which is an <span id="code-style">ofstream</span> (Output File stream).<br>
 <pre id="code-style"><code class="c++">ofstream fout {"filenameout.txt"};</code></pre><br>
 <p id="text-style">Although you do not have to call your files "fin", "fout", you should choose a consistent and logical name.</p>
 </p>
-<p id="text-style">The following program reads a number from a file "in.txt", displays the number, and writes "Sup World" to a file "out.txt"</p>
+<p id="text-style">The following program reads a number from a file "in.txt", displays the number, and writes "Sup World" to a file "out.txt".</p>
 <pre id="code-style"><code class="c++">#include &lt;iostream>
 #include &lt;fstream>
 using namespace std;
 int main() {
-	ifstream fin{"in.txt"};
-	ofstream fout{"out.txt"};
+	ifstream fin {"in.txt"};
+	ofstream fout {"out.txt"};
 
 	// write some code
 	int num;
@@ -48,13 +48,12 @@ int main() {
 	cout &lt;&lt; "in.txt contains the number " &lt;&lt; num;
 	fout &lt;&lt; "Sup world";
 }</code></pre>
-<p id="text-style">NOTE: It is not advised to read and write from the same file simultaneously.</p>
-<p id="text-style">Have a look <a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/sample.pl#cpp">here</a> for more examples</p>
+<p id="text-style">Have a look <a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/sample.pl#cpp">here</a> for more examples.</p>
 <hr id="art-div">
 
 
 <h2 id="sub-head">2.4 Homework</h2>
-<p id="text-style">Solve <a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=333">Addition</a></p>
+<p id="text-style">Solve <a id="link-style" href="https://orac2.info/problem/simpleadd/">Addition</a></p>
 <p id="text-style">HINT: <span class="hint-style">There is a walkthrough <a id="link-style" href="http://orac.amt.edu.au/aioc/tutorials/walkthroughs/01.html">here</a>, although they do file input differently.
 </span></p>
 {% endblock %}

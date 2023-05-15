@@ -2,20 +2,21 @@
 {% block title %}8. Prefix and Suffix Sums{% endblock %}
 {% block article %}
 <h1 id="top-head">8 Prefix & suffix sums</h1>
-<h2 id="sub-head">8.1 Problem: Range Queries</h2>
-<pre id="code-style"><code class="c++">Input:      stdin (cin)
+<i>This chapter is in the form of a problem statement because I think its cool. Attempt the subtasks yourself and try coding it, before looking at the solutions. Think about time complexity, and whether long longs are necessary here.</i><br><br>
+<h2 id="sub-head">8.1 The Problem: Range Sum Queries</h2>
+<pre id="code-style"><code class="text">Input:      stdin (cin)
 Output:     stdout (cout)
 Time Limit: 1s
 </code></pre>
 <p id="text-style">The input will contain 2 integers: <span id="code-style">N</span> and <span id="code-style">Q</span> (<span id="code-style">1 <= N, Q <= 100000</span>)</p>
 <p id="text-style">This is followed by an array of <span id="code-style">N</span> items <br>
-<span id="code-style">x1 x2 ... xN</span> (<span id="code-style">-1e6 <= xi <= 1e6</span>)<p>
+<span id="code-style">x1 x2 ... xN</span> (<span id="code-style">-1e6 ≤ xi ≤ 1e6</span>)<p>
 <p id="text-style">This is followed by <span id="code-style">Q</span> queries of the form: <br>
-<span id="code-style">l r</span> (<span id="code-style">1 <= l <= r <= N</span>)<br>
+<span id="code-style">l r</span> (<span id="code-style">1 ≤ l ≤ r ≤ N</span>)<br>
 "What is the sum of the values from <span id="code-style">l</span> to <span id="code-style">r</span>?" </p>
-<p id="text-style">Subtask 1: <span id="code-style">N, Q < 1000</span></p>
-<p id="text-style">Subtask 2: all <span id="code-style">l = 1</span></p>
-<p id="text-style">Subtask 3: No additional constraints apply</p>
+<p id="text-style">Subtask 1: <span id="code-style">N, Q ≤ 1000</span></p>
+<p id="text-style">Subtask 2: In every query, <span id="code-style">l = 1</span>.</p>
+<p id="text-style">Subtask 3: No additional constraints apply.</p>
 
 <p id="text-style"><b>Sample Input</b></p>
 <pre id="code-style"><code class="c++">5 3
@@ -32,25 +33,66 @@ Time Limit: 1s
 <hr id="art-div">
 
 <h2 id="sub-head">8.2 Solution: Range Queries Subtask 1</h2>
-<p id="text-style">For subtask 1, both <span id="code-style">N</span> and <span id="code-style">Q</span> are small. This means that you can take <span id="code-style">O(N)</span> for each query (<span id="code-style">O(NQ)</span> in total)</p>
-<p id="text-style">i.e. for each query, walk through the array and count the sum</p>
+<p id="text-style">For subtask 1, both <span id="code-style">N</span> and <span id="code-style">Q</span> are small. This means that you can take <span id="code-style">O(N)</span> for each query (<span id="code-style">O(NQ)</span> in total).</p>
+<p id="text-style">On other words, for each query, walk through the array and count the sum.</p>
+<pre id="code-style"><code class="c++">#include &lt;iostream>
+using namespace std;
+
+int N, Q, arr[100005];
+
+int main() {
+	cin >> N >> Q;
+	for (int i = 1; i <= N; i++) {
+		cin >> arr[i];
+	}
+	
+	for (int q = 0; q < Q; q++) {
+		int l, r;
+		cin >> l >> r;
+		int total = 0;
+		for (int i = l; i <= r; i++) {
+			total += arr[i];
+		}
+		cout << total << "\n";
+	}
+}
+</code></pre>
 <hr id="art-div">
 
 <h2 id="sub-head">8.3 Solution: Range Queries Subtask 2</h2>
 <p id="text-style">Observe that if you walk through the array for each query, you are potentially seeing the same element many times.</p>
-<p id="text-style">A prefix sum stores the sum of elements from the beginning to the current value</p>
+<p id="text-style">A prefix sum stores the sum of elements from the beginning to the current value:</p>
 <pre id="code-style"><code class="c++">prefix[i-1] = arr[1] + arr[2] + ... + arr[i-1]; // assuming 1 indexed
 prefix[i] =   arr[1] + arr[2] + ... + arr[i-1] + arr[i]; 
 </code></pre>
-<p id="text-style">So you can say <span id="code-style">prefix[i] = prefix[i-1] + arr[i]</span> (make sure that i-1 is a valid array index)</p>
-<p id="text-style">This allows you to calculate the entire prefix sum in linear time, then answer queries in constant time. This is also known as <a id="link-style" href="https://en.wikipedia.org/wiki/Precomputation#:~:text=In%20algorithms%2C%20precomputation%20is%20the,each%20time%20it%20is%20executed.">Precomputation</a>
-</p>
-<p id="text-style"></p>
+<p id="text-style">So you can say <span id="code-style">prefix[i] = prefix[i-1] + arr[i]</span> (make sure that i-1 is a valid array index).</p>
+<p id="text-style">This allows you to calculate the entire prefix sum in linear time, then answer queries in constant time. This is also known as <a id="link-style" href="https://en.wikipedia.org/wiki/Precomputation">Precomputation</a>.</p>
+<pre id="code-style"><code class="c++">#include &lt;iostream>
+using namespace std;
+
+int N, Q, arr[100005], prefix[100005];
+
+int main() {
+	cin >> N >> Q;
+	prefix[0] = 0;
+	for (int i = 1; i <= N; i++) {
+		cin >> arr[i];
+		prefix[i] = prefix[i-1] + arr[i];
+	}
+	
+	for (int q = 0; q < Q; q++) {
+		int l, r;
+		cin >> l >> r;
+		assert(l == 1);
+		cout << prefix[r] << "\n";
+	}
+}
+</code></pre>
 <hr id="art-div">
 
 <h2 id="sub-head">8.4 Solution: Range Queries Subtask 3</h2>
-<p id="text-style">Observe that the sum from <span id="code-style">l</span> to <span id="code-style">r</span> is <span id="code-style">prefix[r] - prefix[l-1]</span><br>
-If you have trouble convincing yourself, fully write out <span id="code-style">prefix[l-1]</span> and <span id="code-style">prefix[r]</span></p>
+<p id="text-style">Observe that the sum from <span id="code-style">l</span> to <span id="code-style">r</span> is <span id="code-style">prefix[r] - prefix[l-1]</span>.<br>
+If you have trouble convincing yourself, fully write out <span id="code-style">prefix[l-1]</span> and <span id="code-style">prefix[r]</span>.</p>
 <pre id="code-style"><code class="c++">#include &lt;iostream>
 using namespace std;
 
@@ -74,10 +116,10 @@ int main() {
 <hr id="art-div">
 
 <h2 id="sub-head">8.5 Homework</h2>
-<p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=1121">Snap dragons: Accumulate</a><br>
-HINT: <span class="hint-style">std::accumulate</span></p>
-<p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=591">Time warp</a><br>
-HINT: <span class="hint-style">Solve the problem inefficiently first, then optimise it afterwards</span></p>
-<p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=450">Dating Site IT</a><br>
-HINT: <span class="hint-style">Suffix sums store the difference between 2 adjacent cells. <span id="code-style">suffix[i] = arr[i] - arr[i-1]</span></span></p>
+<p id="text-style"><a id="link-style" href="https://orac2.info/problem/acio20contest0accumulate/">Snap dragons: Accumulate</a><br>
+HINT: <span class="hint-style">std::accumulate.</span></p>
+<p id="text-style"><a id="link-style" href="https://orac2.info/problem/aiio12timewarp/">Time warp</a><br>
+HINT: <span class="hint-style">Solve the problem inefficiently first, then optimise it afterwards.</span></p>
+<p id="text-style"><a id="link-style" href="https://orac2.info/problem/fario10dating/">Dating Site IT</a><br>
+HINT: <span class="hint-style">We can build a prefix array from an array, but can we can also build the array using the prefix array! What does this look like?</span></p>
 {% endblock %}

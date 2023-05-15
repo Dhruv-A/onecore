@@ -27,8 +27,8 @@ cout << &arr[3] - ptr << "\n"; // distance between 2 memory addresses
 
 <br>
 <p id="text-style">Pointers are useful for:
-<li>Stepping through an array of an unknown size (see below)</li>
-<li>Dynamically allocating memory (not in this course)</li>
+<li>Stepping through an array of an unknown size (see below).</li>
+<li>Dynamically allocating memory (not in this course).</li>
 <pre id="code-style"><code class="c++">// an alternative to stepping through an array, when its size is unknown
 int arr[] = { -2, 21, 42, 0 };
 for (int* i = begin(arr); i != end(arr); ++i) { // end(arr) points to address after &arr[3], 
@@ -59,7 +59,7 @@ View all functions in the algorithm library <a id="link-style" href="https://en.
 <hr id="art-div"> 
 
 <h2 id="sub-head">9.3 Vectors</h2>
-<p id="text-style">Vectors (from <span id="code-style">#include &lt;vector></span>) are dynamic arrays which resize when an element is inserted or deleted. Please don't get them confused with <a id="link-style" href="https://en.wikipedia.org/wiki/Vector_(mathematics_and_physics)">maths / physics vectors</a>, they are not related in any way.</p>
+<p id="text-style">Vectors (from <span id="code-style">#include &lt;vector></span>) are dynamic arrays may resize when an element is inserted or deleted. Please don't get them confused with <a id="link-style" href="https://en.wikipedia.org/wiki/Vector_(mathematics_and_physics)">maths / physics vectors</a>, they are not related in any way.</p>
 <p id="text-style">Using vectors or arrays is up to personal preference, but there are sometimes cases where one datastructure would work better than the other.</p>
 <pre id="code-style"><code class="c++">vector&lt;int> v; // you have to declare the type, but not the size
 for (int i = 0; i < 10; ++i) {
@@ -130,10 +130,6 @@ cout << (*m.lower_bound('a')).second; // first value where key >= 'a'
 
 
 <h1 id="sub-head">9.6 Homework</h1>
-<p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?set=aio20&problemid=1129">Ghost Encounters</a><br>
+<p id="text-style"><a id="link-style" href="https://orac2.info/problem/aio20ghost/">Ghost Encounters</a><br>
 HINT: <span class="hint-style">Why doesn't an array work?</span></p>
-<p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=904">Time warp</a><br>
-HINT: <span class="hint-style">Use the <span id="code-style">.push_back</span> and <span id="code-style">.pop_back </span> operations of a vector</span></p>
-<p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=519">House of a Thousand Blades</a><br>
-HINT: <span class="hint-style">Use the <span id="code-style">.push_back</span> and <span id="code-style">.pop_back </span> operations of a vector</span></p>
 {% endblock %}

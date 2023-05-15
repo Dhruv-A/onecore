@@ -3,7 +3,7 @@
 {% block article %}
 <h1 id="top-head">7 Functions</h1>
 <h2 id="sub-head">7.1 Functions</h2>
-<p id="text-style">A function is a group of code that which can be run repeatedly (when called repeatedly). It allows you to define code once and reuse it many times (to avoid writing out the same code multiple times). You can pass functions data (known as parameters), and the function can return data.</p
+<p id="text-style">A function is a chunck of code, which can be reused. It allows you to define code once and use it many times (to avoid writing out the same code multiple times). You can pass functions data (known as parameters), and the function can return data.</p>
 <p id="text-style">For example, I can make a (trivial) function to do addition, which takes 2 parameters (a, b) and returns their sum:</p>
 <pre id="code-style"><code class="c++">int add(int a, int b) {
   int output = a + b;
@@ -19,8 +19,8 @@ cout << add(-1, add(7, 8)) << "\n";</code></pre>
 }
 </code></pre>
 <p id="text-style">More generally, a function will have the form: <span id="code-style">return_type function_name(parameter1, parameter2, ...) {</span></p>
-<p id="text-style">In fact, <span id="code-style">int main()</span> is a function, which is called when code is executed. (The return value, known as the exit code, is by default 0, unless the program has an error)</p>
-<p id="text-style">It is essential you use functions. It makes debugging easier, since you can divide your code into functions and check that each function works. Also, it is cleaner to read (and when other people read your code).</p>
+<p id="text-style">In fact, <span id="code-style">int main()</span> is a function, which is called when code is executed. (The return value, known as the exit code, is by default 0, unless the program has an error).</p>
+<p id="text-style">It is essential you use functions. It makes debugging easier, since you can divide your code into functions and check that each function works. Also, it is cleaner to read, for both yourself and others.</p>
 <hr id="art-div">
 
 <h2 id="sub-head">7.2 Recursive Functions</h2>
@@ -37,7 +37,7 @@ For example, "I think you think I love you" contains the sentence "You think I l
 <p id="text-style">What does this code do?<br>
 ANSWER: <span class="hint-style"><a id="link-style" href="https://en.wikipedia.org/wiki/Recurrence_relation#Factorial">Factorial recursive definition</a></span></p>
 <p id="text-style">TASK: print all combinations of the numbers 1 to 3 in increasing order (don't hard code it).<br>
-Also, what is the time complexity, if it was combinations from 1 to n?</p>
+Also, what is the time complexity, if it were instead combinations of the numbers 1 to n?</p>
 <p id="text-style">HINT: <span class="hint-style">First, try doing it without the whitespace</span></p>
 <pre id="code-style"><code>1
  1
@@ -68,10 +68,10 @@ printCombinations(1);</code></pre></span>
 <hr id="art-div">
 
 <h2 id="sub-head">7.3 Homework</h2>
-<p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=688">Archery</a><br>
-HINT: <span class="hint-style">make a function to return the larger of 2 numbers</span></p>
-<p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=981">Snake Charmer</a><br>
-HINT: <span class="hint-style">make a function to change direction</span></p>
-<p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=248">Chimpanzee</a><br>
-HINT: <span class="hint-style">make a function to test your solution in a square region, and print the values accordingly. (good for debugging)</span></p>
+<p id="text-style"><a id="link-style" href="https://orac2.info/problem/aio13archery/">Archery</a><br>
+HINT: <span class="hint-style">Make a function to return the larger of 2 numbers.</span></p>
+<p id="text-style"><a id="link-style" href="https://orac2.info/problem/aio17snake/">Snake Charmer</a><br>
+HINT: <span class="hint-style">Make a function to change direction.</span></p>
+<p id="text-style"><a id="link-style" href="https://orac2.info/problem/aio05chimp/">Chimpanzee</a><br>
+HINT: <span class="hint-style">Make a function to test your solution in a square region, and print the values accordingly. (good for debugging).</span></p>
 {% endblock %}

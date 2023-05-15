@@ -11,15 +11,15 @@
 
 
 <h2 id="sub-head">10.2 The Idea</h2>
-<p id="text-style">Given a sorted array of <span id="code-style">N</span> elements (<span id="code-style">arr[0], arr[1], ... arr[N-1]</span>), binary search finds the highest <span id="code-style">i</span> such that <span id="code-style">arr[i] <= K</span><br>
-<i>We assume that there is an answer. So <span id="code-style">arr[0] <= K</span></i></p>
+<p id="text-style">Given a sorted array of <span id="code-style">N</span> elements <span id="code-style">arr[0], arr[1], ... arr[N-1]</span>, binary search can find the highest <span id="code-style">i</span> such that <span id="code-style">arr[i] ≤ K</span>. We will call this the target.<br>
+<i>We assume that there is a target. So <span id="code-style">arr[0] ≤ K</span>.</i></p>
 <p id="text-style">Observe that if the array is not sorted, it would take a <a id="link-style" href="https://www.geeksforgeeks.org/linear-search/">linear search</a>. Thus, there must be some way to optimise this by exploiting the fact that the array is sorted.</p>
-<p id="text-style">Invariant: the answer is in the range <span id="code-style">[l..r)</span></p>
+<p id="text-style">Invariant: the target is in the range <span id="code-style">[l..r)</span> (the range which includes <span id="code-style">l</span> and up to but not including <span id="code-style">r</span>)</p>
 At each step, we can narrow the range by half:<br>
-let <span id="code-style">m = (l+r)/2</span><br>
-if <span id="code-style">arr[m] < K</span>, the answer is either in the range <span id="code-style">[l..m)</span><br>
-Otherwise, the answer is in the range <span id="code-style">[m..r)</span><br>
-The answer can't be in both ranges, because there is only 1 answer.</p>
+let <span id="code-style">m = (l+r)/2</span>.<br>
+if <span id="code-style">arr[m] ≤ K</span>, the target could be <span id="code-style">m</span>, but it is definitely anything lower. So, the target is in the range <span id="code-style">[m..r)</span>.<br>
+Otherwise, the target is in the range <span id="code-style">[l..m)</span>.<br>
+The target can't be in both ranges, because there is only 1 target.</p>
 <p id="text-style">NOTE: binary search works for a sorted array, because it is monotonically increasing. In other words:<br>
 if <span id="code-style">arr[i] > K</span>, then <span id="code-style">arr[i..N] > K</span><br>
 if <span id="code-style">arr[i] < K</span>, then <span id="code-style">arr[0..i] < K</span></p>
@@ -29,14 +29,11 @@ if <span id="code-style">arr[i] < K</span>, then <span id="code-style">arr[0..i]
 <p><img src="https://miro.medium.com/max/890/1*1nOsAVYmvY48FgMVLNIZ5Q.jpeg" alt="Binary Search Visualisation"></p>
 <p id="text-style">The number of steps you take is equivalent to how many times you can divide <span id="code-style">N</span> by 2.</p>
 <p id="text-style">If you divided <span id="code-style">N</span> by 10 at each step, the number steps is be approximately the number of digits in <span id="code-style">N</span> (<span id="code-style">logN</span> base 10)<br>
-So, if you divide <span id="code-style">N</span> by 2 at each step, the number of steps is approximately the number of digits in <span id="code-style">N base 2</span> (<span id="code-style">logN</span> base 2)<p>
-<p id="text-style">Thus binary search takes <span id="code-style">O(logn)</span></p></p>
+So, if you divide <span id="code-style">N</span> by 2 at each step, the number of steps is approximately the number of digits in <span id="code-style">N base 2</span>, which is<span id="code-style">log(N)</span> base 2.<p>
+<p id="text-style">Thus binary search takes <span id="code-style">O(log N)</span>.</p></p>
 <hr id="art-div">
 
 <h2 id="sub-head">10.4 The Implementation</h2>
-<p id="text-style">NOTE: Don't use early exit</p>
-<li>It has no effect on time complexity, since the same number of operations are used in the worst case scenario</li>
-<li>It is potentially another source of bugs</li>
 <pre id="code-style"><code class="c++">int search(int K) {
 	int l = 0, r = N;
 	while (l + 1 < r) { // the range [l..r) contains more than 1 element, continue searching
@@ -51,7 +48,7 @@ So, if you divide <span id="code-style">N</span> by 2 at each step, the number o
 	return l; // the range is now [l..l+1)
 }
 </code></pre>
-<p id="text-style">You can also define it recursively</p>
+<p id="text-style">You can also define it recursively:</p>
 <pre id="code-style"><code class="c++">int search(int K, int l=0, int r=N) {
 	if (l + 1 < r) { // the range [l, r) contains more than 1 element, continue searching
 		int m = (l+r) / 2; // NOTE: if l+r is odd, divide by 2 rounds down
@@ -71,19 +68,19 @@ So, if you divide <span id="code-style">N</span> by 2 at each step, the number o
 
 <h2 id="sub-head">10.5 #include &lt;algorithm></h2>
 <p id="text-style">The algorithm library implements binary search for you. However, some problems require you to implement your own binary search (or a variant), so you should not always rely on the algorithms library.</p>
-<p id="text-style"><span id="code-style">binary_search</span> returns <span id="code-style">true</span> if any element in the array is <b>equivalent</b> to val (otherwise <span id="code-style">false</span>)</p>
+<p id="text-style"><span id="code-style">binary_search</span> returns <span id="code-style">true</span> if any element in the array is <b>equivalent</b> to val (otherwise <span id="code-style">false</span>).</p>
 <pre id="code-style"><code class="c++">int arr[] = {1, 2, 2, 3, 5, 6};
 cout << binary_search(begin(arr), end(arr), 2) << "\n"; // outputs true
 cout << binary_search(begin(arr), end(arr), 42) << "\n"; // outputs false
 </code></pre>
 
-<p id="text-style"><span id="code-style">lower_bound</span> returns an iterator pointing to the first element in the array <b>more than or equal to</b> val</p>
+<p id="text-style"><span id="code-style">lower_bound</span> returns an iterator pointing to the first element in the array <b>greater than or equal to</b> val.</p>
 <pre id="code-style"><code class="c++">int arr[] = {1, 2, 2, 3, 5, 6};
 cout << lower_bound(begin(arr), end(arr), 2) - begin(arr) << "\n"; // outputs 1
 cout << lower_bound(begin(arr), end(arr), 42) - begin(arr) << "\n"; // outputs 6
 </code></pre>
 
-<p id="text-style"><span id="code-style">upper_bound</span> returns an iterator pointing to the first element in the array <b>more than</b> val</p>
+<p id="text-style"><span id="code-style">upper_bound</span> returns an iterator pointing to the first element in the array <b>greater than</b> val.</p>
 <pre id="code-style"><code class="c++">int arr[] = {1, 2, 2, 3, 5, 6};
 cout << upper_bound(begin(arr), end(arr), 2) - begin(arr) << "\n"; // outputs 3
 cout << upper_bound(begin(arr), end(arr), 42) - begin(arr) << "\n"; // outputs 6
@@ -93,16 +90,14 @@ cout << upper_bound(begin(arr), end(arr), 42) - begin(arr) << "\n"; // outputs 6
 
 <h2 id="sub-head">10.6 Homework</h2>
 <p id="text-style">The following problems are not directly binary search problems. Instead, they require you to find some condition or value to binary search for</p>
-<p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=1080">Medusa's Snakes</a><br>
-HINT: <span class="hint-style">It's obvious that it is a binary search, but what are you binary searching for?</span></p>
-<p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=985">Lollipops, Sweets and Chocolates</a><br>
-HINT: <span class="hint-style">Similarly to "Medusa's Snakes", what are you binary searching for?</span></p>
-<p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=1082">Lollipops, Sweets and Chocolates II</a><br>
-HINT: <span class="hint-style">Similarly to "Lollipops, Sweets and Chocolates", what are you binary searching for?</span></p>
-<p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=255">Spies V: Voices in the Dark</a><br>
+<p id="text-style"><a id="link-style" href="https://orac2.info/problem/aio06spies/">Spies V: Voices in the Dark</a><br>
 HINT: <span class="hint-style">Try creating an <span id="code-style">O(jg)</span> algorithm first, then optimise it.</span></p>
-<p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=853">Wet Chairs</a><br>
+<p id="text-style"><a id="link-style" href="https://orac2.info/problem/aio15chairs/">Wet Chairs</a><br>
 HINT: <span class="hint-style">How do you answer queries of the form "What is the smallest distance possible if the leftmost person sits on chair <span id="code-style">i</span>?"</span></p>
-<p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=269">Cats III: Off With Their Heads</a><br>
+<p id="text-style"><a id="link-style" href="https://orac2.info/problem/aio19snake/">Medusa's Snakes</a><br>
+HINT: <span class="hint-style">Its definitely a binary search, but what are you binary searching for?</span></p>
+<p id="text-style"><a id="link-style" href="https://orac2.info/problem/aio19lsc/">Lollipops, Sweets and Chocolates II</a><br>
+HINT: <span class="hint-style">Similarly to "Lollipops, Sweets and Chocolates", what are you binary searching for?</span></p>
+<p id="text-style"><a id="link-style" href="https://orac2.info/problem/aiio07cats/">Cats III: Off With Their Heads</a><br>
 HINT: <span class="hint-style">How can you find the number of cats less than k?</span></p>
 {% endblock %}

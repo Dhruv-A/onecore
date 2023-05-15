@@ -8,7 +8,7 @@ For example:</p>
 <pre id="code-style"><code class="c++">bool isProgrammingGood = true;
 bool amIBored = false;</code></pre>
 <p id="text-style">You can use this to compare integers. The following operators take 2 integers and output a boolean</p>
-<pre id="code-style"><code class="c++">cout &lt;&lt; 1 == 1 &lt;&lt; "\n"; // is 1 equals to 1? 
+<pre id="code-style"><code class="c++">cout &lt;&lt; (1 == 1) &lt;&lt; "\n"; // is 1 equals to 1? 
 cout &lt;&lt; (3 > 4) &lt;&lt; "\n"; // is 3 more than 4?
 cout &lt;&lt; (10 >= 9) &lt;&lt; "\n"; // is 10 more than or equal to 9?
 cout &lt;&lt; (2 != 5) &lt;&lt; "\n"; // is 2 not equals to 5?
@@ -16,19 +16,19 @@ cout &lt;&lt; (2 != 5) &lt;&lt; "\n"; // is 2 not equals to 5?
 <p id="text-style"><b>Some further conditions</b></p>
 <table style="width:300px">
 	<tr>
-		<td><pre id="code-style"><code class="c++">x || y</pre></code></td>
-		<td><p id="text-style">x or y</p></td>
+		<td><span id="code-style"><code class="c++">x || y</span></td>
+		<td><p id="text-style">Is x true or is y true?</p></td>
 	</tr>
 	<tr>
-		<td><pre id="code-style"><code class="c++">x && y</pre></code></td>
-		<td><p id="text-style">x and y</p></td>
+		<td><span id="code-style"><code class="c++">x && y</span></td>
+		<td><p id="text-style">Is both x and y true?</p></td>
 	</tr>
 	<tr>
-		<td><pre id="code-style"><code class="c++">!x</pre></code></td>
-		<td><p id="text-style">not x</p></td>
+		<td><span id="code-style"><code class="c++">!x</span></td>
+		<td><p id="text-style">Is x not true? Or equivalently, is x false?</p></td>
 	</tr>
 </table>
-<p id="text-style">For example</p>
+<p id="text-style">For example:</p>
 <pre id="code-style"><code class="c++">bool canDrive = (age >= 16) && (hasLplate || hasPplate || hasLicense) && !isDrunk;</code></pre>
 <br>
 <p id="text-style">TASK: Write a simple program to check a customer's movie ticket. It is a valid ticket if it is at least 10 minutes before the movie starts, and the customer is accompanied by an adult if he/she is less than 12 years old.</p>
@@ -65,13 +65,13 @@ else {
 	// wear a hat
 }
 </code></pre>
-<p id="text-style">NOTE: only 1 of these actions will be done. (i.e. if <span id="code-style">isRainy == true</span>, the code does not consider any following options)</p>
+<p id="text-style">NOTE: only 1 of these actions will be done. (i.e. if <span id="code-style">isRainy == true</span>, the code does not consider any following options).</p>
 <p id="text-style">NOTE: you can only use the <span id="code-style">else if</span> or <span id="code-style">else</span> keyword after you have used the <span id="code-style">if</span> keyword</p>
 <hr id="art-div">
 
 
 <h2 id="sub-head">4.3 While Loops</h2>
-<p id="text-style">A while loop executes statements repeatedly until the given condition evaluates to false. While loops are used when it is not known in advance, how many times a block of code is to be executed. For example:</p>
+<p id="text-style">A while loop executes statements repeatedly until the given condition evaluates to false. While loops are used when it is not currently known how many times a block of code is to be executed. For example:</p>
 <pre id="code-style"><code class="c++">int i = 0;
 while (i < 10) {
 	cout &lt;&lt; i &lt;&lt; " ";
@@ -79,7 +79,8 @@ while (i < 10) {
 }
 </pre></code>
 <p id="text-style">What is the output of the program?</p>
-<p id="text-style">ANSWER: <span class="hint-style"><span id="code-style">"0 1 2 3 4 5 6 7 8 9"</span><br>10 was not printed, because when <span id="code-style">i = 10</span>, the condition <span id="code-style">(i < 10)</span> will be false, and the while loop will terminate</span></p>
+<p id="text-style">ANSWER: <span class="hint-style"><span id="code-style">0 1 2 3 4 5 6 7 8 9</span><br>10 was not printed, because when <span id="code-style">i = 10</span>, the condition <span id="code-style">(i < 10)</span> will be false, and the while loop will terminate</span></p>
+<p id="text-style">It is very important to be able to reason about what your code will do! When your code is doing something unexpected, you can look at what you expect it to do, compared to what it is actually donig. This is called debugging! (Removing bugs/problems with your code).</p>
 <br>
 <p id="text-style">TASK: write a program to accept integer inputs until it encounters <span id="code-style">0</span>. Then print the sum of the integer inputs.</p>
 <p id="text-style">ANSWER:</p>
@@ -102,24 +103,24 @@ cout << "The sum is " << total;</code></pre></span>
 }</code></pre>
 <p id="text-style"><b>initialisation statement</b> This statement gets executed only once, at the beginning of the for loop.</p>
 <p id="text-style"><b>condition</b> This statement gets evaluated ahead of each loop body execution, and aborts the loop if it evaluates to false.</p>
-<p id="text-style"><b>loop body</b></p>
+<p id="text-style"><b>loop body</b> The code when you want to get run repeatedly.</p>
 <p id="text-style"><b>iteration execution</b> This statement gets executed after the loop body, ahead of the next condition evaluation. You can enter multiple statements in the iteration execution part, such as <span id="code-style">a++, b+=10, c=b+a</span>.</p>
 <p id="text-style">TASK: Write code to print integers from 0 to 9 (inclusive) using a for loop?</p>
 <p id="text-style">ANSWER:</p>
 <span class="hint-style"><pre id="code-style"><code class="c++">for (int i = 0; i < 10; i++) {
 	cout << i << " ";
 }</code></pre></span>
-<p id="text-style">NOTE: do not <span id="code-style">cout &lt;&lt; i;</span> outside the loop. It only "exists" inside the loop</p>
+<p id="text-style">NOTE: do not use the variable <span id="code-style">i</span> outside the loop. It only "exists" inside the loop.</p>
 <hr id="art-div">
 
 
 <h2 id="sub-head">4.5 Homework</h2>
-<p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=382">The Tremendous Tak-Tak Tree</a><br>
+<p id="text-style"><a id="link-style" href="https://orac2.info/problem/simpletaktak/">The Tremendous Tak-Tak Tree</a><br>
 HINT: <span class="hint-style">There is a walkthrough <a id="link-style" href="http://orac.amt.edu.au/aioc/tutorials/walkthroughs/05.html">here</a>, although they do file input differently.</p>
-<p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=383">Counting To Infinity</a><br>
+<p id="text-style"><a id="link-style" href="https://orac2.info/problem/simplecount/">Counting To Infinity</a><br>
 HINT: <span class="hint-style">There is a walkthrough <a id="link-style" href="http://orac.amt.edu.au/aioc/tutorials/walkthroughs/06.html">here</a>, although they do file input differently.</p>
-<p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=397">A Dish Best Served Cold</a><br>
+<p id="text-style"><a id="link-style" href="https://orac2.info/problem/simplestats/">A Dish Best Served Cold</a><br>
 HINT: <span class="hint-style">There is a walkthrough <a id="link-style" href="http://orac.amt.edu.au/aioc/tutorials/walkthroughs/07.html">here</a>, although they do file input differently.</p>
-<p id="text-style"><a id="link-style" href="https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=398">Drought</a><br>
+<p id="text-style"><a id="link-style" href="https://orac2.info/problem/simpledrought/">Drought</a><br>
 HINT: <span class="hint-style">There is a walkthrough <a id="link-style" href="http://orac.amt.edu.au/aioc/tutorials/walkthroughs/08.html">here</a>, although they do file input differently.</p>
 {% endblock %}

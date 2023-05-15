@@ -62,4 +62,4 @@ def csharpTutorial(postID):
 def discordinv():
   return redirect('https://discord.com/invite/2d27eyG')
 
-app.run(host='0.0.0.0', threaded=True)
+app.run(host='0.0.0.0', threaded=True, debug=False)
