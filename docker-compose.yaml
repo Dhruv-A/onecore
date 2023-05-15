@@ -1,0 +1,17 @@
+version: "3.3"
+
+services:
+        property-vis:
+                image: "${COMPOSE_PROJECT_NAME}"
+                restart: "${RESTART_POLICY}"
+                user: "${_UID}:${_GID}"
+                volumes:
+                        - "/etc/timezone:/etc/timezone:ro"
+                        - "/etc/localtime:/etc/localtime:ro"
+                        - "${HOST_VOLUME}:${CONTAINER_VOLUME}"
+                ports:
+                        - "${APP_HOST_PORT}:${APP_CONTAINER_PORT}"
+                command:
+                        - "main.py"
+                container_name: "${COMPOSE_PROJECT_NAME}"
+
