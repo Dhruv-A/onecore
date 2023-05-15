@@ -1,51 +1,51 @@
 {% extends "./baseinfo.html" %}
 {% block title %}11. 1-Dimensional Dynamic Programming{% endblock %}
 {% block article %}
-<h1 id="top-head">11 1-Dimensional Dynamic Programming</h1>
-<h2 id="sub-head">11.1 The Idea</h2>
-<p id="text-style">DP (short for dynamic programming), is a method for solving complex problems by breaking them down into simpler problems. This seems very similar to recursion!</p>
-<p id="text-style"><b>How to recognise a dp problem?</b></p>
+<h1 class="top-head">11 1-Dimensional Dynamic Programming</h1>
+<h2 class="sub-head">11.1 The Idea</h2>
+<p class="text-style">DP (short for dynamic programming), is a method for solving complex problems by breaking them down into simpler problems. This seems very similar to recursion!</p>
+<p class="text-style"><b>How to recognise a dp problem?</b></p>
 <li>Certain problem types, such as optimisation and combinatorics.</li>
 <li>Parameters must be distinct and finite (e.g. not floats).</li>
-<li>Dynamic programming problems can be define in terms of itself (e.g. <span id="code-style">dp(n)</span> calls some <span id="code-style">dp(m)</span>, where <span id="code-style">m < n</span>.</li>
-<p id="text-style">Sometimes, it is very difficult to recognise a dp problem. You will be able to identify dp problems more easily with more practise</p>
-<p id="text-style"><b>How do you successfully create a dp?</b></p>
-<p id="text-style"> 1. Define subproblems<br>
+<li>Dynamic programming problems can be define in terms of itself (e.g. <span class="code-style">dp(n)</span> calls some <span class="code-style">dp(m)</span>, where <span class="code-style">m < n</span>.</li>
+<p class="text-style">Sometimes, it is very difficult to recognise a dp problem. You will be able to identify dp problems more easily with more practise</p>
+<p class="text-style"><b>How do you successfully create a dp?</b></p>
+<p class="text-style"> 1. Define subproblems<br>
  2. Define recurrence relation<br>
  3. Order of computation<br>
  4. Recognise base cases</p>
 <i>I will be using these steps in the following examples, and you should too!</i>
-<hr id="art-div">
+<hr class="art-div">
 
-<h2 id="sub-head">11.2 Problem: Fibonacci</h2>
-<pre id="code-style"><code class="text">Input:      stdin (cin)
+<h2 class="sub-head">11.2 Problem: Fibonacci</h2>
+<pre class="code-style"><code class="text">Input:      stdin (cin)
 Output:     stdout (cout)
 Time Limit: 1s
 </code></pre>
-<p id="text-style">Find the nth fibonacci number (<span id="code-style">1 <= n <= 100000</span>)</p>
-<p id="text-style"><b>Sample Input</b></p>
-<pre id="code-style"><code class="text">10</code></pre>
+<p class="text-style">Find the nth fibonacci number (<span class="code-style">1 <= n <= 100000</span>)</p>
+<p class="text-style"><b>Sample Input</b></p>
+<pre class="code-style"><code class="text">10</code></pre>
 
-<p id="text-style"><b>Sample Output</b></p>
-<pre id="code-style"><code class="text">89</code></pre>
-<hr id="art-div">
+<p class="text-style"><b>Sample Output</b></p>
+<pre class="code-style"><code class="text">89</code></pre>
+<hr class="art-div">
 
-<h2 id="sub-head">11.3 Solution: Fibonacci</h2>
-<p id="text-style"><b>1. Define subproblems</b></p>
-<p id="text-style"><span id="code-style">fib(n)</span> is the nth Fibonacci number.</p>
-<p id="text-style"><b>2. Define recurrence relation</b></p>
-<p id="text-style"><span id="code-style">fib(n) = fib(n - 2) + fib(n - 1)</span>, so we need to define <span id="code-style">fib(n - 2)</span> and <span id="code-style">fib(n - 1)</span> first.</p>
-<p id="text-style"><b>3. Order of computation</b></p>
-<p id="text-style">There is never a situation where <span id="code-style">fib(x)</span> requires <span id="code-style">fib(y)</span> and <span id="code-style">fib(y)</span> requires <span id="code-style">fib(x)</span>.</p>
-<p id="text-style">This means you can compute <span id="code-style">fib(0)</span>, <span id="code-style">fib(1)</span>, ... <span id="code-style">fib(n)</span> in that order without any complications.</p>
-<p id="text-style"><b>4. Recognise base cases</b></p>
-<p id="text-style">We have to predefine some value to start from, so that our dp can build up from there.</p>
-<p id="text-style">The functions <span id="code-style">fib(0)</span> and <span id="code-style">fib(1)</span> will call <span id="code-style">fib</span> with negative values. We do not want that, so we pre-define those values as the base case:<br>
-<pre id="code-style">fib(0) = 1
+<h2 class="sub-head">11.3 Solution: Fibonacci</h2>
+<p class="text-style"><b>1. Define subproblems</b></p>
+<p class="text-style"><span class="code-style">fib(n)</span> is the nth Fibonacci number.</p>
+<p class="text-style"><b>2. Define recurrence relation</b></p>
+<p class="text-style"><span class="code-style">fib(n) = fib(n - 2) + fib(n - 1)</span>, so we need to define <span class="code-style">fib(n - 2)</span> and <span class="code-style">fib(n - 1)</span> first.</p>
+<p class="text-style"><b>3. Order of computation</b></p>
+<p class="text-style">There is never a situation where <span class="code-style">fib(x)</span> requires <span class="code-style">fib(y)</span> and <span class="code-style">fib(y)</span> requires <span class="code-style">fib(x)</span>.</p>
+<p class="text-style">This means you can compute <span class="code-style">fib(0)</span>, <span class="code-style">fib(1)</span>, ... <span class="code-style">fib(n)</span> in that order without any complications.</p>
+<p class="text-style"><b>4. Recognise base cases</b></p>
+<p class="text-style">We have to predefine some value to start from, so that our dp can build up from there.</p>
+<p class="text-style">The functions <span class="code-style">fib(0)</span> and <span class="code-style">fib(1)</span> will call <span class="code-style">fib</span> with negative values. We do not want that, so we pre-define those values as the base case:<br>
+<pre class="code-style">fib(0) = 1
 fib(1) = 1</pre></p>
-<p id="text-style"><b>5. Implementation</b></p>
-<p id="text-style">Bottom up.</p>
-<pre id="code-style"><code class="c++">// bottom-up implementation
+<p class="text-style"><b>5. Implementation</b></p>
+<p class="text-style">Bottom up.</p>
+<pre class="code-style"><code class="c++">// bottom-up implementation
 #include &lt;iostream>
 using namespace std;
 
@@ -63,12 +63,12 @@ int main() {
 	}
 	cout << fib[N];
 }</code></pre>
-<p id="text-style">Top down.</p>
-<p id="text-style"><span id="code-style">fib(n)</span> calls <span id="code-style">fib(n - 2)</span> and <span id="code-style">fib(n - 1)</span><br>
-<span id="code-style">fib(n-1)</span> calls <span id="code-style">fib(n - 3)</span> and <span id="code-style">fib(n - 2)</span><br>
-Thus, functions such as <span id="code-style">fib(n - 2)</span>, are called multiple times.<br>
+<p class="text-style">Top down.</p>
+<p class="text-style"><span class="code-style">fib(n)</span> calls <span class="code-style">fib(n - 2)</span> and <span class="code-style">fib(n - 1)</span><br>
+<span class="code-style">fib(n-1)</span> calls <span class="code-style">fib(n - 3)</span> and <span class="code-style">fib(n - 2)</span><br>
+Thus, functions such as <span class="code-style">fib(n - 2)</span>, are called multiple times.<br>
 Since it will always return the same value, it is faster to store the value.</p>
-<pre id="code-style"><code class="c++">// top-down implementation
+<pre class="code-style"><code class="c++">// top-down implementation
 #include &lt;iostream>
 using namespace std;
 
@@ -94,56 +94,56 @@ int main() {
 	cin >> N;
 	cout << fib(N);
 }</code></pre>
-<p id="text-style">NOTE: Your choice of implemention (top-down or bottom-up) should be based on the one you are more comfortable writing, since you will find it more intuitive.</p>
-<hr id="art-div">
+<p class="text-style">NOTE: Your choice of implemention (top-down or bottom-up) should be based on the one you are more comfortable writing, since you will find it more intuitive.</p>
+<hr class="art-div">
 
-<h2 id="sub-head">11.4 Problem: Coin</h2>
-<pre id="code-style"><code class="text">Input:      stdin (cin)
+<h2 class="sub-head">11.4 Problem: Coin</h2>
+<pre class="code-style"><code class="text">Input:      stdin (cin)
 Output:     stdout (cout)
 Time Limit: 1s
 </code></pre>
-<p id="text-style">There is a row of coins, where each coin has a particular value (may be negative).<br>
+<p class="text-style">There is a row of coins, where each coin has a particular value (may be negative).<br>
 Maximise the sum of the coins you pick, but you can't pick 2 adjacent coins.</p>
-<p id="text-style">The input will contain an integer <span id="code-style">N</span> (<span id="code-style">1 <= N <= 100000</span>) representing the number of coins. This is followed by N integers representing the value of each coin: <span id="code-style">A1</span>, <span id="code-style">A2</span>, ..., <span id="code-style">An</span> (<span id="code-style">-1e6 <= Ai <= 1e6</span>)<br>
+<p class="text-style">The input will contain an integer <span class="code-style">N</span> (<span class="code-style">1 <= N <= 100000</span>) representing the number of coins. This is followed by N integers representing the value of each coin: <span class="code-style">A1</span>, <span class="code-style">A2</span>, ..., <span class="code-style">An</span> (<span class="code-style">-1e6 <= Ai <= 1e6</span>)<br>
 
-<p id="text-style"><b>Sample Input</b></p>
-<pre id="code-style"><code class="c++">10
+<p class="text-style"><b>Sample Input</b></p>
+<pre class="code-style"><code class="c++">10
 1 7 3 7 9 4 3 1 8 6</code></pre>
 
-<p id="text-style"><b>Sample Output</b></p>
-<pre id="code-style"><code class="c++">27</code></pre>
-<p id="text-style"><b>Explanation</b></p>
-<p id="text-style">By chosing the following coins, 27 is the maximum possible value.<br>
-<pre id="code-style"><code class="c++">[ 7     9   3   8 ]
+<p class="text-style"><b>Sample Output</b></p>
+<pre class="code-style"><code class="c++">27</code></pre>
+<p class="text-style"><b>Explanation</b></p>
+<p class="text-style">By chosing the following coins, 27 is the maximum possible value.<br>
+<pre class="code-style"><code class="c++">[ 7     9   3   8 ]
 </code></pre></p>
-<hr id="art-div">
+<hr class="art-div">
 
-<h2 id="sub-head">11.5 Solution: Coin</h2>
-<p id="text-style">Your first thought might be a greedy algorithm which goes along the lines of: choose the highest coin, then the next highest if possible, ...<br>
-Nope, sorry. Here's a breaking case: <span id="code-style">4 5 4</span>.<br>
+<h2 class="sub-head">11.5 Solution: Coin</h2>
+<p class="text-style">Your first thought might be a greedy algorithm which goes along the lines of: choose the highest coin, then the next highest if possible, ...<br>
+Nope, sorry. Here's a breaking case: <span class="code-style">4 5 4</span>.<br>
 When the problem is an optimisation problem, it probably requires a dp.</p>
-<p id="text-style"><b>1. Define subproblems</b></p>
-<p id="text-style"><span id="code-style">dp(i)</span> is the highest score when considering all elements <span id="code-style">[1..i]</span>.</p>
-<p id="text-style"><b>2. Define recurrence relation</b></p>
-<p id="text-style">There are 2 possible options when considering the ith coin (i.e. expanding the range from <span id="code-style">[1..i-1]</span> to <span id="code-style">[1..i]</span>).<br>
-<p id="text-style"><li>Take the current coin: <span id="code-style">Ai + dp(i-2)</span>.</li>
-<li>Don't take the current coin: <span id="code-style">dp(i-1)</span></li>.</p>
-<pre id="code-style"><code class="c++">dp(i) = max(
+<p class="text-style"><b>1. Define subproblems</b></p>
+<p class="text-style"><span class="code-style">dp(i)</span> is the highest score when considering all elements <span class="code-style">[1..i]</span>.</p>
+<p class="text-style"><b>2. Define recurrence relation</b></p>
+<p class="text-style">There are 2 possible options when considering the ith coin (i.e. expanding the range from <span class="code-style">[1..i-1]</span> to <span class="code-style">[1..i]</span>).<br>
+<p class="text-style"><li>Take the current coin: <span class="code-style">Ai + dp(i-2)</span>.</li>
+<li>Don't take the current coin: <span class="code-style">dp(i-1)</span></li>.</p>
+<pre class="code-style"><code class="c++">dp(i) = max(
 	A[i] + dp(i-2), 
 	A[i] + dp(i-1)
 )
 </code></pre>
-<p id="text-style"></p>
+<p class="text-style"></p>
 <b>3. Order of computation</b>
-<p id="text-style">There is never a situation where <span id="code-style">dp(x)</span> requires <span id="code-style">dp(y)</span> and <span id="code-style">dp(y)</span> requires <span id="code-style">dp(x)</span>.</p>
-<p id="text-style">Similarly to Fibonacci, you want to process <span id="code-style">dp(1)</span>, <span id="code-style">dp(2)</span>, ... <span id="code-style">dp(n)</span>.</p>
+<p class="text-style">There is never a situation where <span class="code-style">dp(x)</span> requires <span class="code-style">dp(y)</span> and <span class="code-style">dp(y)</span> requires <span class="code-style">dp(x)</span>.</p>
+<p class="text-style">Similarly to Fibonacci, you want to process <span class="code-style">dp(1)</span>, <span class="code-style">dp(2)</span>, ... <span class="code-style">dp(n)</span>.</p>
 <b>4. Recognise base cases</b>
-<p id="text-style">Calling <span id="code-style">dp(0)</span> and <span id="code-style">dp(1)</span> will call <span id="code-style">f</span> with negative values. We do not want that, so we pre-define those values as the base case:<br>
-<pre id="code-style"><code class="c++">dp(0) = 0
+<p class="text-style">Calling <span class="code-style">dp(0)</span> and <span class="code-style">dp(1)</span> will call <span class="code-style">f</span> with negative values. We do not want that, so we pre-define those values as the base case:<br>
+<pre class="code-style"><code class="c++">dp(0) = 0
 dp(1) = A[1]
 </code></pre>
-<p id="text-style"><b>5. Implementation</b></p>
-<pre id="code-style"><code class="c++">// bottom-up implementation
+<p class="text-style"><b>5. Implementation</b></p>
+<pre class="code-style"><code class="c++">// bottom-up implementation
 #include &lt;iostream>
 #include &lt;algorithm>
 using namespace std;
@@ -166,7 +166,7 @@ int main() {
 	}
 	cout << dp[N];
 }</code></pre>
-<pre id="code-style"><code class="c++">// top-down implementation
+<pre class="code-style"><code class="c++">// top-down implementation
 #include &lt;iostream>
 #include &lt;algorithm>
 using namespace std;
@@ -197,12 +197,12 @@ int main() {
 	}
 	cout << dp(N);
 }</code></pre>
-<hr id="art-div">
+<hr class="art-div">
 
 
-<h2 id="sub-head">11.6 Homework</h2>
-<p id="text-style"><a id="link-style" href="https://orac2.info/problem/aio11tickets/">Tickets</a><br>
+<h2 class="sub-head">11.6 Homework</h2>
+<p class="text-style"><a class="link-style" href="https://orac2.info/problem/aio11tickets/">Tickets</a><br>
 HINT: <span class="hint-style">It should be obvious :)</span></p>
-<p id="text-style"><a id="link-style" href="https://orac2.info/problem/aio07superphone/">Superphone</a><br>
+<p class="text-style"><a class="link-style" href="https://orac2.info/problem/aio07superphone/">Superphone</a><br>
 HINT: <span class="hint-style">Be careful about "Order of Computation".</span></p>
 {% endblock %}

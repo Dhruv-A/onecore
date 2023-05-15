@@ -1,24 +1,24 @@
 {% extends "basecsharp.html" %}
 {% block title %}6. Data collections and Arrays{% endblock %}
 {% block article %}
-<h1 id="top-head">6. Data collections and Arrays</h1>
-<h2 id="sub-head">6.1 Foreach statement</h2>
+<h1 class="top-head">6. Data collections and Arrays</h1>
+<h2 class="sub-head">6.1 Foreach statement</h2>
 <p id="text=style">The foreach statement is similar
   to a for loop, however, it transverses the
   elements in a collection. It can be compared to
   a standard for loop in Python. In Python,
   if we would like to transverse through a list, we would type:</p>
-<pre id="code-style"><code class="python">for x in list:
+<pre class="code-style"><code class="python">for x in list:
   statement…
 </code></pre>
-<p id="text-style">This block of code will store each
+<p class="text-style">This block of code will store each
   value of the list in the value x for processing to be
   performed in the statement, then incremented for the next
   value in the list. In this way we can see that the for loop
   automatically increments the iterator by 1. This is essentially
   what the foreach loop does in C#.</p>
-<p id="text-style">Let’s start with this example:</p>
-<pre id="code-style"><code class="C#">using System;
+<p class="text-style">Let’s start with this example:</p>
+<pre class="code-style"><code class="C#">using System;
 using System.Collections.Generic;
 
 namespace HelloWorld
@@ -35,7 +35,7 @@ namespace HelloWorld
     }
   }
 }</code></pre>
-<p id="text-style">We have defined names to be a var type,
+<p class="text-style">We have defined names to be a var type,
   which is used to declare a variable but not necessarily
   its type. The compiler will look at the type of expression
   on the right side of the operator and derive the type during
@@ -51,7 +51,7 @@ namespace HelloWorld
   customerBalance as decimal to know its type for clarity.
   Reasonable alternatives might include double or even int
   or long. The point is you don’t know by looking at the code.</p>
-<p id="text-style">Next, we create a List of strings using
+<p class="text-style">Next, we create a List of strings using
   the new List&lt;string> declaration. You may be
   wondering what the difference is between lists and arrays.
   Note: you cannot replace ‘List’ with any name you want the
@@ -63,23 +63,23 @@ namespace HelloWorld
   array than the size you have specified. Lists are pointers
   to objects, allowing new objects to be added to the list
   undefinedly (just like the list element in python).</p>
-<p id="text-style">We then add the elements "&lt;name>", "Ana"
+<p class="text-style">We then add the elements "&lt;name>", "Ana"
   and "Felipe" into the list. In the foreach loop we create an
   incrementor called element (declared by the var identifier),
   which keeps track of the current element in our list. Our
   statement here is printing out the string in our list in uppercase.
   This is an inbuilt System function in c#, called ToUpper().</p>
-<p id="text-style">Note: we have added in line 2. This is a
+<p class="text-style">Note: we have added in line 2. This is a
   generic namespace that contains interface and classes
   that define strongly typed collections (the ones which use
   the var keyword as the compiler has to determine their type).
   Hence, the name generic. This namespace tells the compiler how
   to interpret such a definition.</p>
-<p id="text-style">When you run your code, you should get the following:</p>
-<pre id="code-style"><code class="C#">Hello &lt;NAME>!
+<p class="text-style">When you run your code, you should get the following:</p>
+<pre class="code-style"><code class="C#">Hello &lt;NAME>!
 Hello ANA!
 Hello FELIPE!</code></pre>
-<p id="text-style">As mentioned before, lists allow us to add
+<p class="text-style">As mentioned before, lists allow us to add
   and remove elements more easily than arrays as they are
   not static like arrays. In an array if you would like to move the
   3rd element, you would need to loop through all elements in the array
@@ -87,7 +87,7 @@ Hello FELIPE!</code></pre>
   3rd element down one. We can use the .Add method to add an element to
   the end of a list and the .Remove to remove an element already in the
   list. Check out this code:</p>
-<pre id="code-style"><code class="C#">var names = new List&lt;string> { "&lt;name>", "Ana", "Felipe" };
+<pre class="code-style"><code class="C#">var names = new List&lt;string> { "&lt;name>", "Ana", "Felipe" };
 names.Add("Maria");
 names.Add("Bill");
 names.Remove("Ana");
@@ -95,37 +95,37 @@ foreach (var element in names)
    {
     Console.WriteLine($"Hello {element.ToUpper()}!");
    }</code></pre>
-<pre id="code-style"><code class="C#">Hello &lt;NAME>!
+<pre class="code-style"><code class="C#">Hello &lt;NAME>!
 Hello FELIPE!
 Hello MARIA!
 Hello BILL!</code></pre>
-<p id="text-style">As you can see, Maria and Bill have
+<p class="text-style">As you can see, Maria and Bill have
   been added to the list, and Ana has been removed.</p>
-<p id="text-style">The list element also allows you to reference
+<p class="text-style">The list element also allows you to reference
   individual items by index, using the left and right braces.
   Add the following to your code after the loop, to test it out.
   Note: you cannot access past the end of the list, try
   changing the values below to test this out.</p>
-<pre id="code-style"><code class="C#">Console.WriteLine($"My name is {names[0]}.");
+<pre class="code-style"><code class="C#">Console.WriteLine($"My name is {names[0]}.");
 Console.WriteLine($"I've added {names[2]} and {names[3]} to the list.");</code></pre>
-<p id="text-style">We can also determine the number of elements in
+<p class="text-style">We can also determine the number of elements in
   the list using the Count property.</p>
-<pre id="code-style"><code class="C#">Console.WriteLine($"The list has {names.Count} people in it");</code></pre>
-<p id="text-style">Remember, in C# indicies start at 0, so
+<pre class="code-style"><code class="C#">Console.WriteLine($"The list has {names.Count} people in it");</code></pre>
+<p class="text-style">Remember, in C# indicies start at 0, so
   the largest valid index is one less the number of items in the list.</p>
-<p id="text-style"><strong>Challenge</strong><br>
+<p class="text-style"><strong>Challenge</strong><br>
   Write the code to generate the first 20 numbers in the sequence.
   (Hint: the 20th Fibonacci number is 6765.) Here is some sample
   code to guide you.</p>
-<pre id="code-style"><code class="C#">var previous = fibonacciNumbers[fibonacciNumbers.Count - 1];
+<pre class="code-style"><code class="C#">var previous = fibonacciNumbers[fibonacciNumbers.Count - 1];
 var previous2 = fibonacciNumbers[fibonacciNumbers.Count - 2];
 
 fibonacciNumbers.Add(previous + previous2);
 
 foreach(var item in fibonacciNumbers)
     Console.WriteLine(item);</code></pre>
-<p id="text-style"><strong>Solution</strong></p>
-<pre id="code-style"><code class="C#">var fibonacciNumbers = new List<int> {1, 1};
+<p class="text-style"><strong>Solution</strong></p>
+<pre class="code-style"><code class="C#">var fibonacciNumbers = new List<int> {1, 1};
 
 while (fibonacciNumbers.Count < 20)
 {
@@ -136,7 +136,7 @@ while (fibonacciNumbers.Count < 20)
 }
 foreach(var item in fibonacciNumbers)
     Console.WriteLine(item);</code></pre>
-<p id="text-style">Comments: After each iteration of the loop,
+<p class="text-style">Comments: After each iteration of the loop,
   you take the last two integers in the list, sum them, and add
   that value to the list. The loop repeats until you've added 20
   items to the list.</p>

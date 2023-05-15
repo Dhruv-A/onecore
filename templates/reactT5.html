@@ -1,29 +1,29 @@
 {% extends "./basereact.html" %}
 {% block title %}5. Prop System{% endblock %}
 {% block article %}
-<h1 id="top-head">5. Prop System</h1>
-<h2 id="sub-head">5.1 What is the prop system</h2>
-<p id="text-style">A system for passing data from a parent
+<h1 class="top-head">5. Prop System</h1>
+<h2 class="sub-head">5.1 What is the prop system</h2>
+<p class="text-style">A system for passing data from a parent
    component to its children components. Its ultimate goal is to
    customise or configure a child component. e.g for each of
    the comment children, it can display different data for each
    child component which is unique but ultimately the same changes.</p>
 <img src="https://drive.google.com/uc?export=view&id=1uJtXNuHh42HsM0RwXvpU8niA8Tnf4mdz"
 alt="react-image">
-<hr id="art-div">
-<h2 id="sub-head">5.2 How does it work</h2>
-<pre id="code-style"><code class="javascript">&lt;CommentDetail [name of prop] = "[value of prop]" /></code></pre>
-<p id="text-style">This will give a unique value for each property of a child component.
+<hr class="art-div">
+<h2 class="sub-head">5.2 How does it work</h2>
+<pre class="code-style"><code class="javascript">&lt;CommentDetail [name of prop] = "[value of prop]" /></code></pre>
+<p class="text-style">This will give a unique value for each property of a child component.
   Now in the component we have to run the function as prop. For example:
-  <pre id="code-style"><code class="javascript">const CommentDetail = props => {
+  <pre class="code-style"><code class="javascript">const CommentDetail = props => {
   [also {props.author}]
 }</code></pre>
   Essentially the props is a built-in javascript object which
   contains all the information that is passed from the parent.
 </p>
-<p id="text-style"><strong>Another way to communicate
+<p class="text-style"><strong>Another way to communicate
    that information is using closing tags</strong>
-   <pre id="code-style"><code class="javascript">&lt;ApprovalCard>[whatever inside here becomes a prop]&lt;/ApprovalCard></code></pre>
+   <pre class="code-style"><code class="javascript">&lt;ApprovalCard>[whatever inside here becomes a prop]&lt;/ApprovalCard></code></pre>
    If you console.log this you’ll realise that the component becomes
    a prop with the property name of children so you can use this
    children property as display data within the content section of your

@@ -1,19 +1,19 @@
 {% extends "basecsharp.html" %}
 {% block title %}1. Introduction{% endblock %}
 {% block article %}
-<h1 id="top-head">1. Introduction</h1>
-<h2 id="sub-head">1.1 Setting up the project</h2>
+<h1 class="top-head">1. Introduction</h1>
+<h2 class="sub-head">1.1 Setting up the project</h2>
 <p id="text=style">Hi, I’m Cristina and I will be taking you through
    the C# course. This course is for intermediate coders who have
    complete the Introduction to Python course. We will be using
    Visual Studio (VS) code for this course. Installation instructions can
-   be found <a id="link-style" href="https://code.visualstudio.com/download">here</a>. Once you
+   be found <a class="link-style" href="https://code.visualstudio.com/download">here</a>. Once you
    have set up VS Code we need to install the C# extension, you
    can install it from within VS Code by searching for 'C#' in the
    Extensions view (Ctrl+Shift+X). You also need to
-   download the <a id="link-style" href="https://dotnet.microsoft.com/download">.NET
+   download the <a class="link-style" href="https://dotnet.microsoft.com/download">.NET
    Core application</a>.</p>
-<p id="text-style">We will create a .NET Core console app project named "HelloWorld".</p>
+<p class="text-style">We will create a .NET Core console app project named "HelloWorld".</p>
 <ol style="margin-left: 1rem;">
   <li>Select File > Open Folder (File > Open... on macOS) from the main menu.</li>
   <li>In the Open Folder dialog, create a HelloWorld folder
@@ -27,20 +27,20 @@
   <li>In the Terminal, enter the following command:
   dotnet new console</li>
 </ol>
-<p id="text-style"><strong>Important:</strong> Remember when you are creating the
+<p class="text-style"><strong>Important:</strong> Remember when you are creating the
    dot net application it needs to be in the folder. For
    example, if the terminal does not open in the correct
    directory of your HelloWorld file, type cd HelloWorld into
    the terminal to redirect the terminal to the file. </p>
 <img src="https://drive.google.com/uc?export=view&id=1raYOOjuN7sl3ohANp_s5YNhQEyiW-Odk"
 alt="csharp-image">
-<p id="text-style">As we can see from this screenshot, we have
+<p class="text-style">As we can see from this screenshot, we have
    successfully created the folder HelloWorld (under the Explorer
    tab), however, as highlighted the terminal is pointing to the
    wrong directory.</p>
 <img src="https://drive.google.com/uc?export=view&id=1yHuKn8nK01JjyRGgHWT6qklgYAA9Vv6Q"
 alt="csharp-image">
-<p id="text-style">However, as our HelloWorld file is
+<p class="text-style">However, as our HelloWorld file is
    within the “CORE” file (directory above the folder we can’t),
    we can perform a cd (change directory command). Remember
    the cd command in terminal is just for relative file
@@ -53,9 +53,9 @@ alt="csharp-image">
    “Hello World!” should be printed to the screen.</p>
 <img src="https://drive.google.com/uc?export=view&id=1WSzPY5txeZfBBnD_9Gus3W6daJ7-7HUA"
 alt="csharp-image">
-<hr id="art-div">
-<h2 id="sub-head">1.2 About the .NET framework</h2>
-<p id="text-style">C# relies on the .NET framework, and is a language
+<hr class="art-div">
+<h2 class="sub-head">1.2 About the .NET framework</h2>
+<p class="text-style">C# relies on the .NET framework, and is a language
   mainly used for app development. This framework refers to a
   collection of application programming interfaces (APIs) and a shared
   library of code that developers can call when building applications.
@@ -70,6 +70,6 @@ alt="csharp-image">
   code to run independently from the computer’s hardware. One way to
   think about this is that the .NET framework is a universal driver
   that allows your code to work with many devices.
-For more information, check out <a id="link-style" href="https://docs.microsoft.com/en-gb/dotnet/framework/get-started/#Introducing">this article from Microsoft</a>
+For more information, check out <a class="link-style" href="https://docs.microsoft.com/en-gb/dotnet/framework/get-started/#Introducing">this article from Microsoft</a>
 </p>
 {% endblock %}

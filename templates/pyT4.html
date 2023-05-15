@@ -1,13 +1,13 @@
 {% extends "./basepy.html" %}
 {% block title %}4. Arithmetic Operators{% endblock %}
 {% block article %}
-<h1 id="top-head">4. Arithmetic Operators</h1>
-<p id="sub-head">4.1 Basics</p>
-<p id="text-style">As a high-level programming language,
+<h1 class="top-head">4. Arithmetic Operators</h1>
+<p class="sub-head">4.1 Basics</p>
+<p class="text-style">As a high-level programming language,
    python can be used to do math calculations.</p>
-<p id="text-style">Let's first step through how to use the
+<p class="text-style">Let's first step through how to use the
    first four operators in the interpreter.</p>
-<pre id="code-style"><code class="python">>>> 2 + 5  # Addition
+<pre class="code-style"><code class="python">>>> 2 + 5  # Addition
 7
 >>> 8 - 3  # Subtraction
 5
@@ -15,46 +15,46 @@
 12
 >>> 10 / 2 # Division
 5.0</code></pre>
-<p id="text-style">Notice that <span id="code-style"> 10 / 2
-   </span>returns <span id="code-style">5.0</span> with an
-   extra <span id="code-style">.0</span> instead of just
-   <span id="code-style">5</span>. Up until now we have only
+<p class="text-style">Notice that <span class="code-style"> 10 / 2
+   </span>returns <span class="code-style">5.0</span> with an
+   extra <span class="code-style">.0</span> instead of just
+   <span class="code-style">5</span>. Up until now we have only
    be dealing with numbers as <strong>integers</strong> which
    are whole numbers like:</p>
 
-<ul id="code-style" style="margin-left: 1rem">
+<ul class="code-style" style="margin-left: 1rem">
 <li>5</li>
 <li>0</li>
 <li>256</li>
 <li>-12</li>
 </ul>
-<p id="text-style">However there is in fact another number-like
+<p class="text-style">However there is in fact another number-like
   data type called <strong>floats</strong> which are numbers with
   decimal places like:</p>
-<ul id="code-style" style="margin-left: 1rem">
+<ul class="code-style" style="margin-left: 1rem">
 <li>1.5</li>
 <li>5.0</li>
 <li>3.1415926</li>
 </ul>
 
-<p id="text-style">Floats are necessary when we
+<p class="text-style">Floats are necessary when we
    divide a number by a non-factor:</p>
-<pre id="code-style"><code class="python">>>> 7 / 2
+<pre class="code-style"><code class="python">>>> 7 / 2
 3.5
 >>> 4.5 / 3
 1.5
 >>> 10 / 3
 3.3333333333333335</code></pre>
 
-<hr id="art-div">
+<hr class="art-div">
 
-<p id="sub-head">4.2 The floor division operator</h2>
+<p class="sub-head">4.2 The floor division operator</h2>
 
-<p id="text-style">The floor division operator performs ordinary
+<p class="text-style">The floor division operator performs ordinary
    division, then <em>rounds the result down to the
      lower integer</em>.</p>
 
-<pre id="code-style"><code class="python">>>> 10 / 3
+<pre class="code-style"><code class="python">>>> 10 / 3
 3.3333333333333335
 >>> 10 // 3
 3
@@ -68,63 +68,63 @@
 3</code></pre>
 
 
-<p id="text-style">Notice that the final result is not the
+<p class="text-style">Notice that the final result is not the
    nearest integer, but rather the lower integer.<br>If we want
    to divide integer and return an integer instead of a float
    we can use the foor operator.</p>
 
-<pre id="code-style"><code class="python">>>> 10 / 2
+<pre class="code-style"><code class="python">>>> 10 / 2
 5.0
 >>> 10 // 2
 5</code></pre>
 
-<hr id="art-div">
-<h2 id="sub-head">4.3 The modulo operator</h2>
+<hr class="art-div">
+<h2 class="sub-head">4.3 The modulo operator</h2>
 
-<p id="text-style">The <em>modulo operator</em>, sometimes known as the
+<p class="text-style">The <em>modulo operator</em>, sometimes known as the
   <em>remainder operator</em> returns the remainder when the
   first operand is divided by the second.</p>
 
-<pre id="code-style"><code class="python">>>> 5 % 3
+<pre class="code-style"><code class="python">>>> 5 % 3
 2</code></pre>
 
-<p id="text-style">In the above example,
-   <span id="code-style">3</span> goes into
-   <span id="code-style">5</span> once, leaving a remainder of
-   <span id="code-style">2</span>. Therefore, the result of
-   <span id="code-style">5 % 3</span> is the remainder
-   <span id="code-style">2</span>.</p>
+<p class="text-style">In the above example,
+   <span class="code-style">3</span> goes into
+   <span class="code-style">5</span> once, leaving a remainder of
+   <span class="code-style">2</span>. Therefore, the result of
+   <span class="code-style">5 % 3</span> is the remainder
+   <span class="code-style">2</span>.</p>
 
-<pre id="code-style"><code class="python">>>> 23 % 5
+<pre class="code-style"><code class="python">>>> 23 % 5
 3</code></pre>
 
-<p id="text-style">In the above example,
-   <span id="code-style">5</span> goes into
-   <span id="code-style">23</span> four times, leaving a remainder
-   of <span id="code-style">3</span>. Hence the result of
-   <span id="code-style">23 % 5</span> is the
-   remainder&nbsp;<span id="code-style">3</span></p>
+<p class="text-style">In the above example,
+   <span class="code-style">5</span> goes into
+   <span class="code-style">23</span> four times, leaving a remainder
+   of <span class="code-style">3</span>. Hence the result of
+   <span class="code-style">23 % 5</span> is the
+   remainder&nbsp;<span class="code-style">3</span></p>
 
-<hr id="art-div">
-<h2 id="sub-head">4.4 The exponent operator</h2>
-<p id="text-style">The <em>exponent operator</em> or <em>
+<hr class="art-div">
+<h2 class="sub-head">4.4 The exponent operator</h2>
+<p class="text-style">The <em>exponent operator</em> or <em>
    power operator</em> returns the first operand
    raised to the power of the second.</p>
-<pre id="code-style">
+<pre class="code-style">
 <code class="python">>>> 5**2  # Equivalent to 5 * 5
 >>> 2**3  # Equivalent to 2 * 2 * 2</code></pre>
-<hr id="art-div">
-<h2 id="sub-head">4.5 Order of operations</h2>
-<p id="text-style">If you use multiple arithmetic operators on a single
+<hr class="art-div">
+<h2 class="sub-head">4.5 Order of operations</h2>
+<p class="text-style">If you use multiple arithmetic operators on a single
    line, Python will use the conventional order of operations. In
    decreasing order of precedence:</p>
-<ol id="code-style" style="margin-left: 2rem">
+<ol class="code-style" style="margin-left: 2rem">
 <li>*, /, //, %</li>
 <li>+, -</li>
 </ol>
-<p id="text-style">Operators on the same line above are performed in
+<p class="text-style">Operators on the same line above are performed in
    order of occurence.</p>
-<pre id="code-style">
+<pre class="code-style">
 <code class="python">>>> 3 * 2 + 5  # Equivalent to 6 + 5
 >>> 4 * 5 - 3 * 4  # Equivalent to 20 - 12
 8
@@ -134,19 +134,19 @@
 8
 >>> 3 * -5
 -15</code></pre>
-<p id="text-style">Brackets can be used to specify order of operations.</p>
-<pre id="code-style"><code class="python">>>> 3 * (2 + 4)  # Equivalent to 3 * 6
+<p class="text-style">Brackets can be used to specify order of operations.</p>
+<pre class="code-style"><code class="python">>>> 3 * (2 + 4)  # Equivalent to 3 * 6
 18
 >>> 12 / (1 + 2)  # Equivalent to 12 / 3
 4
 >>> (5 + 9) % 3  # Equivalent to 14 % 3
 2</code></pre>
-<hr id="art-div">
-<p id="sub-head">4.6 Arithmetic operators on variables</p>
-<p id="text-style">We can assign integers and floats to variables and
+<hr class="art-div">
+<p class="sub-head">4.6 Arithmetic operators on variables</p>
+<p class="text-style">We can assign integers and floats to variables and
    perform arithmetic operations on these variables for the
    same result.</p>
-<pre id="code-style"><code class="python">>>> a = 12
+<pre class="code-style"><code class="python">>>> a = 12
 >>> b = 3
 >>> c = 1.5
 >>> a + b
@@ -161,12 +161,12 @@
 4
 >>> c ** b
 3.375</code></pre>
-<hr id="art-div">
-<h2 id="sub-head">4.7 Converting strings to integers</h2>
-<p id="text-style"> Sometimes, we want to convert a string to an integer
+<hr class="art-div">
+<h2 class="sub-head">4.7 Converting strings to integers</h2>
+<p class="text-style"> Sometimes, we want to convert a string to an integer
    so that we can perform the above maths on it. This can be done using
    <em>int()</em>.</p>
-<pre id="code-style"><code class="python">>>> num = 5
+<pre class="code-style"><code class="python">>>> num = 5
 >>> print(type(num))
 &lt;class 'int'>
 >>> num = '5'
@@ -175,11 +175,11 @@
 >>> print(type(int(num)))
 &lt;class 'int'>
 </code></pre>
-<p id="text-style">When we want to get an input from the user,
+<p class="text-style">When we want to get an input from the user,
    we use <em>input()</em>. However, sometimes we want to get an
    an integer input from the user. The <em>input()</em> function
    gives you a string, so we can simply surround it in <em>int()</em>.</p>
-<pre id="code-style"><code class="python">>>> year = input('What year is it? ')
+<pre class="code-style"><code class="python">>>> year = input('What year is it? ')
 What year is it? 2020
 >>> print(type(year))
 &lt;class 'str'>
@@ -188,19 +188,19 @@ What year is it? 2020
 >>> print(type(year))
 &lt;class 'int'>
 </code></pre>
-<p id="text-style">As you can see, when we don't convert our input to
+<p class="text-style">As you can see, when we don't convert our input to
    an integer, even if we enter a number, it is a string. But when we
    convert it to an integer using <em>int()</em>, it makes it an integer!</p>
 <div id="compare"></div>
-<hr id="art-div">
+<hr class="art-div">
 
-<h2 id="sub-head">4.8 More operators</h2>
-<p id="text-style">Sometimes it's important to compare two values.
+<h2 class="sub-head">4.8 More operators</h2>
+<p class="text-style">Sometimes it's important to compare two values.
    We haven't come across any examples of this so far but we will
    very soon!. To compare values we have a few operators which may seem
    familiar from maths.</p>
 
-<ul id="text-style" style="margin-left: 1rem">
+<ul class="text-style" style="margin-left: 1rem">
   <li>==&nbsp; checks whether two values are equal</li>
   <li>!= &nbsp;&nbsp;checks whether two values are not equal</li>
   <li>> &nbsp;&nbsp;&nbsp;checks whether the value of the left operand is greater
@@ -213,10 +213,10 @@ What year is it? 2020
           than or equal to the value of the right operand</li>
 </ul>
 
-<p id="text-style">
+<p class="text-style">
   Here are some examples of these being used:
 </p>
-<pre id="code-style"><code class="python">>>> print(5 == 5)
+<pre class="code-style"><code class="python">>>> print(5 == 5)
 True
 >>> print(5 != 5)
 False

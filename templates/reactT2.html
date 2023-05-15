@@ -1,70 +1,70 @@
 {% extends "./basereact.html" %}
 {% block title %}2. Fundamental Theory{% endblock %}
 {% block article %}
-<h1 id="top-head">2. Fundamental Theory</h1>
-<h2 id="sub-head">2.1 React vs ReactDOM</h2>
-<p id="text-style">Before getting into React and ReactDOM,
+<h1 class="top-head">2. Fundamental Theory</h1>
+<h2 class="sub-head">2.1 React vs ReactDOM</h2>
+<p class="text-style">Before getting into React and ReactDOM,
    you have to understand the problem with simple HTML which works
    by updating the DOM. The <em>DOM</em> or <em>Document Object Model</em>
    will track every change in state that you declare and update the DOM.
    For example, <em>make the text blue</em> or <em>set the font
    size to 15</em></p>
-<p id="text-style">In theory these changes are fast,
+<p class="text-style">In theory these changes are fast,
    however, the catch is that frequently manipulating this DOM
    will make it slow simply because the elements that need to be
    changed, must first be re-rendered to update what it looks like on
    your browser end. The solution is to make use of a <em>Virtual DOM</em>,
    which is a virtual representation of the real DOM -></p>
-<p id="text-style"><strong>How is this better?</strong></p>
-<p id="text-style">For each change that is introduced, a new
+<p class="text-style"><strong>How is this better?</strong></p>
+<p class="text-style">For each change that is introduced, a new
    Virtual DOM will be created to calculate the best and most
    efficient method to make these changes on the RealDOM. It’s like instead of
    me telling you all the answers to a math exam, and making you
    write down some numbers, I’ve told you the most efficient way to
    get to the answers.</p>
-<p id="text-style">React knows what a component is and how to make them work together
+<p class="text-style">React knows what a component is and how to make them work together
    whilst ReactDom knows how to make it show up in the DOM. ReactDOM uses
    javascript to use that collection of components and render it in the DOM.
    HTML stuff in the render is called <strong>JSX</strong>, a special dialect
    which allows us to place javascript code and determine the
    content of a react app just like normal html.</p>
 </p>
-<p id="text-style">Screen change on mouse move is called an <em>event
+<p class="text-style">Screen change on mouse move is called an <em>event
    handler</em>. They detect when a user is interacting with an
    app, and update the application/component.</p>
-<p id="text-style"><strong>To create a component:</strong></p>
-<pre id="code-style"><code class="javascript">const App = () => {
+<p class="text-style"><strong>To create a component:</strong></p>
+<pre class="code-style"><code class="javascript">const App = () => {
   return [JSX here]
 };</code></pre>
-<p id="text-style"><strong>To render the component:</strong></p>
-<pre id="code-style"><code class="javascript">ReactDOM.render(
+<p class="text-style"><strong>To render the component:</strong></p>
+<pre class="code-style"><code class="javascript">ReactDOM.render(
   &lt;App />,
   document.querySelector('#root')
 );</code></pre>
-<hr id="art-div">
-<h2 id="sub-head">2.2 JSX vs HTML</h2>
-<p id="text-style">Adding styling to an individual element</p>{% raw %}
-<pre id="code-style"><code id="html">HTML: &lt;div style="background-color: red;">&lt;div>
+<hr class="art-div">
+<h2 class="sub-head">2.2 JSX vs HTML</h2>
+<p class="text-style">Adding styling to an individual element</p>{% raw %}
+<pre class="code-style"><code id="html">HTML: &lt;div style="background-color: red;">&lt;div>
 JSX: &lt;div style={{ backgroundColor: 'red' }}>&lt;/div>
 
 HTML: &lt;div style="background-color: blue; color: white;">&lt;div>
 JSX: &lt;div style={{ backgroundColor: 'blue'; color: 'white' }}>&lt;/div></code></pre>
 
-<p id="text-style">First curly brace indicates a javascript class, and
+<p class="text-style">First curly brace indicates a javascript class, and
    the second means a javascript object. You're not supposed to use
    class in JSX, use className instead to avoid collisions with the
    keyword “class” which may think we are trying to define a
    new javascript class</p>
-<p id="text-style">Use a javascript variable and print it inside
+<p class="text-style">Use a javascript variable and print it inside
    a JSX block:</p>
-<pre id="code-style"><code class="javascript">const buttonText = 'Click me!';
+<pre class="code-style"><code class="javascript">const buttonText = 'Click me!';
 &lt;button style={{backgroundColor: 'blue', color: 'white'}}>
   {buttonText}
 &lt;/button>
 </code></pre>
 
   OR
-<pre id="code-style"><code class="javascript">function getButtonText() {
+<pre class="code-style"><code class="javascript">function getButtonText() {
   return 'Click on me!';
 }
 &lt;button style={{backgroundColor: 'blue', color: 'white'}}>
@@ -76,7 +76,7 @@ JSX: &lt;div style={{ backgroundColor: 'blue'; color: 'white' }}>&lt;/div></code
    objects inside of a react Component as text. Unless we use it as
    a property of the const.</p>
 {% endraw %}
-<p id="text-style">Initially React seems very complicated and it takes
+<p class="text-style">Initially React seems very complicated and it takes
    a lot of time and consistent revision to consolidate the content. I
    recommend repeating each module at least 2-3 times per week. We'll
    be covering different parts of components in the next module!</p>

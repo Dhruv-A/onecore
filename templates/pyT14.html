@@ -1,26 +1,26 @@
 {% extends "./basepy.html" %}
 {% block title %}14. Functions{% endblock %}
 {% block article %}
-<h1 id="top-head">14. Functions</h1>
-<h2 id="sub-head">14.1 In-built functions</h2>
-<p id="text-style">Python has many in-built functiions, which are
+<h1 class="top-head">14. Functions</h1>
+<h2 class="sub-head">14.1 In-built functions</h2>
+<p class="text-style">Python has many in-built functiions, which are
    ones that python provides you. These include:</p>
-<ul id="text-style" style="margin-left: 1rem;">
+<ul class="text-style" style="margin-left: 1rem;">
   <li>print()</li>
   <li>enumerate()</li>
   <li>min()</li>
   <li>sorted()</li>
   <li>chr()</li>
 </ul>
-<p id="text-style">I'll go through a few of these below</p>
-<hr id="art-div">
-<h2 id="sub-head">14.2 Enumerate</h2>
-<p id="text-style">Enumerate is extremely useful in certain situations.
+<p class="text-style">I'll go through a few of these below</p>
+<hr class="art-div">
+<h2 class="sub-head">14.2 Enumerate</h2>
+<p class="text-style">Enumerate is extremely useful in certain situations.
    It's a way to keep count of how far you are into a list when you're
    looping through it. For every value in a list that you iterate
    through in a for loop, it will have a tuple in the form of
    (count, value). Here's an example with and without enumerate.</p>
-<pre id="code-style"><code class="python">>>> letters = ['a', 'b', 'c']
+<pre class="code-style"><code class="python">>>> letters = ['a', 'b', 'c']
 >>> for item in letters:
       print(item)
 
@@ -32,76 +32,76 @@ c
 0 a
 1 b
 2 c</code></pre>
-<hr id="art-div">
-<h2 id="sub-head">14.3 Min() and Sorted()</h2>
-<p id="text-style">The min() function returns the lowest value. It's
+<hr class="art-div">
+<h2 class="sub-head">14.3 Min() and Sorted()</h2>
+<p class="text-style">The min() function returns the lowest value. It's
    very straightforward.</p>
-<pre id="code-style"><code class="python">>>> numbers = [6, 1, 3]
+<pre class="code-style"><code class="python">>>> numbers = [6, 1, 3]
 >>> print(min(numbers))
 1</code></pre>
-<p id="text-style">The sorted() function returns a list with sorted
+<p class="text-style">The sorted() function returns a list with sorted
    letters and numbers. You can sort lots of datatypes including
    strings and lists, but they will return lists.</p>
-<pre id="code-style"><code class="python">>>> letters = 'helloworld'
+<pre class="code-style"><code class="python">>>> letters = 'helloworld'
 >>> print(sorted(letters))
 ['d', 'e', 'h', 'l', 'l', 'l', 'o', 'o', 'r', 'w']
 >>> numbers = '234094832842'
 >>> print(sorted(numbers))
 ['0', '2', '2', '2', '3', '3', '4', '4', '4', '8', '8', '9']</code></pre>
-<hr id="art-div">
-<h2 id="sub-head">14.4 Defining your own functions</h2>
-<p id="text-style">Just like the in-built functions that python
+<hr class="art-div">
+<h2 class="sub-head">14.4 Defining your own functions</h2>
+<p class="text-style">Just like the in-built functions that python
    already has, we can define our own functions. Let's say we want a
    function that prints out 'Hello World' whenever we call it. We can
    do that as follows:</p>
-<pre id="code-style"><code class="python">def hi():  # creates a function called hi
+<pre class="code-style"><code class="python">def hi():  # creates a function called hi
   print('Hello World')  # prints out 'Hello World' when the function is called</code></pre>
-<p id="text-style">That's all you need! So, whenever we call the above
+<p class="text-style">That's all you need! So, whenever we call the above
    function, it will print out 'Hello World'</p>
-<pre id="code-style"><code class="python">def hi():
+<pre class="code-style"><code class="python">def hi():
   print('Hello World')
 
 hi()
 hi()</code></pre>
-<p id="text-style">This will print out that string twice:</p>
-<pre id="code-style"><code class="python">Hello World
+<p class="text-style">This will print out that string twice:</p>
+<pre class="code-style"><code class="python">Hello World
 Hello World</code></pre>
-<p id="text-style">Basically, how it works is, whenever you define a
+<p class="text-style">Basically, how it works is, whenever you define a
    function and call it, it runs all the code in the function. It's
    great when you want to reuse certain code multiple times.</p>
-<hr id="art-div">
-<h2 id="sub-head">14.5 Take arguments</h2>
-<p id="text-style">Just like most in-built functions in python, your
+<hr class="art-div">
+<h2 class="sub-head">14.5 Take arguments</h2>
+<p class="text-style">Just like most in-built functions in python, your
    own functions can take arguments. Let's say we wanted to make a
    function to greet someone. It takes in their name and prints 'Hi, '
    followed by their name. We can make that function as follows:</p>
-<pre id="code-style"><code class="python">>>> def sayHi(name):
+<pre class="code-style"><code class="python">>>> def sayHi(name):
       print('Hi, ' + name)
 >>> sayHi('Harry')
 Hi, Harry</code></pre>
-<p id="text-style">You can take in multiple arguments into functions, separated
+<p class="text-style">You can take in multiple arguments into functions, separated
    by commas. Let's say you wanted a function that takes in two values and
    prints out their sum.</p>
-<pre id="code-style"><code class="python">>>> def add(a, b):
+<pre class="code-style"><code class="python">>>> def add(a, b):
       print(a + b)
 >>> add(3, 4)
 7</code></pre>
-<hr id="art-div">
-<h2 id="sub-head">14.6 The return statement</h2>
-<p id="text-style">Rather than printing out at the end, most functions
+<hr class="art-div">
+<h2 class="sub-head">14.6 The return statement</h2>
+<p class="text-style">Rather than printing out at the end, most functions
    return a value, which you can assign to another variable. We can create
    functions that do this using the return statement. They work like the
    previous functions, however, they will return a value rather than
    print it.</p>
-<p id="text-style">Let's say that we wanted to create a function that doubles
+<p class="text-style">Let's say that we wanted to create a function that doubles
    an integer value.</p>
-<pre id="code-style"><code class="python">>>> def double(a):
+<pre class="code-style"><code class="python">>>> def double(a):
       b = 2 * a
       return b
 >>> num = 5
 >>> newNum = double(num)
 >>> print(newNum)
 10</code></pre>
-<p id="text-style">This way, we can assign the output to a variable rather
+<p class="text-style">This way, we can assign the output to a variable rather
    than only printing it out.</p>
 {% endblock %}

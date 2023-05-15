@@ -1,30 +1,30 @@
 {% extends "./basepy.html" %}
 {% block title %}10. Dictionaries{% endblock %}
 {% block article %}
-<h1 id="top-head">10. Dictionaries</h1>
-<h2 id="sub-head">10.1 What is a dictionary?</h2>
-<p id="text-style">Dictionaries are unordered collections of data values.
+<h1 class="top-head">10. Dictionaries</h1>
+<h2 class="sub-head">10.1 What is a dictionary?</h2>
+<p class="text-style">Dictionaries are unordered collections of data values.
    Unlike elements of a list, which are indexed by their position, those
    in a dictionary are indexed by a <em>key</em>. The data in a dictionary
    is said to be a key:value pair.</p>
-<p id="text-style">Let's say we wanted to make an ID system, which
+<p class="text-style">Let's say we wanted to make an ID system, which
    stores information about people based on a unique ID number. We start by
    making a dictionary which { } and adding keys and values separated with
    colons</p>
-<pre id="code-style"><code class="python">ids = {
+<pre class="code-style"><code class="python">ids = {
   239843: 'Student_A',
   209435: 'Student_B',
   948594: 'Student_C',
   198321: 'Student_D'
 }
 </code></pre>
-<a id="link-style" href="{{ url_for('static', filename='pyCode/10-Dictionary-1.py') }}"
+<a class="link-style" href="{{ url_for('static', filename='pyCode/10-Dictionary-1.py') }}"
    download>Download example</a>
-<p id="text-style">This gives us a dictionary where, if we search for
+<p class="text-style">This gives us a dictionary where, if we search for
    someone's ID, it will give us their name. After you download and run the file,
    try indexing like you did with lists, however, this time use the keys as your
    index</p>
-<pre id="code-style"><code class="python">>>> print(ids[209435])
+<pre class="code-style"><code class="python">>>> print(ids[209435])
 Student_B
 >>> print(ids[0])
 Traceback (most recent call last):
@@ -32,43 +32,43 @@ Traceback (most recent call last):
     print(ids[0])
 KeyError: 0
 </code></pre>
-<p id="text-style">As you can see, if we try to index using the key, it
+<p class="text-style">As you can see, if we try to index using the key, it
    returns the value stored in the dictionary for that key, however, if
    we try to index based on position like with lists, it will give us an error.
    This is because dictionaries will only give you the value corresponding
    to a key and they are unordered so you can't search for a value using position
    like you can with lists.</p>
-<hr id="art-div">
-<h2 id="sub-head">10.2 Iterating through keys</h2>
-<p id="text-style">Sometimes, we want to loop through a dictionary, such
+<hr class="art-div">
+<h2 class="sub-head">10.2 Iterating through keys</h2>
+<p class="text-style">Sometimes, we want to loop through a dictionary, such
    as if we want to print out all the names in the dictionary in the above
    example. We can do this using a for loop.</p>
-<pre id="code-style"><code class="python">for name in ids:
+<pre class="code-style"><code class="python">for name in ids:
 print(ids[name])
 
 Student_A
 Student_B
 Student_C
 Student_D</code></pre>
-<p id="text-style">Every time you loop through the for loop, the variable
+<p class="text-style">Every time you loop through the for loop, the variable
    <em>name</em> gets assigned to another key in the dictionary, and you
    simply find the student using that key. This is a very useful way to access
    the contents of dictionaries.</p>
-<hr id="art-div">
-<h2 id="sub-head">10.3 Getting values using the get method</h2>
-<p id="text-style">When we try to find the value stored in a key in python,
+<hr class="art-div">
+<h2 class="sub-head">10.3 Getting values using the get method</h2>
+<p class="text-style">When we try to find the value stored in a key in python,
    we need to make sure that the key exists. In the ids example above, if we
    try to find the value in ids[3243243] <em>which doesn't exist</em>, we will
    get an error. To avoid this, python has a get method for dictionaries. It
    takes two arguments, the first being the key you're trying, and the second
    being a default value.</p>
-<pre id="code-style"><code class="python">>>> print(ids.get(239843, 'Student Not Found'))  # a student who exists in the dictionary
+<pre class="code-style"><code class="python">>>> print(ids.get(239843, 'Student Not Found'))  # a student who exists in the dictionary
 Student_A
 >>> print(ids.get(203942, 'Student Not Found'))  # a student who isn't in the dictionary
 Student Not Found</code></pre>
-<p id="text-style">As seen, this prevents any errors and lets us assign a
+<p class="text-style">As seen, this prevents any errors and lets us assign a
    default value when a key doesn't exist.</p>
-<p id="text-style">Dictionaries are very useful and important to understand when
+<p class="text-style">Dictionaries are very useful and important to understand when
    learning python. They are applicable to solving many different types of
    problems so it's a good idea to make sure you know how to use them!</p>
 {% endblock %}

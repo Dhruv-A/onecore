@@ -1,12 +1,12 @@
 {% extends "basecsharp.html" %}
 {% block title %}5. Loops{% endblock %}
 {% block article %}
-<h1 id="top-head">5. Loops</h1>
-<h2 id="sub-head">5.1 While Loop</h2>
+<h1 class="top-head">5. Loops</h1>
+<h2 class="sub-head">5.1 While Loop</h2>
 <p id="text=style">Loops allow you to repeat statements
   that the programmer wants executed more than once. The first
   loop structure in C# is the while loop.</p>
-<pre id="code-style"><code class="C#">using System;
+<pre class="code-style"><code class="C#">using System;
 
 namespace HelloWorld
 {
@@ -24,16 +24,16 @@ namespace HelloWorld
         }
     }
 }</code></pre>
-<p id="text-style">It is a pretest loop meaning that we
+<p class="text-style">It is a pretest loop meaning that we
   check the condition that counter is less than 10 before
   entering the loop. It will repeat checking the condition and
   executing the statements in the curly braces (highlighted in red)
   until the condition is false. That is until counter is 10, as
   10 is not less than 10.</p>
-<p id="text-style"><strong>Challenge</strong><br>What do you think
+<p class="text-style"><strong>Challenge</strong><br>What do you think
   will be the output of this code?</p>
-<p id="text-style"><strong>Solution</strong></p>
-<pre id="code-style"><code class="C#">The counter is 0
+<p class="text-style"><strong>Solution</strong></p>
+<pre class="code-style"><code class="C#">The counter is 0
 The counter is 1
 The counter is 2
 The counter is 3
@@ -44,7 +44,7 @@ The counter is 7
 The counter is 8
 The counter is 9
 We are out of the loop!</code></pre>
-<p id="text-style">As we can see, the program did not
+<p class="text-style">As we can see, the program did not
   print 10 because it did not satisfy the condition when
   counter was equal to 10. The ++ after the counter variable
   is the increment operator, it can also written as increment
@@ -52,33 +52,33 @@ We are out of the loop!</code></pre>
   variable by one we can write increment – (in this case if we
   decrement the variable we will enter and infinite while loop
   as the condition will always be true).</p>
-<hr id="art-div">
-<h2 id="sub-head">5.2 Do…while loop</h2>
-<p id="text-style">If you would like to test the condition
+<hr class="art-div">
+<h2 class="sub-head">5.2 Do…while loop</h2>
+<p class="text-style">If you would like to test the condition
   after the execution of the code block in the while loop bod,
   you can use the do…while loop, which is known as a post-test
   repetition – it tests the condition after the code has been executed.</p>
-<p id="text-style"><strong>Challenge</strong><br>See if
+<p class="text-style"><strong>Challenge</strong><br>See if
   you can change the code from the previous example to
   take place in a do…while loop.</p>
-<p id="text-style"><strong>Solution</strong></p>
-<pre id="code-style"><code class="C#">int counter = 0;
+<p class="text-style"><strong>Solution</strong></p>
+<pre class="code-style"><code class="C#">int counter = 0;
 do
 {
   Console.WriteLine($"The counter is {counter}");
   counter++;
 } while (counter < 10);
 Console.WriteLine("We are out of the loop!");</code></pre>
-<hr id="art-div">
-<h2 id="sub-head">5.3 For loop</h2>
-<p id="text-style">The for loop does the same work as the
+<hr class="art-div">
+<h2 class="sub-head">5.3 For loop</h2>
+<p class="text-style">The for loop does the same work as the
   while loop and can be thought of as automatically
   incrementing the counter after every pass.</p>
-<pre id="code-style"><code class="C#">for(int counter = 0; counter < 10; counter++)
+<pre class="code-style"><code class="C#">for(int counter = 0; counter < 10; counter++)
 {
   Console.WriteLine($"Hello World! The counter is {counter}");
 }</code></pre>
-<p id="text-style">In the above example, the first part
+<p class="text-style">In the above example, the first part
   is called the for initaliser (int counter = 0;) which declares
   that counter is the loop variable and sets its value
   to 0 (remember the semi-colon!). It is then followed
@@ -89,20 +89,20 @@ Console.WriteLine("We are out of the loop!");</code></pre>
   to modify the loop variable after the body code has been executes
   (the only following the for statement).  As we have just learnt,
   it will increment the counter by one after each pass.</p>
-<p id="text-style"><strong>Challenge</strong>
+<p class="text-style"><strong>Challenge</strong>
 <ul style="margin-left: 1rem;">
   <li>Change the initialiser to start at a different value e.g. 6</li>
   <li>Change the condition to stop at a different value e.g. 54</li>
   <li>Print out the output.</li>
 </ul></p>
-<p id="text-style"><em>There is one more type of
+<p class="text-style"><em>There is one more type of
   loop, the foreach loop, that we will cover in
   the next section which transverses items in a
   collection e.g. an array with two access point e.g.
   Array[3][4] (like enumerate in Python).</em></p>
-<hr id="art-div">
-<h2 id="sub-head">5.4 Loop nesting</h2>
-<p id="text-style">We can nest loops in order to create
+<hr class="art-div">
+<h2 class="sub-head">5.4 Loop nesting</h2>
+<p class="text-style">We can nest loops in order to create
   a matrix, which is simply a table with many diemtions.
   For example, a single array is equivalent to a list in
   python and holds a collection of items e.g. [bread, milk, etc…].
@@ -116,44 +116,44 @@ Console.WriteLine("We are out of the loop!");</code></pre>
   before the sub group of elements after the colon. We can
   assign it to represent a row. So [1: [1, 2, 3, 4] would mean
   that the first row has the values 1, 2, 3, 4.</p>
-<p id="text-style">We can use one for loop to generate the rows
+<p class="text-style">We can use one for loop to generate the rows
   and other one to generate the value of the elements in the
   row. For example the following loop generating the numbers
   1 to 10 (or the rows).</p>
-<pre id="code-style"><code class="C#">for (int row = 1; row < 11; row++)
+<pre class="code-style"><code class="C#">for (int row = 1; row < 11; row++)
 {
   Console.WriteLine($"The row is {row}");
 }</code></pre>
-<p id="text-style">Another loop can generate the columns:</p>
-<pre id="code-style"><code class="C#">for (char column = 'a'; column < 'k'; column++)
+<p class="text-style">Another loop can generate the columns:</p>
+<pre class="code-style"><code class="C#">for (char column = 'a'; column < 'k'; column++)
 {
   Console.WriteLine($"The column is {column}");
 }</code></pre>
-<p id="text-style">If we nest one loop inside the other we can
+<p class="text-style">If we nest one loop inside the other we can
   generate the 2D array:</p>
-<pre id="code-style"><code class="C#">for (int row = 1; row < 11; row++)
+<pre class="code-style"><code class="C#">for (int row = 1; row < 11; row++)
 {
   for (char column = 'a'; column < 'k'; column++)
   {
     Console.WriteLine($"The cell is ({row}, {column})");
   }
 }</code></pre>
-<p id="text-style">If you run this code, you will
+<p class="text-style">If you run this code, you will
   notice that the outer loop increments once the nested
   for loop has finished running. In this way we first
   generate the row then all of the row values (or the
   coloum values for that row), until we populate the entire
   table. Note: in these examples we are not storing the result,
   just printing it. For example, the output</p>
-<p id="text-style">The cell is (1, a)<br>
+<p class="text-style">The cell is (1, a)<br>
 The cell is (1, b)<br>
 The cell is (1, c)<br>
 The cell is (1, d)<br>
 The cell is (1, e)</p>
-<p id="text-style">Corresponds to</p>
+<p class="text-style">Corresponds to</p>
 <img src="https://drive.google.com/uc?export=view&id=10woCeXUp5cB1i3Gg9LkLBXPiMdbl9Inx"
 alt="csharp-image">
-<p id="text-style"><strong>Challenge</strong><br>
+<p class="text-style"><strong>Challenge</strong><br>
   Write a C# code to find the sum of all integers 1 to 20 that are divisible
   by three.<br><br>
   Hint 1: <span class="hint-style">the % is used to get the
@@ -163,9 +163,9 @@ alt="csharp-image">
     part of the sum</span><br>
   Hint 3: <span class="hint-style">the for loop can allow you
     to repeat a series of steps for all numbers 1 through 20</span></p>
-<p id="text-style"><strong>Answer</strong><br>
+<p class="text-style"><strong>Answer</strong><br>
 63.</p>
-<pre id="code-style"><code class="C#">int sum = 0;
+<pre class="code-style"><code class="C#">int sum = 0;
 for (int number = 1; number < 21; number++)
 {
   if (number % 3 == 0)

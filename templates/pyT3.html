@@ -1,133 +1,133 @@
 {% extends "./basepy.html" %}
 {% block title %}3. Basics{% endblock %}
 {% block article %}
-<h1 id="top-head">3. Basics</h1>
-<h2 id="sub-head">3.1 Shell and Files</h2>
-<p id="text-style">So far we've been working in the shell
+<h1 class="top-head">3. Basics</h1>
+<h2 class="sub-head">3.1 Shell and Files</h2>
+<p class="text-style">So far we've been working in the shell
    where we can see what we're running as soon as we type it.
    Another way to code is to create a new file in idle
    (File > New File) and then run after you type up code
    (Run > Run Module). You should always code in a file,
    however, we will explain most things in the shell so that
    you can instantly see the results.</p>
-<hr id="art-div">
-<h2 id="sub-head">3.2 Assigning Variables</h2>
-<p id="text-style">Firstly, we will create a variable.
+<hr class="art-div">
+<h2 class="sub-head">3.2 Assigning Variables</h2>
+<p class="text-style">Firstly, we will create a variable.
    Variables can be used to store information. Let's
    create a variable called 'name' and we will assign
    a name to it:</p>
-<pre id="code-style"><code class="python">name = 'Dhruv'</code></pre>
-<p id="text-style">Notice how you do not have to put
+<pre class="code-style"><code class="python">name = 'Dhruv'</code></pre>
+<p class="text-style">Notice how you do not have to put
    quotations around the variable because it's not a string.
    Now, if we run this, and see what the value of
    the variable is:</p>
-<pre id="code-style"><code class="python">>>> name
+<pre class="code-style"><code class="python">>>> name
 Dhruv</code></pre>
-<p id="text-style">It returns the name.</p>
-<hr id="art-div">
+<p class="text-style">It returns the name.</p>
+<hr class="art-div">
 
-<h2 id="sub-head">3.3 Print</h2>
+<h2 class="sub-head">3.3 Print</h2>
 
-<p id="text-style">The print function outputs text:</p>
-<pre id="code-style"><code class="python">>>> print('Hello, World!')
+<p class="text-style">The print function outputs text:</p>
+<pre class="code-style"><code class="python">>>> print('Hello, World!')
 Hello, World!</code></pre>
-<p id="text-style">Make sure the text inside is a string.</p>
-<pre id="code-style"><code class="python">>>> print(Hello)
+<p class="text-style">Make sure the text inside is a string.</p>
+<pre class="code-style"><code class="python">>>> print(Hello)
 Traceback (most recent call last):
   File "&lt;pyshell#1>", line 1, in &lt;module&gt;
     print(Hello)
 NameError: name 'Hello' is not defined</code></pre>
-<p id="text-style">This error is a result of not putting
+<p class="text-style">This error is a result of not putting
    quotation marks around Hello. When we don't put in
    quotation marks, the code thinks we are looking for the
    variable Hello rather than the string. Additionally,
    you can print variables if you want!</p>
-<pre id="code-style"><code class="python">>>> print('Hello')
+<pre class="code-style"><code class="python">>>> print('Hello')
 Hello</code></pre>
-<p id="text-style">Alternatively, you can store the
+<p class="text-style">Alternatively, you can store the
    name in a variable and print that out</p>
-<pre id="code-style"><code class="python">>>>name = 'Dhruv'
+<pre class="code-style"><code class="python">>>>name = 'Dhruv'
 >>> print(name)
 Dhruv</code></pre>
-<hr id="art-div">
-<p id="sub-head">3.4 Input</p>
-<p id="text-style">The input function asks for input from a user.</p>
-<p id="text-style">You can add text inside the function to ask
+<hr class="art-div">
+<p class="sub-head">3.4 Input</p>
+<p class="text-style">The input function asks for input from a user.</p>
+<p class="text-style">You can add text inside the function to ask
    questions. Then I can type my input on that same line,
    let's say I'm answering the question that I'm asking:</p>
-<pre id="code-style"><code class="python">>>> input('What is your name?')
+<pre class="code-style"><code class="python">>>> input('What is your name?')
 What is your name?Dhruv</code></pre>
-<p id="text-style">Notice how the output text and your input is
+<p class="text-style">Notice how the output text and your input is
    connected. This does not look good and we typically add a
    space at the end of the string to fix it:</p>
-<pre id="code-style"><code class="python">>>> input('What is your name? ')
+<pre class="code-style"><code class="python">>>> input('What is your name? ')
 What is your name? Dhruv</code></pre>
-<p id="text-style">When you ask for an input, you should store your answer in a variable so that you can use it later on:</p>
-<pre id="code-style"><code class="python">>>> name = input('What is your name? ')
+<p class="text-style">When you ask for an input, you should store your answer in a variable so that you can use it later on:</p>
+<pre class="code-style"><code class="python">>>> name = input('What is your name? ')
 What is your name? Dhruv
 >>> print(name)
 Dhruv
 >>> print('Hi ' + name)
 Hi Dhruv</code></pre>
-<p id="text-style">Notice that we don't use quotation marks
+<p class="text-style">Notice that we don't use quotation marks
    around variables, and that's how our code knows that
    it's a variable and not a string!</p>
-<hr id="art-div">
-<p id="sub-head">3.5 Integers and Floats</p>
-<p id="text-style">An integer is a whole number.
+<hr class="art-div">
+<p class="sub-head">3.5 Integers and Floats</p>
+<p class="text-style">An integer is a whole number.
    In python, if we want to assign an integer to a variable, we can do the same thing we did with strings, except without quotation marks. For example, if I assign the number
    10 to num:</p>
-<pre id="code-style"><code class="python">>>> num = 10
+<pre class="code-style"><code class="python">>>> num = 10
 >>> print(num)
 10
 >>> type(num)
 &lt;class 'int'&gt;</code></pre>
-<p id="text-style">If we want decimals as well, we
+<p class="text-style">If we want decimals as well, we
    use something called a floating point number
    (float). For example, if I assign the number 10.1
    to num:</p>
-<pre id="code-style"><code class="python">>>> num = 10.1
+<pre class="code-style"><code class="python">>>> num = 10.1
 >>> print(num)
 10.1
 &lt;class 'float'&gt;</code></pre>
-<p id="text-style">So, those are integers and floats. We
+<p class="text-style">So, those are integers and floats. We
    will look at reasons why integers and floats are
    important later!</p>
-<hr id="art-div">
-<h2 id="sub-head">3.6 Type casting</h2>
-<p id="text-style">Sometimes, we want to convert between
+<hr class="art-div">
+<h2 class="sub-head">3.6 Type casting</h2>
+<p class="text-style">Sometimes, we want to convert between
    integers and strings. We can only concatenate strings, therefore,
    in order to join a string and an integer, we need to convert
    the integer into a string first. Let's say we want to print
    the temperature:</p>
-<pre id="code-style"><code class="python">>>> temp = 20
+<pre class="code-style"><code class="python">>>> temp = 20
 print('It is ' + temp + ' degrees today!')
 Traceback (most recent call last):
   File "&lt;pyshell#3>", line 1, in &lt;module>
     print('It is ' + temp + ' degrees today!')
 TypeError: can only concatenate str (not "int") to str</code></pre>
-<p id="text-style">As explained, you need will get an error if
+<p class="text-style">As explained, you need will get an error if
    you try to concatenate a string and an integer. To fix this
    we change the integer to a string:</p>
-<pre id="code-style"><code class="python">>>> temp = 20
+<pre class="code-style"><code class="python">>>> temp = 20
 >>> print('It is ' + str(temp) + ' degrees today!')
 It is 20 degrees today!</code></pre>
-<hr id="art-div">
-<h2 id="sub-head">3.7 f-Strings</h2>{% raw %}
-<p id="text-style">Python has another way to connect multiple
+<hr class="art-div">
+<h2 class="sub-head">3.7 f-Strings</h2>{% raw %}
+<p class="text-style">Python has another way to connect multiple
    strings without using + to concatenate them. This is done
    using f-strings. A f-string is like a normal string, except
    if you want to add variables you add them as if they were
    part of the string, and surround them with {}. For example,
    let's say that we wanted to ask the user for a name and
    then greet them, we could do it in two ways. The first is:</p>
-<pre id="code-style"><code class="python">name = input('What is your name? ')
+<pre class="code-style"><code class="python">name = input('What is your name? ')
 print('Hi, ' + name)</code></pre>
-<p id="text-style">This is the way we've already learnt: using + to concatenate
+<p class="text-style">This is the way we've already learnt: using + to concatenate
    two strings. The way below uses an f-string to do that:</p>
-<pre id="code-style"><code class="python">name = input('What is your name? ')
+<pre class="code-style"><code class="python">name = input('What is your name? ')
 print(f'Hi, {name}')</code></pre>
-<p id="text-style">F-strings are much more readable and mean that we don't
+<p class="text-style">F-strings are much more readable and mean that we don't
    need to deal with multiple strings. Because of this, these modules will mostly
    be using f-strings.</p>
 {% endraw %}

@@ -1,4 +1,4 @@
-#top-head {
+.top-head {
   font-family: 'Nunito Sans', Helvetica, sans-serif;
   margin-top: 20pt;
   margin-bottom: 3rem;
@@ -6,31 +6,31 @@
   font-size: 20pt;
   font-weight: bold;
 }
-#sub-head {
+.sub-head {
   font-family: 'Nunito Sans', Helvetica, sans-serif;
   line-height: 1.38;
   font-size: 16pt;
   font-weight: bold;
   margin-bottom: 2rem;
 }
-#code-style {
+.code-style {
   font-family: monospace;
   line-height: 1.38;
   font-size: 11pt;
   margin: 1rem 0;
 }
-#text-style {
+.text-style {
   font-family: 'Nunito Sans', Helvetica, sans-serif;
   line-height: 1.38;
   font-size: 12pt;
   margin: 1rem 0;
 }
-#link-style {
+.link-style {
   text-decoration: none;
   color: rgb(66, 138, 245);
   line-height: 1.38;
   font-size: 12pt;
 }
-#art-div {
+.art-div {
   margin: 3rem 0;
-  }
+}

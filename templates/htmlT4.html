@@ -1,24 +1,24 @@
 {% extends "basehtml.html" %}
 {% block title %}4. Basic Tags 2{% endblock %}
 {% block article %}
-<h1 id="top-head">4. Basic Tags 2</h1>
-<h2 id="sub-head">4.1 Selecting Images</h2>
-<p id="text-style">We will continue to use the bookshop example from the
+<h1 class="top-head">4. Basic Tags 2</h1>
+<h2 class="sub-head">4.1 Selecting Images</h2>
+<p class="text-style">We will continue to use the bookshop example from the
    previous module and build on it below. Our webpage currently only
    has text and looks boring. One way to make a page more interesting
    is using images. You can add an image you find online using its url
    or anything you have on your laptop using its name.
  </p>
- <p id="text-style">One very important aspect of a website is the images
+ <p class="text-style">One very important aspect of a website is the images
     you use. You cannot copy any image you find online and must look at
     any conditions for using it. For example, we make most of the images
     we use on this website and the remaining ones come from sources which
     allow images to be reproduced. We recommend you use a source such as
-    <a id="link-style" href="https://unsplash.com/">unsplash</a> which
+    <a class="link-style" href="https://unsplash.com/">unsplash</a> which
     provides freely-usable images.</p>
-<hr id="art-div">
-<h2 id="sub-head">4.2 Adding Images to HTML</h2>
-<p id="text-style">To add images onto our website, we use the image tag.
+<hr class="art-div">
+<h2 class="sub-head">4.2 Adding Images to HTML</h2>
+<p class="text-style">To add images onto our website, we use the image tag.
    It has certain <em>attributes</em> which define what is inside. The first
    is <em>src</em> which takes in the source of the image (either a url
    or the image name if it's saved in the same folder as the HTML file). The
@@ -26,52 +26,52 @@
    if it cannot find the image. Furthermore, image tags do not have a closing
    tag. Let's take a picture of books from unspash
    and put it on the page.</p>
-<pre id="code-style"><code class="html">&lt;img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="books-image"></code></pre>
+<pre class="code-style"><code class="html">&lt;img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="books-image"></code></pre>
 <iframe srcdoc='<img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="books-image">' width=100%></iframe>
-<p id="text-style">In the above example, it retrieves the image as expected.
+<p class="text-style">In the above example, it retrieves the image as expected.
    However, in some cases it cannot find the image, so it will use the
    specified alternative text.</p>
-<pre id="code-style"><code class="html">&lt;img src="https://images.unsplash.com/photo-14557369804613-52c61a468e7d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="books-image"></code></pre>
+<pre class="code-style"><code class="html">&lt;img src="https://images.unsplash.com/photo-14557369804613-52c61a468e7d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="books-image"></code></pre>
 <iframe srcdoc='<img src="https://images.unsplash.com/photo-14557369804613-52c61a468e7d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="books-image">' width=100%></iframe>
-<hr id="art-div">
-<h2 id="sub-head">4.3 Hypertext Links</h2>
-<p id="text-style">Sometimes we want to provide links to different
+<hr class="art-div">
+<h2 class="sub-head">4.3 Hypertext Links</h2>
+<p class="text-style">Sometimes we want to provide links to different
    websites and pages such as
-   <a id="link-style" href="https://unsplash.com/">unsplash</a> and
-   <a id="link-style" href="https://atom.io/">atom</a>. These can
+   <a class="link-style" href="https://unsplash.com/">unsplash</a> and
+   <a class="link-style" href="https://atom.io/">atom</a>. These can
    be created using the anchor tag. It requires a closing tag. Inside
    the opening tag it has the <em>href</em> attribute. This specifies
    the url of the page you want to link. In between the opening and
    closing tags, you specify what you want to be displayed on the link.
    Let's create a link to the home page of this website, which has
    the url <em>https://onecore.tech/</em>.</p>
-<pre id="code-style"><code class="html">&lt;a href="https://onecore.tech/">CORE website&lt;/a></code></pre>
+<pre class="code-style"><code class="html">&lt;a href="https://onecore.tech/">CORE website&lt;/a></code></pre>
 <iframe srcdoc='<a href="https://onecore.tech/">CORE website</a>' width="100%"></iframe>
-<p id="text-style">As you can see, the link doesn't look great and the
+<p class="text-style">As you can see, the link doesn't look great and the
    hyperlinks on this website look way more appealing. By default, links
    are dark blue and underlined. However, we can change almost everything
    about the styling. We'll learn about that later on when we move to CSS.</p>
-<hr id="art-div">
-<h2 id="sub-head">4.4 Bold and Italics</h2>
-<p id="text-style">Within paragraphs, we sometimes want to put emphasis
+<hr class="art-div">
+<h2 class="sub-head">4.4 Bold and Italics</h2>
+<p class="text-style">Within paragraphs, we sometimes want to put emphasis
    on certain words. There are many rules about what to use and if
    you're interested in learning about it
-   <a id="link-style" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong">
+   <a class="link-style" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong">
    this is a good website</a>. When we want bolded text to indicate words
    of greater importance, we use the strong element. <strong>This is
    what it looks like.</strong></p>
-<pre id="code-style"><code class="html">&lt;p>Come to our bookshop to purchase books about programming!
+<pre class="code-style"><code class="html">&lt;p>Come to our bookshop to purchase books about programming!
    &lt;strong>We are only open on weekdays.&lt;/strong>&lt;/p></code></pre>
 <iframe srcdoc="<p>Come to our bookshop to purchase books about programming!
    <strong>We are only open on weekdays.</strong></p>" width="100%"></iframe>
-<p id="text-style">Alternatively, we can use the emphasis element to
+<p class="text-style">Alternatively, we can use the emphasis element to
    indicate that a certain sentence has emphasis. <em>This is what
    it looks like.</em></p>
-<pre id="code-style"><code class="html">&lt;p>Come to our bookshop to purchase books about programming!
+<pre class="code-style"><code class="html">&lt;p>Come to our bookshop to purchase books about programming!
   Our most popular book is &lt;em>Learn HTML and CSS&lt;/em>.&lt;/p></code></pre>
 <iframe srcdoc="<p>Come to our bookshop to purchase books about programming!
   Our most popular book is <em>Learn HTML and CSS</em>.</p>" width="100%"></iframe>
-<p id="text-style">There are other methods to style text which are more
+<p class="text-style">There are other methods to style text which are more
    preferred in some cases. We will start to cover styling in the
    next module!</p>
 {% endblock %}

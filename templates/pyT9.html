@@ -1,110 +1,110 @@
 {% extends "./basepy.html" %}
 {% block title %}9. Lists and Tuples{% endblock %}
 {% block article %}
-<h1 id="top-head">9. Lists and Tuples</h1>
-<p id="sub-head">9.1 What is a list?</p>
-<p id="text-style">A list is a data type in python which can
+<h1 class="top-head">9. Lists and Tuples</h1>
+<p class="sub-head">9.1 What is a list?</p>
+<p class="text-style">A list is a data type in python which can
    contain items. You use [ ] to specify that something is a list
    and you separate items with a comma. For example, let's say
    I have a list of numbers from 1 to 10:</p>
-<pre id="code-style"><code class="python">numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</code></pre>
-<p id="text-style">The variable numbers is a list holding numbers from 1 to 10.
+<pre class="code-style"><code class="python">numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</code></pre>
+<p class="text-style">The variable numbers is a list holding numbers from 1 to 10.
    Lists can contain different data types in them, like strings as well.</p>
-<pre id="code-style"><code class="python">items = ['something', 5, 8, 'anotherthing']</code></pre>
-<p id="text-style">The above code gives you a list called items. It contains
+<pre class="code-style"><code class="python">items = ['something', 5, 8, 'anotherthing']</code></pre>
+<p class="text-style">The above code gives you a list called items. It contains
    2 strings and two integers. The order is exactly how you place them in the list.
    I'll cover more about what this means below!</p>
-<hr id="art-div">
-<h2 id="sub-head">9.2 Appending items to a list</h2>
-<p id="text-style">You can add items to a list using the <em>append</em>
+<hr class="art-div">
+<h2 class="sub-head">9.2 Appending items to a list</h2>
+<p class="text-style">You can add items to a list using the <em>append</em>
    method. This works using the item you want to add as the argument inside
    append() and the list before it as shown below when I append 5 to a list
    of numbers from 1 to 4:</p>
-<pre id="code-style"><code class="python">numbers = [1, 2, 3, 4]
+<pre class="code-style"><code class="python">numbers = [1, 2, 3, 4]
 numbers.append(5)
 print(numbers)</code></pre>
-<p id="text-style">which outputs</p>
-<pre id="code-style"><code class="python">[1, 2, 3, 4, 5]</code></pre>
-<p id="text-style">The append function is great for situations such as where you
+<p class="text-style">which outputs</p>
+<pre class="code-style"><code class="python">[1, 2, 3, 4, 5]</code></pre>
+<p class="text-style">The append function is great for situations such as where you
    have a shopping list and want to keep adding new items:</p>
-<pre id="code-style"><code class="python">shopping = ['butter', 'eggs']
+<pre class="code-style"><code class="python">shopping = ['butter', 'eggs']
 shopping.append('milk')
 shopping.append('bread')
 print(shopping)</code></pre>
-<p id="text-style">which will give you</p>
-<pre id="code-style"><code class="python">['butter', 'eggs', 'milk', 'bread']</code></pre>
-<hr id="art-div">
-<h2 id="sub-head">9.3 Finding the first item</h2>
-<p id="text-style">Let's look back at the shopping list above. What if we wanted
+<p class="text-style">which will give you</p>
+<pre class="code-style"><code class="python">['butter', 'eggs', 'milk', 'bread']</code></pre>
+<hr class="art-div">
+<h2 class="sub-head">9.3 Finding the first item</h2>
+<p class="text-style">Let's look back at the shopping list above. What if we wanted
    to only find out what the first item is? We using something called an index,
    which looks like a list but actually isn't. In programming, we start counting
    from 0, so the first item in the list is iten 0. To get the 0th index, we
    will put square brackets with a 0 right after the list as shown below</p>
-<pre id="code-style"><code class="python">shopping = ['butter', 'eggs', 'milk', 'bread']
+<pre class="code-style"><code class="python">shopping = ['butter', 'eggs', 'milk', 'bread']
 print(shopping[0])</code></pre>
-<p id="text-style">This will print out the item at the 0th index (the first item) as
+<p class="text-style">This will print out the item at the 0th index (the first item) as
    shown below</p>
-<pre id="code-style"><code class="python">butter</code></pre>
-<p id="text-style">You can use this to get the letter in any specific position.
+<pre class="code-style"><code class="python">butter</code></pre>
+<p class="text-style">You can use this to get the letter in any specific position.
    Additionally, you can start at the back of the list using a negative number,
    such as indexing [-1] to find the last item in the list.</p>
-<pre id="code-style"><code class="python">shopping = ['butter', 'eggs', 'milk', 'bread']
+<pre class="code-style"><code class="python">shopping = ['butter', 'eggs', 'milk', 'bread']
 print(shopping[-1])</code></pre>
-<p id="text-style">which will give you the last item in the list, bread</p>
-<pre id="code-style"><code class="python">bread</code></pre>
-<hr id="art-div">
-<h2 id="sub-head">9.4 Iterating through the list</h2>
-<p id="text-style">You can loop through each item in a list using a
+<p class="text-style">which will give you the last item in the list, bread</p>
+<pre class="code-style"><code class="python">bread</code></pre>
+<hr class="art-div">
+<h2 class="sub-head">9.4 Iterating through the list</h2>
+<p class="text-style">You can loop through each item in a list using a
    for loop. This assigns the variable after <em>for</em> to each
    of the items in the list one by one.</p>
-<pre id="code-style"><code class="python">shopping = ['butter', 'eggs', 'milk', 'bread']
+<pre class="code-style"><code class="python">shopping = ['butter', 'eggs', 'milk', 'bread']
 for item in shopping:
   print(item)</code></pre>
-<pre id="code-style"><code class="python">butter
+<pre class="code-style"><code class="python">butter
 eggs
 milk
 bread</code></pre>
-<p id="text-style">This can be very useful such as when looping through a list
+<p class="text-style">This can be very useful such as when looping through a list
    like the one above, or a list containing numbers that you want to
    perform calculations on.</p>
-<hr id="art-div">
-<h2 id="sub-head">9.5 Length of a list</h2>
-<p id="text-style">To see how many items are in a list, you
+<hr class="art-div">
+<h2 class="sub-head">9.5 Length of a list</h2>
+<p class="text-style">To see how many items are in a list, you
    can use <em>len</em>. This takes one argument, the list.</p>
-<pre id="code-style"><code class="python">shopping = ['butter', 'eggs', 'milk', 'bread']
+<pre class="code-style"><code class="python">shopping = ['butter', 'eggs', 'milk', 'bread']
 print(len(shopping))</code></pre>
-<pre id="code-style"><code class="python">4</code></pre>
-<hr id="art-div">
-<h2 id="sub-head">9.6 What is a tuple?</h2>
-<p id="text-style">A tuple is a sequence of comma separated values.
+<pre class="code-style"><code class="python">4</code></pre>
+<hr class="art-div">
+<h2 class="sub-head">9.6 What is a tuple?</h2>
+<p class="text-style">A tuple is a sequence of comma separated values.
    They look like this:</p>
-<pre id="code-style"><code class="python">a = (1, 'something', 'anotherThing')</code></pre>
-<p id="text-style">They might seem like another version of a list, except there are
+<pre class="code-style"><code class="python">a = (1, 'something', 'anotherThing')</code></pre>
+<p class="text-style">They might seem like another version of a list, except there are
    some differences. We won't be covering the differences now, however,
    it's good to know how a tuple works because in certain situations,
    you may need to use them.</p>
-<hr id="art-div">
-<h2 id="sub-head">9.7 Tuple packing</h2>
-<p id="text-style">Tuple packing refers to putting values into a tuple as
+<hr class="art-div">
+<h2 class="sub-head">9.7 Tuple packing</h2>
+<p class="text-style">Tuple packing refers to putting values into a tuple as
    shown:</p>
-<pre id="code-style"><code class="python">>>> nums = 1,2,3
+<pre class="code-style"><code class="python">>>> nums = 1,2,3
 >>> print(nums)
 (1, 2, 3)
 >>> type(nums)
 &lt;class 'tuple'></code></pre>
-<p id="text-style">Whenever you assign a sequence of values to a variable,
+<p class="text-style">Whenever you assign a sequence of values to a variable,
    it will create a tuple. You can do this with only one value as well,
    however, you will need to add a comma to the end.</p>
-<pre id="code-style"><code class="python">>>> num = 1,
+<pre class="code-style"><code class="python">>>> num = 1,
 >>> print(num)
 (1,)
 >>> type(num)
 &lt;class 'tuple'></code></pre>
-<hr id="art-div">
-<h2 id="sub-head">9.8 Tuple unpacking</h2>
-<p id="text-style">You can do the opposite of packing tuples by assigning
+<hr class="art-div">
+<h2 class="sub-head">9.8 Tuple unpacking</h2>
+<p class="text-style">You can do the opposite of packing tuples by assigning
    a tuple to multiple variables. Let's say you want a = 1, b = 2, c = 3</p>
-<pre id="code-style"><code class="python">>>> a, b, c = 1, 2, 3
+<pre class="code-style"><code class="python">>>> a, b, c = 1, 2, 3
 >>> print(a)
 1
 >>> print(b)

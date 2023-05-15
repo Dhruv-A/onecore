@@ -38,9 +38,9 @@
       <article id="course-lesson">
         {% block article %}
         {% endblock %}
-        <hr id="art-div">
-        <a href="/python/{{ prev }}" id="link-style" style="{% if prev < 1 %}display: none{% endif %}";>Previous</a>
-        <a href="/python/{{ next }}" id="link-style" style="text-align: right; float: right;{% if next > 14 %}display: none{% endif %}";>Next</a>
+        <hr class="art-div">
+        <a href="/python/{{ prev }}" class="link-style" style="{% if prev < 1 %}display: none{% endif %}";>Previous</a>
+        <a href="/python/{{ next }}" class="link-style" style="text-align: right; float: right;{% if next > 14 %}display: none{% endif %}";>Next</a>
 
       </article>
   </div>

@@ -1,8 +1,8 @@
 {% extends "./basereact.html" %}
 {% block title %}4. Class-Based Components{% endblock %}
 {% block article %}
-<h1 id="top-head">4. Class-Based Components</h1>
-<h2 id="sub-head">4.1 Functional vs Class-Based Components</h2>
+<h1 class="top-head">4. Class-Based Components</h1>
+<h2 class="sub-head">4.1 Functional vs Class-Based Components</h2>
 <ul id="list-style" style="margin-left: 1rem">
   <li>Functional components render simple things whilst class-based
       components introduce more technical elements like LifeCycle
@@ -10,42 +10,42 @@
   <li>As daunting as it may seem, making a class-based component
       isn’t too different from a functional component</li>
 </ul>
-<p id="text-style">This is an example of a functional component</p>
+<p class="text-style">This is an example of a functional component</p>
 <img src="https://drive.google.com/uc?export=view&id=10kx_z7cIVrO8A0viBCBRATdv33N2R-WJ"
 alt="react-image">
-<p id="text-style">This is an example of a class-based component</p>
+<p class="text-style">This is an example of a class-based component</p>
 <img src="https://drive.google.com/uc?export=view&id=1YhUh3HW_t4dTMrgqxkcvMltsh2FShh1P"
 alt="react-image">
-<hr id="art-div">
-<h2 id="sub-head">4.2 Extending a component</h2>
-<p id="text-style">Extending a component it allows us to pass <em>props</em>
+<hr class="art-div">
+<h2 class="sub-head">4.2 Extending a component</h2>
+<p class="text-style">Extending a component it allows us to pass <em>props</em>
    (which stands for properties) to
    any defined class, without the help of a constructor. Similarly,
    we can pass around state changes through <em>inheritance</em> by any other
    class component. However, by extending the react component we must define
    the ‘render’ method to return the same React element as we did
    with the functional component</p>
-<hr id="art-div">
-<h2 id="sub-head">4.3 Rules of a class-based component</h2>
+<hr class="art-div">
+<h2 class="sub-head">4.3 Rules of a class-based component</h2>
 <ul id="list-style" style="margin-left: 1rem">
   <li>Must use javascript class</li>
   <li>Must extend (subclass) React.component</li>
   <li>Must define a render method that returns JSX</li>
 </ul>
-<hr id="art-div">
-<h2 id="sub-head">4.4 When to use a class-based component</h2>
-<p id="text-style">Use a functional component when you are
+<hr class="art-div">
+<h2 class="sub-head">4.4 When to use a class-based component</h2>
+<p class="text-style">Use a functional component when you are
    trying to render simple content. Class components are
    good for everything else e.g responding to user input,
    network requests. Whenever you need several helper functions
    use a class-based component</p>
-<p id="text-style"><strong>Benefits of using functional components</strong></p>
+<p class="text-style"><strong>Benefits of using functional components</strong></p>
 <ul id="list-style" style="margin-left: 1rem">
   <li>Easier to understand, read and test because they
       don’t involve states or lifecycle methods</li>
   <li>You generally end up typing <strong>less</strong> code</li>
 </ul>
-<p id="text-style"><strong>Benefits of using class-based components</strong></p>
+<p class="text-style"><strong>Benefits of using class-based components</strong></p>
 <ul id="list-style" style="margin-left: 1rem">
   <li>Lifecycle methods which occur at different stages when a React
       component are rendered to the DOM, introduces a slight complexity

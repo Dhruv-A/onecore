@@ -1,45 +1,45 @@
 {% extends "./baseinfo.html" %}
 {% block title %}7. Functions{% endblock %}
 {% block article %}
-<h1 id="top-head">7 Functions</h1>
-<h2 id="sub-head">7.1 Functions</h2>
-<p id="text-style">A function is a chunck of code, which can be reused. It allows you to define code once and use it many times (to avoid writing out the same code multiple times). You can pass functions data (known as parameters), and the function can return data.</p>
-<p id="text-style">For example, I can make a (trivial) function to do addition, which takes 2 parameters (a, b) and returns their sum:</p>
-<pre id="code-style"><code class="c++">int add(int a, int b) {
+<h1 class="top-head">7 Functions</h1>
+<h2 class="sub-head">7.1 Functions</h2>
+<p class="text-style">A function is a chunck of code, which can be reused. It allows you to define code once and use it many times (to avoid writing out the same code multiple times). You can pass functions data (known as parameters), and the function can return data.</p>
+<p class="text-style">For example, I can make a (trivial) function to do addition, which takes 2 parameters (a, b) and returns their sum:</p>
+<pre class="code-style"><code class="c++">int add(int a, int b) {
   int output = a + b;
   return output;
 }
 </code></pre>
-<p id="text-style">You can then use the function by calling it:</p>
-<pre id="code-style"><code class="c++">cout << add(2, 3) << "\n";
+<p class="text-style">You can then use the function by calling it:</p>
+<pre class="code-style"><code class="c++">cout << add(2, 3) << "\n";
 cout << add(-1, add(7, 8)) << "\n";</code></pre>
-<p id="text-style">You can have a function without a return value by using <span id="code-style">void</span></p>
-<pre id="code-style"><code class="c++">void sayHi() {
+<p class="text-style">You can have a function without a return value by using <span class="code-style">void</span></p>
+<pre class="code-style"><code class="c++">void sayHi() {
 	cout << "Sup world!";
 }
 </code></pre>
-<p id="text-style">More generally, a function will have the form: <span id="code-style">return_type function_name(parameter1, parameter2, ...) {</span></p>
-<p id="text-style">In fact, <span id="code-style">int main()</span> is a function, which is called when code is executed. (The return value, known as the exit code, is by default 0, unless the program has an error).</p>
-<p id="text-style">It is essential you use functions. It makes debugging easier, since you can divide your code into functions and check that each function works. Also, it is cleaner to read, for both yourself and others.</p>
-<hr id="art-div">
+<p class="text-style">More generally, a function will have the form: <span class="code-style">return_type function_name(parameter1, parameter2, ...) {</span></p>
+<p class="text-style">In fact, <span class="code-style">int main()</span> is a function, which is called when code is executed. (The return value, known as the exit code, is by default 0, unless the program has an error).</p>
+<p class="text-style">It is essential you use functions. It makes debugging easier, since you can divide your code into functions and check that each function works. Also, it is cleaner to read, for both yourself and others.</p>
+<hr class="art-div">
 
-<h2 id="sub-head">7.2 Recursive Functions</h2>
-<p id="text-style"><i>"Why are recursive functions so narcissistic? Because they always call themselves."</i></p>
-<p id="text-style">Recursive functions allow a complex idea or problem to be defining by simpler versions of itself. They are functions which call themselves to solve a smaller subproblem of the original problem. Usually, there is a base case to stop the function from calling itself infinitely. <br>
+<h2 class="sub-head">7.2 Recursive Functions</h2>
+<p class="text-style"><i>"Why are recursive functions so narcissistic? Because they always call themselves."</i></p>
+<p class="text-style">Recursive functions allow a complex idea or problem to be defining by simpler versions of itself. They are functions which call themselves to solve a smaller subproblem of the original problem. Usually, there is a base case to stop the function from calling itself infinitely. <br>
 For example, "I think you think I love you" contains the sentence "You think I love you", contains the sentence "I love you".</p>
-<p id="text-style">Another example is the recursive definition of the factorial function:<br>
-<pre id="code-style"><code class="c++">int factorial(int n) {
+<p class="text-style">Another example is the recursive definition of the factorial function:<br>
+<pre class="code-style"><code class="c++">int factorial(int n) {
 	if (n == 1) {
 		return 1; // base case
 	}
 	return n * factorial(n - 1); // recurrence relation
 }</code></pre></p>
-<p id="text-style">What does this code do?<br>
-ANSWER: <span class="hint-style"><a id="link-style" href="https://en.wikipedia.org/wiki/Recurrence_relation#Factorial">Factorial recursive definition</a></span></p>
-<p id="text-style">TASK: print all combinations of the numbers 1 to 3 in increasing order (don't hard code it).<br>
+<p class="text-style">What does this code do?<br>
+ANSWER: <span class="hint-style"><a class="link-style" href="https://en.wikipedia.org/wiki/Recurrence_relation#Factorial">Factorial recursive definition</a></span></p>
+<p class="text-style">TASK: print all combinations of the numbers 1 to 3 in increasing order (don't hard code it).<br>
 Also, what is the time complexity, if it were instead combinations of the numbers 1 to n?</p>
-<p id="text-style">HINT: <span class="hint-style">First, try doing it without the whitespace</span></p>
-<pre id="code-style"><code>1
+<p class="text-style">HINT: <span class="hint-style">First, try doing it without the whitespace</span></p>
+<pre class="code-style"><code>1
  1
   1
   2
@@ -49,8 +49,8 @@ Also, what is the time complexity, if it were instead combinations of the number
   2
   3
 ...</code></pre>
-<p id="text-style">ANSWER: </p>
-<span class="hint-style"><pre id="code-style"><code class="c++">void printCombinations(int depth) {
+<p class="text-style">ANSWER: </p>
+<span class="hint-style"><pre class="code-style"><code class="c++">void printCombinations(int depth) {
 	if (depth > 3) return; // termination condition
 	for (int i = 1; i <= 3; i++) {
 		// output i, padded with sufficient spaces
@@ -65,13 +65,13 @@ Also, what is the time complexity, if it were instead combinations of the number
 }
 
 printCombinations(1);</code></pre></span>
-<hr id="art-div">
+<hr class="art-div">
 
-<h2 id="sub-head">7.3 Homework</h2>
-<p id="text-style"><a id="link-style" href="https://orac2.info/problem/aio13archery/">Archery</a><br>
+<h2 class="sub-head">7.3 Homework</h2>
+<p class="text-style"><a class="link-style" href="https://orac2.info/problem/aio13archery/">Archery</a><br>
 HINT: <span class="hint-style">Make a function to return the larger of 2 numbers.</span></p>
-<p id="text-style"><a id="link-style" href="https://orac2.info/problem/aio17snake/">Snake Charmer</a><br>
+<p class="text-style"><a class="link-style" href="https://orac2.info/problem/aio17snake/">Snake Charmer</a><br>
 HINT: <span class="hint-style">Make a function to change direction.</span></p>
-<p id="text-style"><a id="link-style" href="https://orac2.info/problem/aio05chimp/">Chimpanzee</a><br>
+<p class="text-style"><a class="link-style" href="https://orac2.info/problem/aio05chimp/">Chimpanzee</a><br>
 HINT: <span class="hint-style">Make a function to test your solution in a square region, and print the values accordingly. (good for debugging).</span></p>
 {% endblock %}

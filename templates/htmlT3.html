@@ -1,43 +1,43 @@
 {% extends "basehtml.html" %}
 {% block title %}3. Basic Tags 1{% endblock %}
 {% block article %}
-<h1 id="top-head">3. Basic Tags 1</h1>
-<h2 id="sub-head">3.1 DOCTYPE Declaration</h2>
-<p id="text-style">The HTML which makes up almost every website you'll find
+<h1 class="top-head">3. Basic Tags 1</h1>
+<h2 class="sub-head">3.1 DOCTYPE Declaration</h2>
+<p class="text-style">The HTML which makes up almost every website you'll find
    is called HTML5. When the web browser interprets what our HTML says, it
    needs a way to know that we are using HTML5. Therefore, we start off
    every HTML page we code with the doctype declaration below.</p>
-<pre id="code-style"><code class="html">&lt;!DOCTYPE html></code></pre>
-<hr id="art-div">
-<h2 id="sub-head">3.2 Headings</h2>
-<p id="text-style">The first tag we will learn is the heading
+<pre class="code-style"><code class="html">&lt;!DOCTYPE html></code></pre>
+<hr class="art-div">
+<h2 class="sub-head">3.2 Headings</h2>
+<p class="text-style">The first tag we will learn is the heading
    tag. As the name suggests, you use them for headings. Let's say
    you're making a website for a bookshop, the first thing you
    want on the page will be a heading so that the viewer knows
    what the page is about.</p>
-<pre id="code-style"><code class="html">&lt;!DOCTYPE html>
+<pre class="code-style"><code class="html">&lt;!DOCTYPE html>
 &lt;h1>Core's Bookshop&lt;/h1></code></pre>
-<p id="text-style">Let's break down the above code:
+<p class="text-style">Let's break down the above code:
 <ol style="margin-left: 1rem;">
   <li>The first line is the doctype declaration we explained
       above. You always include it as the <strong>first</strong> line in
       your file.</li>
    <li>The second line contains the heading using the
-       <span id="code-style">&lt;h1></span> tag. We need both an opening tag
+       <span class="code-style">&lt;h1></span> tag. We need both an opening tag
        and the closing tag to signify the end of the tag. The closing tag
        is the same as the opening one except it starts with &lt;/</li>
 </ol></p>
-<p id="text-style">Feel free to copy code on this website and paste it directly
+<p class="text-style">Feel free to copy code on this website and paste it directly
    into your HTML file using the copy icon at the top right
    corner of the blocks of code!</p>
-<p id="text-style">Let's see what the above code looks like by opening it
+<p class="text-style">Let's see what the above code looks like by opening it
    in chrome.</p>
 <iframe srcdoc="<!DOCTYPE html>
 <h1>Core's Bookshop</h1>" width="100%"></iframe>
-<p id="text-style">There are many other heading tags we can use. These
-   include <span id="code-style">&lt;h2>, &lt;h3>, &lt;h4></span> and
+<p class="text-style">There are many other heading tags we can use. These
+   include <span class="code-style">&lt;h2>, &lt;h3>, &lt;h4></span> and
    so on.</p>
-<pre id="code-style"><code class="html">&lt;!DOCTYPE html>
+<pre class="code-style"><code class="html">&lt;!DOCTYPE html>
 &lt;h1>H1 Heading&lt;/h1>
 &lt;h2>H2 Heading&lt;/h2>
 &lt;h3>H3 Heading&lt;/h3>
@@ -47,12 +47,12 @@
 <h2>H2 Heading</h2>
 <h3>H3 Heading</h3>
 <h4>H4 Heading</h4>" width="100%"></iframe>
-<hr id="art-div">
-<h2 id="sub-head">3.3 Paragraphs</h2>
-<p id="text-style">One really common and important tag is the paragraph tag.
+<hr class="art-div">
+<h2 class="sub-head">3.3 Paragraphs</h2>
+<p class="text-style">One really common and important tag is the paragraph tag.
    This tag is used to denote paragraphs of text. Let's say that our bookshop
    website has some text about when and what we will sell.</p>
-<pre id="code-style"><code class="html">&lt;!DOCTYPE html>
+<pre class="code-style"><code class="html">&lt;!DOCTYPE html>
 &lt;h1>Core's Bookshop&lt;/h1>
 &lt;p>Welcome to our bookshop! We're opening next month and
    will be selling books on all types of programming.&lt;/p></code></pre>
@@ -60,18 +60,18 @@
 <h1>Core's Bookshop</h1>
 <p>Welcome to our bookshop! We're opening next month and
    will be selling books on all types of programming.</p>" width=100%></iframe>
-<p id="text-style">Notice how even though I put the content in the paragraph
+<p class="text-style">Notice how even though I put the content in the paragraph
    tag on two separate lines, it displayed with all the content on the same
    line. This is a feature of HTML, where the file ignores new lines in the
    code and treats them as if they were one space long.
    This is the case for everything in HTML, not only paragraphs.</p>
-<hr id="art-div">
-<h2 id="sub-head">3.4 New lines in HTML</h2>
-<p id="text-style">When we want to display content on separate lines, we
+<hr class="art-div">
+<h2 class="sub-head">3.4 New lines in HTML</h2>
+<p class="text-style">When we want to display content on separate lines, we
    use the break tag. This does not require a closing tag and instead inserts
    a line break where you place it. Let's apply it to our previous example
    to split the paragraph into two separate lines.</p>
-<pre id="code-style"><code class="html">&lt;!DOCTYPE html>
+<pre class="code-style"><code class="html">&lt;!DOCTYPE html>
 &lt;h1>Core's Bookshop&lt;/h1>
 &lt;p>Welcome to our bookshop!&lt;br>
    We're opening next month and

@@ -1,38 +1,38 @@
 {% extends "./baseinfo.html" %}
 {% block title %}6. Arrays{% endblock %}
 {% block article %}
-<h1 id="top-head">6 Arrays</h1>
-<h2 id="sub-head">6.1 Single Dimensional Arrays</h2>
-<p id="text-style">Arrays are used to hold a collection of items. The data type must be the same for all elements. They can only hold 1 data type (e.g. <span id="code-style">int</span>), and the size of the array is fixed. It is a good idea to declare arrays only directly after <span id="code-style">using namespace std;</span>. There are 2 ways to declare arrays:</p>
-<p id="text-style">(most commonly used) Array declaration by specifying a constant size, elements are by default initialised to <span id="code-style">0</span>.</p>
-<pre id="code-style"><code class="c++">int foo[5];</pre></code>
-<p id="text-style">Array declaration by specifying elements</p>
-<pre id="code-style"><code class="c++">int foo [5] = { 16, 2, 77, 40, 12071 };</pre></code>
-<p id="text-style">Arrays are 0 indexed, which means <span id="code-style">foo[0]</span> is 16, <span id="code-style">foo[1]</span> is 2, and so on...</p>
+<h1 class="top-head">6 Arrays</h1>
+<h2 class="sub-head">6.1 Single Dimensional Arrays</h2>
+<p class="text-style">Arrays are used to hold a collection of items. The data type must be the same for all elements. They can only hold 1 data type (e.g. <span class="code-style">int</span>), and the size of the array is fixed. It is a good idea to declare arrays only directly after <span class="code-style">using namespace std;</span>. There are 2 ways to declare arrays:</p>
+<p class="text-style">(most commonly used) Array declaration by specifying a constant size, elements are by default initialised to <span class="code-style">0</span>.</p>
+<pre class="code-style"><code class="c++">int foo[5];</pre></code>
+<p class="text-style">Array declaration by specifying elements</p>
+<pre class="code-style"><code class="c++">int foo [5] = { 16, 2, 77, 40, 12071 };</pre></code>
+<p class="text-style">Arrays are 0 indexed, which means <span class="code-style">foo[0]</span> is 16, <span class="code-style">foo[1]</span> is 2, and so on...</p>
 <p><img src="http://www.cplusplus.com/doc/tutorial/arrays/arrays2.png" alt="Depiction of array indexing" width=600px></p>
 <br>
-<p id="text-style">NOTE: if the problem statement requires you to have an array of size 100000, you should always initialise it to a slightly higher value (e.g. 100005).</p>
-<hr id="art-div">
+<p class="text-style">NOTE: if the problem statement requires you to have an array of size 100000, you should always initialise it to a slightly higher value (e.g. 100005).</p>
+<hr class="art-div">
 
-<h2 id="sub-head">6.2 Multidimensional Arrays</h2>
-<p id="text-style">Multidimensional arrays are "arrays of arrays". For example, a 2D array can be likened to a grid (all of some data type). For example, a tic tac toe board can be represented as <span id="code-style">int grid[3][3];</span></p>
+<h2 class="sub-head">6.2 Multidimensional Arrays</h2>
+<p class="text-style">Multidimensional arrays are "arrays of arrays". For example, a 2D array can be likened to a grid (all of some data type). For example, a tic tac toe board can be represented as <span class="code-style">int grid[3][3];</span></p>
 <p><img src="https://i2.wp.com/www.rubyguides.com/wp-content/uploads/2017/10/grid.png" alt="Depiction of 2d array indexing" width=400px style="display: block; margin-left: auto; margin-right: auto;"></p>
-<pre id="code-style"><code class="c++">grid[1][1] = 1; // centre cell
+<pre class="code-style"><code class="c++">grid[1][1] = 1; // centre cell
 grid[0][1] = 2; // top edge cell
 grid[2][0] = grid[0][1]; // bottom right cell
 cout << grid[2][0];
 </code></pre>
-<p id="text-style">NOTE: arrays can have more than 2 dimensions. For example <span id="code-style">int year[365][24][60][60];</span></p>
-<hr id="art-div">
+<p class="text-style">NOTE: arrays can have more than 2 dimensions. For example <span class="code-style">int year[365][24][60][60];</span></p>
+<hr class="art-div">
 
 
-<h2 id="sub-head">6.3 Homework</h2>
-<p id="text-style"><a id="link-style" href="https://orac2.info/problem/simplelookup/">Encyclopædia</a><br>
-HINT: <span class="hint-style">There is a walkthrough <a id="link-style" href="http://orac.amt.edu.au/aioc/tutorials/walkthroughs/09.html">here</a>, although they implement file input differently.</p>
-<p id="text-style"><a id="link-style" href="https://orac2.info/problem/simplesearch/">Dictionary</a><br>
-HINT: <span class="hint-style">There is a walkthrough <a id="link-style" href="http://orac.amt.edu.au/aioc/tutorials/walkthroughs/10.html">here</a>, although they implement file input differently.</p>
-<p id="text-style"><a id="link-style" href="https://orac2.info/problem/simpletrip/">Triple Hunting</a><br>
-HINT: <span class="hint-style">There is a walkthrough <a id="link-style" href="http://orac.amt.edu.au/aioc/tutorials/walkthroughs/11.html">here</a>, although they implement file input differently.</p>
-<p id="text-style"><a id="link-style" href="https://orac2.info/problem/simplefriend/">Friendlist</a><br>
-HINT: <span class="hint-style">start with <span id="code-style">int friends[1000005];</span></span></p>
+<h2 class="sub-head">6.3 Homework</h2>
+<p class="text-style"><a class="link-style" href="https://orac2.info/problem/simplelookup/">Encyclopædia</a><br>
+HINT: <span class="hint-style">There is a walkthrough <a class="link-style" href="http://orac.amt.edu.au/aioc/tutorials/walkthroughs/09.html">here</a>, although they implement file input differently.</p>
+<p class="text-style"><a class="link-style" href="https://orac2.info/problem/simplesearch/">Dictionary</a><br>
+HINT: <span class="hint-style">There is a walkthrough <a class="link-style" href="http://orac.amt.edu.au/aioc/tutorials/walkthroughs/10.html">here</a>, although they implement file input differently.</p>
+<p class="text-style"><a class="link-style" href="https://orac2.info/problem/simpletrip/">Triple Hunting</a><br>
+HINT: <span class="hint-style">There is a walkthrough <a class="link-style" href="http://orac.amt.edu.au/aioc/tutorials/walkthroughs/11.html">here</a>, although they implement file input differently.</p>
+<p class="text-style"><a class="link-style" href="https://orac2.info/problem/simplefriend/">Friendlist</a><br>
+HINT: <span class="hint-style">start with <span class="code-style">int friends[1000005];</span></span></p>
 {% endblock %}

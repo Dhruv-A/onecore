@@ -1,14 +1,14 @@
 {% extends "./basepy.html" %}
 {% block title %}13. More Libraries{% endblock %}
 {% block article %}
-<h1 id="top-head">13. More Libraries</h1>
-<h2 id="sub-head">13.1 Collections</h2>
-<p id="text-style">Collections is a library which provides lots of container
+<h1 class="top-head">13. More Libraries</h1>
+<h2 class="sub-head">13.1 Collections</h2>
+<p class="text-style">Collections is a library which provides lots of container
    datatypes. One that we can link back to what we've already learnt is the
    defaultdict. When we create a dictionary using defaultdict, it gives
    every key a default value. It takes in one argument which is the data
    type of the value. For example:</p>
-<pre id="code-style"><code class="python">>>> from collections import defaultdict
+<pre class="code-style"><code class="python">>>> from collections import defaultdict
 >>> d = defaultdict(int)
 >>> print(d['abcde'])
 0
@@ -19,12 +19,12 @@
 >>> d['abcde'] = 10
 >>> print(d['abcde'])
 10</code></pre>
-<p id="text-style">As you can see, no matter what key we try, it will always
+<p class="text-style">As you can see, no matter what key we try, it will always
    default to 0 because we specified that it's a dictionary with int default.
    However, it works exactly as a normal dictionary; when you set a value
    for a particular key, it will use that value for that key rather than
    the default. We can also use this for other datatypes like lists:</p>
-<pre id="code-style"><code class="python">>>> from collections import defaultdict
+<pre class="code-style"><code class="python">>>> from collections import defaultdict
 >>> d = defaultdict(list)
 >>> print(d['abcde'])
 []
@@ -35,33 +35,33 @@
 >>> d['abcde'].append(10)
 >>> print(d['abcde'])
 [10]</code></pre>
-<p id="text-style">This is useful because otherwise, if you create a normal
+<p class="text-style">This is useful because otherwise, if you create a normal
    dictionary and try to find the value of a key that you haven't
    already set, it will give you an error:</p>
-<pre id="code-style"><code class="python">>>> d = {}
+<pre class="code-style"><code class="python">>>> d = {}
 print(d[243243])
 Traceback (most recent call last):
   File "&lt;pyshell#43>", line 1, in &lt;module>
     print(d[243243])
 KeyError: 243243</code></pre>
-<p id="text-style">So, instead of having to use the get method, this is
+<p class="text-style">So, instead of having to use the get method, this is
    a quick way to set a default value for a dictionary. You should
    do some research on the other datatypes you get from the collections
    library!</p>
-<hr id="art-div">
-<h2 id="sub-head">13.2 Calendar</h2>
-<p id="text-style">The calendar library provides calendar related
+<hr class="art-div">
+<h2 class="sub-head">13.2 Calendar</h2>
+<p class="text-style">The calendar library provides calendar related
    functionality. You can research this yourself if you want to learn more,
    but I'll cover one example of what you can do with it.</p>
-<p id="text-style">Let's say we want to print out a calendar for the month of January 2019.
+<p class="text-style">Let's say we want to print out a calendar for the month of January 2019.
    We can do this easily using the calendar library. Firstly, import the
    calendar module and create a calendar using the TextCalendar function.</p>
-<pre id="code-style"><code class="python">>>> import calendar
+<pre class="code-style"><code class="python">>>> import calendar
 >>> cal = calendar.TextCalendar()</code></pre>
-<p id="text-style">Now, we can get January 2019. The prmonth function
+<p class="text-style">Now, we can get January 2019. The prmonth function
    prints out a particular month in a year. It takes two arguments, year
    and month.</p>
-<pre id="code-style"><code class="python">>>> cal.prmonth(2019, 1)
+<pre class="code-style"><code class="python">>>> cal.prmonth(2019, 1)
   January 2019
 Mo Tu We Th Fr Sa Su
    1  2  3  4  5  6
@@ -69,15 +69,15 @@ Mo Tu We Th Fr Sa Su
 14 15 16 17 18 19 20
 21 22 23 24 25 26 27
 28 29 30 31</code></pre>
-<p id="text-style">As you see, it prints out the calendar for January 2019.
+<p class="text-style">As you see, it prints out the calendar for January 2019.
    There are many other useful functions so make sure to check them out!</p>
-<hr id="art-div">
-<h2 id="sub-head">13.3 String</h2>
-<p id="text-style">The string library gives you useful strings, like
+<hr class="art-div">
+<h2 class="sub-head">13.3 String</h2>
+<p class="text-style">The string library gives you useful strings, like
    one with all lowercase letters, and one for punctuation. It's really
    straightforward so just look at the code below which shows a few
    useful strings:</p>
-<pre id="code-style"><code class="python">>>> import string
+<pre class="code-style"><code class="python">>>> import string
 >>> print(string.digits)
 0123456789
 >>> print(string.punctuation)

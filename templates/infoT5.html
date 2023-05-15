@@ -1,64 +1,64 @@
 {% extends "./baseinfo.html" %}
 {% block title %}5. Algorithms Introduction{% endblock %}
 {% block article %}
-<h1 id="top-head">5 Algorithms Introduction</h1>
-<h2 id="sub-head">5.1 BigO Notation</h2>
-<p id="text-style">BigO Notation is a algorithm analysis method to measure the time (or space) required of an algorithm. It is used to determine whether an algorithm is fast enough to not exceed the time limit (usually 1 second). Mathematically, since the run time of an algorithm is a function of the input size, BigO notation describes how run time scales asymtopically with input size.</p>
-<p id="text-style">For example, to print numbers from <span id="code-style">1</span> to <span id="code-style">n</span> (inclusive) requires <span id="code-style">n</span> iterations of the for loop.<br>
-Thus, you can say: "the algorithm takes <span id="code-style">O(n)</span> time" or "the algorithm's time complexity is <span id="code-style">O(n)</span>" or "the algorithm runs in linear time"</p>
-<p id="text-style">Similarly, something in O(1) can be called constant time.</p>
-<p id="text-style">As a rule of thumb, a computer can do 50 million operations in a second. So if <span id="code-style">n = 1e5</span>, an <span id="code-style">O(n^2)</span> algorithm will take <span id="code-style">1e10</span> operations, which would take over 3 minutes. However an <span id="code-style">O(n)</span> algorithm would take under a second.</p>
-<p id="text-style">Something like <a id="link-style" href="https://www.dcc.fc.up.pt/~pribeiro/aulas/pc1920/material/bigo_table.html">this</a> may be useful, but you should be able to figure it out quite quickly.</p>
-<hr id="art-div">
+<h1 class="top-head">5 Algorithms Introduction</h1>
+<h2 class="sub-head">5.1 BigO Notation</h2>
+<p class="text-style">BigO Notation is a algorithm analysis method to measure the time (or space) required of an algorithm. It is used to determine whether an algorithm is fast enough to not exceed the time limit (usually 1 second). Mathematically, since the run time of an algorithm is a function of the input size, BigO notation describes how run time scales asymtopically with input size.</p>
+<p class="text-style">For example, to print numbers from <span class="code-style">1</span> to <span class="code-style">n</span> (inclusive) requires <span class="code-style">n</span> iterations of the for loop.<br>
+Thus, you can say: "the algorithm takes <span class="code-style">O(n)</span> time" or "the algorithm's time complexity is <span class="code-style">O(n)</span>" or "the algorithm runs in linear time"</p>
+<p class="text-style">Similarly, something in O(1) can be called constant time.</p>
+<p class="text-style">As a rule of thumb, a computer can do 50 million operations in a second. So if <span class="code-style">n = 1e5</span>, an <span class="code-style">O(n^2)</span> algorithm will take <span class="code-style">1e10</span> operations, which would take over 3 minutes. However an <span class="code-style">O(n)</span> algorithm would take under a second.</p>
+<p class="text-style">Something like <a class="link-style" href="https://www.dcc.fc.up.pt/~pribeiro/aulas/pc1920/material/bigo_table.html">this</a> may be useful, but you should be able to figure it out quite quickly.</p>
+<hr class="art-div">
 
-<h2 id="sub-head">5.2 Some examples</h2>
-<pre id="code-style"><code class="c++">// an O(n) algorithm
+<h2 class="sub-head">5.2 Some examples</h2>
+<pre class="code-style"><code class="c++">// an O(n) algorithm
 for (int i = 0; i < N; ++i) {
 	cout << i << " ";
 }</code></pre>
-<p id="text-style">What if you were printing the numbers from <span id="code-style">1</span> to <span id="code-style">N</span> (inclusive) 10 times? It is still the same time complexity, since it still takes linear time. It is equivalent to counting the number of operations in proportion to <span id="code-style">n</span>, taking the leading term, and ignoring the constant factor.</p>
-<pre id="code-style"><code class="c++">// still an O(n) algorithm
+<p class="text-style">What if you were printing the numbers from <span class="code-style">1</span> to <span class="code-style">N</span> (inclusive) 10 times? It is still the same time complexity, since it still takes linear time. It is equivalent to counting the number of operations in proportion to <span class="code-style">n</span>, taking the leading term, and ignoring the constant factor.</p>
+<pre class="code-style"><code class="c++">// still an O(n) algorithm
 for (int i = 0; i < N + 5; i++) {
 	cout << i << " ";
 }</code></pre>
-<pre id="code-style"><code class="c++">// still an O(n) algorithm
+<pre class="code-style"><code class="c++">// still an O(n) algorithm
 for (int i = 0; i < 3 * N; i++) {
 	cout << i << " ";
 }</code></pre>
-<pre id="code-style"><code class="c++">// still an O(n) algorithm
+<pre class="code-style"><code class="c++">// still an O(n) algorithm
 for (int i = 0; i < N; i += 2) {
 	cout << i << " ";
 }</code></pre>
-<pre id="code-style"><code class="c++">// still an O(n) algorithm
+<pre class="code-style"><code class="c++">// still an O(n) algorithm
 for (int rep = 0; rep < 10; rep++) {
 	for (int i = 0; i < N; i++) {
 		cout << i << " ";
 	}
 }</code></pre>
-<p id="text-style">However, printing a <span id="code-style">n</span> by <span id="code-style">m</span> grid requires printing <span id="code-style">n*m</span> characters, so you can say it is an <span id="code-style">O(nm)</span> algorithm.</p>
-<pre id="code-style"><code class="c++">for (int row = 0; row < N; row++) {
+<p class="text-style">However, printing a <span class="code-style">n</span> by <span class="code-style">m</span> grid requires printing <span class="code-style">n*m</span> characters, so you can say it is an <span class="code-style">O(nm)</span> algorithm.</p>
+<pre class="code-style"><code class="c++">for (int row = 0; row < N; row++) {
 	for (int col = 0; col < M; col++) {
 		cout << "#" << " ";
 	}
 	cout << "\n":
 }</code></pre>
 <br>
-<p id="text-style">TASK: What is the time complexity of: <span id="code-style">a++</span>.</p>
-<p id="text-style">ANSWER: <span class="hint-style"><span id="code-style">O(1)</span>, since it only requires a constant number of operations</span></p>
-<hr id="art-div">
+<p class="text-style">TASK: What is the time complexity of: <span class="code-style">a++</span>.</p>
+<p class="text-style">ANSWER: <span class="hint-style"><span class="code-style">O(1)</span>, since it only requires a constant number of operations</span></p>
+<hr class="art-div">
 
 
-<h2 id="sub-head">5.3 Homework</h2>
-<p id="text-style">NOTE: as you do these questions, consider the time complexity of each solution.</p>
-<p id="text-style">TASK:<br>
-Accept an integer <span id="code-style">n</span> from the user, and print a triangle of size <span id="code-style">n</span>. For example, when <span id="code-style">n = 5</span>:</p>
-<pre id="code-style"><code class="c++">#
+<h2 class="sub-head">5.3 Homework</h2>
+<p class="text-style">NOTE: as you do these questions, consider the time complexity of each solution.</p>
+<p class="text-style">TASK:<br>
+Accept an integer <span class="code-style">n</span> from the user, and print a triangle of size <span class="code-style">n</span>. For example, when <span class="code-style">n = 5</span>:</p>
+<pre class="code-style"><code class="c++">#
 ##
 ###
 ####
 #####</code></pre>
-<p id="text-style">ANSWER:</p>
-<pre class="hint-style" id="code-style"><code class="c++">/* 
+<p class="text-style">ANSWER:</p>
+<pre class="hint-style" class="code-style"><code class="c++">/* 
 The program does 1 + 2 + 3 + ... + n operations
 This is equivalent to n*(n+1)/2
 You could also calculate it visually as "half the n*n square"
@@ -71,11 +71,11 @@ for (int rowWidth = 1; rowWidth <= N; rowWidth++) {
 	cout << "\n":
 }</code></pre>
 <br>
-<p id="text-style"><a id="link-style" href="https://orac2.info/problem/simplerect/">A Mindbending Scenario</a><br>
-HINT: <span class="hint-style">There is a walkthrough <a id="link-style" href="http://orac.amt.edu.au/aioc/tutorials/walkthroughs/04.html">here</a>, although they do file input differently.</p>
-<p id="text-style"><a id="link-style" href="https://orac2.info/problem/aio19vases/">Vases</a><br>
+<p class="text-style"><a class="link-style" href="https://orac2.info/problem/simplerect/">A Mindbending Scenario</a><br>
+HINT: <span class="hint-style">There is a walkthrough <a class="link-style" href="http://orac.amt.edu.au/aioc/tutorials/walkthroughs/04.html">here</a>, although they do file input differently.</p>
+<p class="text-style"><a class="link-style" href="https://orac2.info/problem/aio19vases/">Vases</a><br>
 HINT: <span class="hint-style">Break it into cases.</p>
-<p id="text-style"><a id="link-style" href="https://orac2.info/problem/aio17mango/">Missing Mango</a><br>
+<p class="text-style"><a class="link-style" href="https://orac2.info/problem/aio17mango/">Missing Mango</a><br>
 HINT: <span class="hint-style">Break it into cases.</p>
 
 {% endblock %}

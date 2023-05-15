@@ -1,13 +1,13 @@
 {% extends "./basereact.html" %}
 {% block title %}6. States{% endblock %}
 {% block article %}
-<h1 id="top-head">6. States</h1>
-<h2 id="sub-head">6.1 Difference between a prop and state</h2>
-<p id="text-style">States are very similar to props except they have
+<h1 class="top-head">6. States</h1>
+<h2 class="sub-head">6.1 Difference between a prop and state</h2>
+<p class="text-style">States are very similar to props except they have
    one important difference. Props are passed to a component whereas
    states are managed within components.</p>
-<hr id="art-div">
-<h2 id="sub-head">6.2 Rules of states</h2>
+<hr class="art-div">
+<h2 class="sub-head">6.2 Rules of states</h2>
 <ul id="list-style" style="margin-left: 1rem">
   <li>Only useable with class based components (or with
       functional components using hooks component)</li>
@@ -20,9 +20,9 @@
     <li>States can <strong>only</strong>
         be updated using the function <strong>‘setState’</strong></li>
 </ul>
-<hr id="art-div">
-<h2 id="sub-head">6.3 Initialising the state</h2>
-<p id="text-style">The render method is required for every single component
+<hr class="art-div">
+<h2 class="sub-head">6.3 Initialising the state</h2>
+<p class="text-style">The render method is required for every single component
    we make. If we don’t use render, we get an error because it
    won’t return the JSX. We can also define the <em>constructor
    function</em>, but it’s not required by react (In JS, so we use
